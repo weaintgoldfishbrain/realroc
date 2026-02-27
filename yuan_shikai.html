@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>袁世凱真相 - 共和破壞者與現代化的奠基人 | 揭密中華民國</title>
+    <meta name="description" content="他被簡化為竊國大盜與簽署二十一條的賣國賊。然而客觀審視歷史，他不僅在辛亥革命時避免內戰，更奠定了中國現代化的基礎。他最終的敗亡，是權力傲慢下的必然悲劇。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        window.pageEpisodeData = {
+            id: "yuan_shikai",
+            chapterLabel: "卷宗 003",
+            title: "袁世凱",
+            subtitle: "共和破壞者與現代化的奠基人",
+            themeColor: "#374151",
+            description: "在國民黨教科書中，他被簡化為「竊國大盜」與簽署二十一條的「賣國賊」。然而客觀審視歷史，他不僅在辛亥革命時避免了全面內戰，更在軍事、貨幣與教育上奠定了中國現代化的基礎。他最終的敗亡，是缺乏民主素養的傳統強人，在權力傲慢下的必然悲劇。",
+            dilemmas: [
+                {
+                    year: "1912年春", title: "第一階段：鼎革之際的權力博弈",
+                    context: "辛亥革命爆發，南方多省獨立。你手握裝備精良的北洋大軍，清廷命你鎮壓革命。但此時清廷氣數已盡，而南方革命軍其實也面臨財政破產邊緣。你要如何在這場大風暴中做出選擇？",
+                    options: [
+                        { text: "效忠大清，率領北洋軍南下徹底血洗革命黨。", stats: [+20, -30, -30], isHistorical: false, feedbackTitle: "血流成河的內戰", feedbackText: "你盡了臣子的愚忠。中國陷入長達數年的南北血腥內戰，列強趁機武裝干預瓜分領土，國家徹底四分五裂。" },
+                        { text: "憑藉軍事實力居中斡旋，逼迫清帝退位，換取民國大總統之位。", stats: [+20, +20, +10], isHistorical: true, feedbackTitle: "代價最小的和平過渡", feedbackText: "你施展了高超的政治手腕。清朝和平終結，國家版圖得以完整保留，避免了極端流血。雖然革命黨罵你「竊國」，但你實質上拯救了當時的中國免於解體。" }
+                    ]
+                },
+                {
+                    year: "1915年初", title: "第二階段：二十一條的絕境交涉",
+                    context: "第一次世界大戰爆發，日本趁機出兵佔領山東，並秘密遞交了企圖全面吞併中國的「二十一條」。你的陸軍總長冷酷地報告：面對裝備精良的日軍，我們最多只能支撐48小時。日本公使威脅你立刻簽署並嚴禁洩密。",
+                    options: [
+                        { text: "寧為玉碎，不為瓦全！立刻通電全國，對日本宣戰！", stats: [-50, -50, +40], isHistorical: false, feedbackTitle: "國家瞬間覆滅", feedbackText: "這是課本最喜歡的「民族英雄」標準答案。但在現實中極其愚蠢。你的軍隊在48小時內彈盡糧絕，日軍迅速攻佔北京。中國提前30年亡國，你成了烈士，但國家沒了。" },
+                        { text: "表面周旋拖延，暗中將條款洩露給英美列強，死拒最致命的「第五號」條款。", stats: [-10, +10, -20], isHistorical: true, feedbackTitle: "背負罵名的損害控制", feedbackText: "你故意洩密引發國際譁然，迫使日本收斂。在最後通牒下，你被迫讓渡了部分經濟特權，但成功逼迫日本撤回了企圖全面控制中國內政的「第五號條款」。你保全了國家實體，卻被痛罵為賣國賊。" }
+                    ]
+                },
+                {
+                    year: "1915年底", title: "第三階段：強人政治的致命誘惑",
+                    context: "民國建立後政局極度動盪，國會與內閣頻繁癱瘓。當時國內知名學者（如楊度）與美國憲法顧問紛紛發表文章，認為中國人缺乏民主素質，共和制只會帶來無休止的內耗，勸進你恢復帝制，建立強有力的中央集權。",
+                    options: [
+                        { text: "恪守憲法與共和精神，逐步培育公民社會，拒絕稱帝。", stats: [-10, +10, +30], isHistorical: false, feedbackTitle: "理想豐滿，素養不足", feedbackText: "這是一個現代法治領導人該做的。但很遺憾，你出身於晚清封建官僚體系，無法忍受國會的制肘，也不相信老百姓有自治能力。你放棄了這條路。" },
+                        { text: "順應「民意」，為了國家的穩定與統一，宣布稱帝，改元洪憲。", stats: [-40, -20, -50], isHistorical: true, feedbackTitle: "威權的自毀與崩塌", feedbackText: "你嚴重誤判了歷史進程——辛亥後「民主共和」已成為絕對的政治正確。你一稱帝，立刻摧毀了統治的合法性基礎。短短83天，你在眾叛親離中病逝，中國陷入軍閥混戰。不受制約的絕對權力，帶來了毀滅性災難。" }
+                    ]
+                }
+            ],
+            summary: "袁世凱的成敗，是近代中國摸索現代化最沉重的警碑。他在國防絕境中以務實的手腕保全了國家（破除單純賣國的神話）；但他對「人治」的迷信與對「法治」的踐踏，最終導致了身敗名裂（證明了民主體制不可或缺的價值）。"
+        };
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="window.location.href='index.html'">
+                <span>🏛️</span> 揭密中華民國真實歷史
+            </h1>
+            <div id="top-nav-controls" class="flex items-center gap-4">
+                <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+
+        <!-- Screen 1: Intro -->
+        <div id="screen-intro" class="w-full max-w-4xl fade-in">
+            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#374151]"></div>
+            <div class="bg-white p-8 md:p-12 paper-shadow rounded-b-lg mb-8 relative border-2 border-gray-200">
+                <div
+                    class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 text-sm font-bold tracking-widest rounded-bl-lg">
+                    極機密</div>
+                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 003</div>
+
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
+                    袁世凱<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">共和破壞者與現代化的奠基人</span>
+                </h2>
+
+                <div
+                    class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
+                    <p>在國民黨教科書中，他被簡化為「竊國大盜」與簽署二十一條的「賣國賊」。然而客觀審視歷史，他不僅在辛亥革命時避免了全面內戰，更在軍事、貨幣與教育上奠定了中國現代化的基礎。他最終的敗亡，是缺乏民主素養的傳統強人，在權力傲慢下的必然悲劇。
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
+                    <button onclick="goToReading()"
+                        class="bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm">
+                        📖 閱讀原始檔案
+                    </button>
+                    <button onclick="startGame()"
+                        class="bg-red-800 hover:bg-red-700 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow flex items-center justify-center gap-2 group relative overflow-hidden">
+                        <span class="relative z-10">進入情境推演</span>
+                        <span class="relative z-10 transform group-hover:translate-x-1 transition-transform">➔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Deep Reading -->
+        <div id="screen-reading" class="w-full max-w-5xl hidden">
+
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold serif-text flex items-center gap-3 text-gray-800">
+                    <span class="text-indigo-900">📂</span> 檔案閱覽室
+                </h2>
+                <button onclick="switchScreen('intro')" class="text-gray-500 hover:text-gray-800 font-medium">✕
+                    關閉檔案</button>
+            </div>
+
+            <!-- 神話解構 (Flip Cards) -->
+            <section class="mb-16">
+                <div class="text-center mb-10">
+                    <h3
+                        class="text-2xl font-bold serif-text text-gray-800 inline-block border-b-4 border-yellow-400 pb-2">
+                        真實史實：歷史現場的另一面</h3>
+                    <p class="text-gray-600 mt-4 text-sm max-w-xl mx-auto">點擊下方卡片，對比傳統歷史課本與被掩蓋的歷史真相。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：袁世凱為了當皇帝，毫無底線地接受了日本喪權辱國的「二十一條」，是個純粹的賣國賊。
+                                </p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：當時中國陸軍彈藥僅能支撐48小時。袁世凱極度震怒但只能靠「拖延戰術」周旋，並暗中將機密洩露給英美引發國際干涉。最終他迫使日本放棄了最致命、企圖全面控制中國內政外交的「第五號條款」，保全了國家實體。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：袁世凱是靠武力恐嚇革命黨，卑鄙地「竊取」了辛亥革命的果實。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：當時南方革命軍在軍事與財政上皆處於崩潰邊緣。是袁世凱憑藉在北洋軍的威望，逼迫清帝和平退位。這項政治妥協極大降低了流血衝突，避免了列強趁機武裝干涉與瓜分中國。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 人物深度介紹 -->
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 tracking-widest px-4">人物列傳</h3>
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <div
+                        class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-gray-800"></div>
+                        <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-r border-gray-200">
+                            <!-- 修補圖片為本地路徑 -->
+                            <img src="images/YuanShikaiPresidente1915-2.jpg" alt="袁世凱肖像"
+                                onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
+                                class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">袁世凱</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1859 - 1916)</p>
+                            <span
+                                class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-bold rounded-full">國家現代化推手</span>
+                        </div>
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">破舊立新：民國肇建與制度現代化
+                            </h4>
+                            <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
+                                <p class="mb-3"><strong>避免全面內戰的和平過渡：</strong>
+                                    1911年辛亥革命爆發，南方革命軍面臨嚴峻的財政與軍事劣勢。袁世凱憑藉在北洋軍中的威望與政治手腕，成功促成清帝和平退位。這一妥協極大地降低了政權更迭的流血衝突，避免了列強武裝干涉與領土瓜分，為中華民國保留了相對完整的版圖基礎。
+                                </p>
+                                <p class="mb-3"><strong>軍事與經濟的現代化奠基：</strong>
+                                    他主導「小站練兵」，全盤引進德國軍制，徹底終結了中國傳統封建世襲軍制，創建了第一支現代國防軍。在經濟上，他於1914年頒布《國幣條例》，發行統一的「袁大頭」銀元，成功驅逐市場劣幣，穩固了國家金融信用，大幅推動了近代民族資本主義的發展。
+                                </p>
+                                <p><strong>推動現代教育與普及：</strong>
+                                    早在晚清他就積極推動廢除科舉。民國初年，袁政府致力於教育制度現代化，頒布法令實施義務教育、倡導師範教育與教科書標準化，為民國時期的知識普及奠定了硬體與制度基礎。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row-reverse border border-gray-200 relative">
+                        <div class="absolute top-0 right-0 w-2 h-full bg-gray-800"></div>
+                        <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-l border-gray-200">
+                            <img src="images/YuanShikaiPresidente1915-2.jpg" alt="袁世凱肖像"
+                                onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
+                                class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">袁世凱</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1859 - 1916)</p>
+                            <span
+                                class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-bold rounded-full">強人政治與外交防禦</span>
+                        </div>
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">弱國外交防線與「法治」的崩潰
+                            </h4>
+                            <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
+                                <p class="mb-3"><strong>「二十一條」交涉的歷史真相：</strong>
+                                    面對日本趁一戰之危提出的條款，在國防軍隊「只能支撐48小時」的絕境下，袁世凱極度震怒並親自掌控談判。他施展極致的拖延戰術，並暗中將機密洩露給英美施壓。最終他被迫妥協了部分經濟權益，但死守底線，堅決拒絕了最致命、企圖全面剝奪中國內政外交自主權的「第五號」條款，保全了國家實體。
+                                </p>
+                                <p class="mb-3"><strong>民主的脆弱與超級總統制：</strong>
+                                    1913年宋教仁遇刺案徹底摧毀了初創的政治互信。面對國會《天壇憲草》試圖將總統權力徹底虛位化的極端限制，缺乏民主妥協精神的袁世凱選擇動用武力，解散國會並廢除《臨時約法》，建立了類似拉丁美洲軍事獨裁的「超級總統制」，犧牲了政權長期的合法性。
+                                </p>
+                                <p><strong>洪憲帝制與人治的迷信：</strong>
+                                    袁世凱本質上仍是傳統威權統治者。在當時部分知識分子（如籌安會）對共和亂象失望、呼籲「人治」的氛圍下，他迷信強人政治能帶來穩定，悍然發動「洪憲帝制」。這不僅逆歷史潮流，更遭到了全國乃至北洋嫡系的背棄，最終僅83天便在眾叛親離中草草收場。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 參考資料文獻 -->
+            <section class="bg-gray-100 p-6 rounded-lg mb-12 border border-gray-200">
+                <h4 class="font-bold text-gray-700 mb-3 text-sm flex items-center gap-2">
+                    <span>📚</span> 關鍵參考史料
+                </h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>唐德剛，《袁氏當國》</li>
+                    <li>Patrick Fuliang Shan，《Yuan Shikai: A Reappraisal》</li>
+                </ul>
+            </section>
+
+            <div class="text-center sticky bottom-4 z-10 pt-4">
+                <button onclick="startGame()"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors shadow-lg paper-shadow text-lg flex items-center gap-2 mx-auto group">
+                    進入歷史情境推演
+                    <span class="transform group-hover:translate-x-2 transition-transform">➔</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 空白 HTML 結構，透過 script 填入 -->
+        <div id="screen-game" class="w-full max-w-3xl hidden">
+            <!-- Game UI -->
+            <div
+                class="bg-white p-4 rounded-lg paper-shadow mb-6 flex justify-between items-center text-sm font-bold sticky top-16 z-10 border border-gray-200">
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>軍事實力</span><span
+                            id="stat-mil-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-mil-bar" class="bg-red-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-mil-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>國家主權</span><span
+                            id="stat-nat-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-nat-bar" class="bg-blue-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-nat-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>歷史評價</span><span
+                            id="stat-rep-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-rep-float"></div>
+                </div>
+            </div>
+
+            <div class="bg-[#fbf9f4] p-8 md:p-10 paper-shadow rounded-lg mb-8 border-2 border-gray-200 relative">
+                <div
+                    class="absolute -top-4 -left-4 w-12 h-12 bg-red-800 text-white rounded-full flex items-center justify-center font-bold shadow-lg border-2 border-white">
+                    <span id="dilemma-progress" class="text-sm tracking-tighter"></span>
+                </div>
+
+                <h3 id="dilemma-year"
+                    class="text-sm font-bold text-red-800 mb-2 tracking-widest uppercase border-b-2 border-red-800 inline-block pb-1">
+                </h3>
+                <h2 id="dilemma-title"
+                    class="text-2xl md:text-3xl font-bold serif-text text-gray-900 mb-6 leading-snug"></h2>
+
+                <div class="text-gray-800 leading-relaxed text-base md:text-lg mb-8 min-h-[120px]">
+                    <p id="dilemma-context" class="whitespace-pre-line text-justify"></p>
+                </div>
+
+                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500"></div>
+            </div>
+        </div>
+
+        <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
+            <div
+                class="bg-white p-8 md:p-10 paper-shadow rounded-lg border-l-8 border-yellow-400 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-5">📜</div>
+                <div class="text-xs font-bold text-gray-400 tracking-widest mb-2 uppercase">局勢推演結果</div>
+                <h3 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug"></h3>
+                <p id="feedback-explanation"
+                    class="text-gray-700 leading-relaxed text-base md:text-lg mb-6 whitespace-pre-line text-justify relative z-10">
+                </p>
+
+                <div class="bg-gray-50 p-4 rounded border border-gray-200 flex justify-between items-center mb-8">
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">軍事實力</div>
+                        <div id="res-mil-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">國家主權</div>
+                        <div id="res-nat-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">歷史評價</div>
+                        <div id="res-rep-icon" class="text-base"></div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button id="next-btn" onclick="nextQuestion()"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded transition-colors w-full sm:w-auto shadow">
+                        進入下一階段推演 ➔
+                    </button>
+                </div>
+            </div>
+            <div class="h-32"></div>
+        </div>
+
+        <div id="screen-end" class="w-full max-w-3xl hidden">
+            <div class="text-center mb-10">
+                <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">歷史檔案定調</div>
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-2">命運結算</h2>
+                <div class="h-1 w-20 bg-gray-800 mx-auto rounded"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg paper-shadow mb-8 text-center border-t-8 border-gray-900">
+                <p class="text-gray-500 mb-2 text-sm">你的最終歷史定位：</p>
+                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text tracking-wide"></h2>
+
+                <div class="flex justify-center gap-6 mb-8 border-b border-gray-200 pb-8">
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">軍事實力</div>
+                        <div id="end-stat-mil" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">國家主權</div>
+                        <div id="end-stat-nat" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">歷史評價</div>
+                        <div id="end-stat-rep" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                </div>
+
+                <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
+                    <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2">
+                        <span>🖋️</span> 真實歷史真相總結：
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="window.location.href='index.html'"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">
+                        🔙 返回首頁解密其他人物
+                    </button>
+                </div>
+            </div>
+            <div class="h-16"></div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
+        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>switchScreen('intro');</script>
+</body>
+
+</html>

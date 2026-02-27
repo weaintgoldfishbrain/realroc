@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汪精衛真相 - 漢奸標籤下的殘酷地緣博弈 | 揭密中華民國</title>
+    <meta name="description" content="汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        window.pageEpisodeData = {
+            id: "wang_jingwei",
+            chapterLabel: "卷宗 002",
+            title: "汪精衛",
+            subtitle: "「漢奸」標籤下的殘酷地緣博弈",
+            themeColor: "#7f1d1d",
+            description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
+            dilemmas: [
+                {
+                    year: "1938年底", title: "第一階段：焦土與和平的十字路口",
+                    context: "抗日戰爭爆發一年多，首都南京及各大精華區已全部淪陷，中國精銳部隊死傷殆盡。你深刻認知到農業國打不贏工業國。如果繼續蔣介石的「焦土抗戰」，國家將化為廢墟；但如果你脫離重慶提出「和平運動」，你將背負千古罵名。",
+                    options: [
+                        { text: "堅守重慶，哪怕戰到最後一兵一卒，國家化為焦土也在所不惜！", stats: [+10, -30, +30], isHistorical: false, feedbackTitle: "慘烈的勝利與隨之而來的赤化", feedbackText: "你選擇了課本標準答案。中國經歷八年絞肉機，數千萬平民傷亡，經濟徹底崩潰。國力消耗與農村空虛讓中共在敵後迅速壯大，最終國民政府在內戰中全面潰敗。" },
+                        { text: "脫離重慶，發表艷電求和。我不入地獄誰入地獄，試圖在淪陷區維持生機。", stats: [-10, +10, -40], isHistorical: true, feedbackTitle: "背負漢奸之名的不歸路", feedbackText: "你踏出了無法回頭的一步。你試圖利用日本的內部矛盾，但在狂熱的民族主義面前，你瞬間從革命元老變成了舉國唾罵的賣國賊。" }
+                    ]
+                },
+                {
+                    year: "1940年", title: "第二階段：密約與偽政權的建立",
+                    context: "你到了日佔區，原本期望能與日本平等談判。但日本軍部露出了貪婪的真面目，逼迫你簽署極度苛刻的《日華新關係調整要綱》（汪密約），否則就不支持你成立政府。如果不簽，你的和平運動將徹底破產。",
+                    options: [
+                        { text: "條件太苛刻，這與賣國無異！拒絕簽字，宣佈和平運動失敗並退隱。", stats: [-20, 0, +20], isHistorical: false, feedbackTitle: "獨善其身的逃避", feedbackText: "你保全了個人最後的一點名節，但淪陷區的百姓只能繼續由殘暴的日軍直接軍管，遭受無情的屠殺與掠奪。" },
+                        { text: "忍辱負重簽下密約，成立南京國民政府，試圖從內部奪回行政權。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "在刀刃上跳舞的傀儡", feedbackText: "你簽下了屈辱的密約成立政府。雖然你處處受制於日本顧問，但你確實建立了一套中國人的警察與行政系統，某種程度上頂替了日軍的直接軍管，為淪陷區百姓爭取了一絲喘息空間。" }
+                    ]
+                },
+                {
+                    year: "1943年", title: "第三階段：太平洋戰爭爆發",
+                    context: "太平洋戰爭爆發，日本在各戰場吃緊。日本要求你的南京政權對英美宣戰，以配合大東亞聖戰。作為交換，你可以要求日本交還在中國境內的外國租界與部分治外法權。",
+                    options: [
+                        { text: "絕對不能對同盟國宣戰，這會讓中國徹底站到世界反法西斯的對立面。", stats: [-10, -10, +10], isHistorical: false, feedbackTitle: "失去利用價值", feedbackText: "你拒絕了日本的要求。惱羞成怒的日方撤銷了對你的全部支持，南京政權土崩瓦解，你被軟禁至死。" },
+                        { text: "配合日本對英美宣戰，並以此為籌碼，強硬要求收回上海等地的外國租界。", stats: [+10, +20, -20], isHistorical: true, feedbackTitle: "主權博弈的弔詭", feedbackText: "你對英美宣戰了，但也成功逼迫日本將法租界、公共租界交還給中國。這項在淪陷區的「主權收復」舉動產生了奇妙的歷史連鎖反應：重慶的蔣介石政府為了不落下風，立刻敦促英美廢除了不平等條約。你的妥協，意外推動了歷史。" }
+                    ]
+                }
+            ],
+            summary: "汪精衛的歷史定位極具爭議。在民族主義的最高標準下他是叛國。但放回當時的歷史情境，他的「和平運動」反映了弱國面對強敵時，另一種基於絕望與現實主義的「瓦全」嘗試，體現了近代中國在地緣夾縫中求生存的極度殘酷。"
+        };
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="window.location.href='index.html'">
+                <span>🏛️</span> 揭密中華民國真實歷史
+            </h1>
+            <div id="top-nav-controls" class="flex items-center gap-4">
+                <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+
+        <!-- Screen 1: Intro -->
+        <div id="screen-intro" class="w-full max-w-4xl fade-in">
+            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#7f1d1d]"></div>
+            <div class="bg-white p-8 md:p-12 paper-shadow rounded-b-lg mb-8 relative border-2 border-gray-200">
+                <div
+                    class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 text-sm font-bold tracking-widest rounded-bl-lg">
+                    極機密</div>
+                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 002</div>
+
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
+                    汪精衛<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">「漢奸」標籤下的殘酷地緣博弈</span>
+                </h2>
+
+                <div
+                    class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
+                    <p>從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
+                    <button onclick="goToReading()"
+                        class="bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm">
+                        📖 閱讀原始檔案
+                    </button>
+                    <button onclick="startGame()"
+                        class="bg-red-800 hover:bg-red-700 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow flex items-center justify-center gap-2 group relative overflow-hidden">
+                        <span class="relative z-10">進入情境推演</span>
+                        <span class="relative z-10 transform group-hover:translate-x-1 transition-transform">➔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Deep Reading -->
+        <div id="screen-reading" class="w-full max-w-5xl hidden">
+
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold serif-text flex items-center gap-3 text-gray-800">
+                    <span class="text-indigo-900">📂</span> 檔案閱覽室
+                </h2>
+                <button onclick="switchScreen('intro')" class="text-gray-500 hover:text-gray-800 font-medium">✕
+                    關閉檔案</button>
+            </div>
+
+            <!-- 神話解構 (Flip Cards) -->
+            <section class="mb-16">
+                <div class="text-center mb-10">
+                    <h3
+                        class="text-2xl font-bold serif-text text-gray-800 inline-block border-b-4 border-yellow-400 pb-2">
+                        真實史實：歷史現場的另一面</h3>
+                    <p class="text-gray-600 mt-4 text-sm max-w-xl mx-auto">點擊下方卡片，對比傳統歷史課本與被掩蓋的歷史真相。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛是因為在內鬥中輸給蔣介石，出於貪婪與私心才投靠日本當漢奸。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：汪早年敢於捨生刺殺清攝政王，其晚年的轉變並非單純怕死。他對中國落後的工業與軍事有極度悲觀的清醒認識，深恐長期「焦土抗戰」會讓國家元氣盡毀並為中共擴張提供溫床。他將建立政權視為「我不入地獄誰入地獄」的政治犧牲。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛政權只是個一無是處的日本傀儡，對中國毫無貢獻。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：汪政權雖然高度受制於日本，但在客觀上頂替了部分日軍的直接軍管，維持了淪陷區的基本社會運作。更弔詭的是，汪政權在1943年成功收回了上海公共租界等特權，此舉迫使重慶蔣介石政府加速與同盟國簽署廢除治外法權的《新約》。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 人物深度介紹 -->
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 tracking-widest px-4">人物列傳</h3>
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <div
+                        class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-red-800"></div>
+                        <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-r border-gray-200">
+                            <!-- 修補圖片路徑及檔名錯誤 -->
+                            <img src="images/wjw.jpg" alt="汪精衛肖像"
+                                onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
+                                class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">汪精衛</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1883 - 1944)</p>
+                            <span
+                                class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">和平運動推動者</span>
+                        </div>
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">「漢奸」標籤下的殘酷地緣博弈
+                            </h4>
+                            <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
+                                <p class="mb-3"><strong>絕境中的悲觀評估：</strong>
+                                    汪精衛早年是著名的革命刺客，但抗戰爆發後，他對中日國力差距的評估極度悲觀。他深恐長期的焦土抗戰不僅無法驅逐日軍，反而會導致中國國家元氣盡毀、人民生靈塗炭。</p>
+                                <p class="mb-3"><strong>地緣妥協與和平路線：</strong>
+                                    他脫離重慶國民政府，主張對日妥協，試圖將中日全面戰爭降級為政治談判。他將建立南京政權視為「曲線救國」與「我不入地獄誰入地獄」的犧牲，期望在日軍佔領區內維持一套中國人的行政系統，保全淪陷區民眾的基本生存空間與經濟命脈。
+                                </p>
+                                <p><strong>主權博弈的弔詭：</strong>
+                                    為了向民眾證明和平路線的價值，汪政權在外交上極力周旋。1943年，汪政權成功收回了上海公共租界與法租界。雖然這在形式上依賴日本的軍事力量，但客觀上也迫使重慶蔣介石政府加速與英美簽署廢除治外法權的新約，意外地共同推進了中國收回主權的歷史進程。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 參考資料文獻 -->
+            <section class="bg-gray-100 p-6 rounded-lg mb-12 border border-gray-200">
+                <h4 class="font-bold text-gray-700 mb-3 text-sm flex items-center gap-2">
+                    <span>📚</span> 關鍵參考史料
+                </h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>汪榮祖，《汪精衛的歷史定位》</li>
+                    <li>林思雲，《真實的汪精衛》</li>
+                </ul>
+            </section>
+
+            <div class="text-center sticky bottom-4 z-10 pt-4">
+                <button onclick="startGame()"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors shadow-lg paper-shadow text-lg flex items-center gap-2 mx-auto group">
+                    進入歷史情境推演
+                    <span class="transform group-hover:translate-x-2 transition-transform">➔</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 空白 HTML 結構，透過 script 填入 -->
+        <div id="screen-game" class="w-full max-w-3xl hidden">
+            <!-- Game UI -->
+            <div
+                class="bg-white p-4 rounded-lg paper-shadow mb-6 flex justify-between items-center text-sm font-bold sticky top-16 z-10 border border-gray-200">
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>軍事實力</span><span
+                            id="stat-mil-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-mil-bar" class="bg-red-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-mil-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>國家主權</span><span
+                            id="stat-nat-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-nat-bar" class="bg-blue-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-nat-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>歷史評價</span><span
+                            id="stat-rep-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-rep-float"></div>
+                </div>
+            </div>
+
+            <div class="bg-[#fbf9f4] p-8 md:p-10 paper-shadow rounded-lg mb-8 border-2 border-gray-200 relative">
+                <div
+                    class="absolute -top-4 -left-4 w-12 h-12 bg-red-800 text-white rounded-full flex items-center justify-center font-bold shadow-lg border-2 border-white">
+                    <span id="dilemma-progress" class="text-sm tracking-tighter"></span>
+                </div>
+
+                <h3 id="dilemma-year"
+                    class="text-sm font-bold text-red-800 mb-2 tracking-widest uppercase border-b-2 border-red-800 inline-block pb-1">
+                </h3>
+                <h2 id="dilemma-title"
+                    class="text-2xl md:text-3xl font-bold serif-text text-gray-900 mb-6 leading-snug"></h2>
+
+                <div class="text-gray-800 leading-relaxed text-base md:text-lg mb-8 min-h-[120px]">
+                    <p id="dilemma-context" class="whitespace-pre-line text-justify"></p>
+                </div>
+
+                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500"></div>
+            </div>
+        </div>
+
+        <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
+            <div
+                class="bg-white p-8 md:p-10 paper-shadow rounded-lg border-l-8 border-yellow-400 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-5">📜</div>
+                <div class="text-xs font-bold text-gray-400 tracking-widest mb-2 uppercase">局勢推演結果</div>
+                <h3 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug"></h3>
+                <p id="feedback-explanation"
+                    class="text-gray-700 leading-relaxed text-base md:text-lg mb-6 whitespace-pre-line text-justify relative z-10">
+                </p>
+
+                <div class="bg-gray-50 p-4 rounded border border-gray-200 flex justify-between items-center mb-8">
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">軍事實力</div>
+                        <div id="res-mil-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">國家主權</div>
+                        <div id="res-nat-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">歷史評價</div>
+                        <div id="res-rep-icon" class="text-base"></div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button id="next-btn" onclick="nextQuestion()"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded transition-colors w-full sm:w-auto shadow">
+                        進入下一階段推演 ➔
+                    </button>
+                </div>
+            </div>
+            <div class="h-32"></div>
+        </div>
+
+        <div id="screen-end" class="w-full max-w-3xl hidden">
+            <div class="text-center mb-10">
+                <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">歷史檔案定調</div>
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-2">命運結算</h2>
+                <div class="h-1 w-20 bg-gray-800 mx-auto rounded"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg paper-shadow mb-8 text-center border-t-8 border-gray-900">
+                <p class="text-gray-500 mb-2 text-sm">你的最終歷史定位：</p>
+                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text tracking-wide"></h2>
+
+                <div class="flex justify-center gap-6 mb-8 border-b border-gray-200 pb-8">
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">軍事實力</div>
+                        <div id="end-stat-mil" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">國家主權</div>
+                        <div id="end-stat-nat" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">歷史評價</div>
+                        <div id="end-stat-rep" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                </div>
+
+                <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
+                    <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2">
+                        <span>🖋️</span> 真實歷史真相總結：
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="window.location.href='index.html'"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">
+                        🔙 返回首頁解密其他人物
+                    </button>
+                </div>
+            </div>
+            <div class="h-16"></div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
+        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>switchScreen('intro');</script>
+</body>
+
+</html>

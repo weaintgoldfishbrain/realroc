@@ -1,4 +1,169 @@
-html {
-  height: 100%;
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f4f1ea;
+  color: #2c2c2c;
+  background-image: radial-gradient(#d5d1c5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+h1,
+h2,
+h3,
+.serif-text {
+  font-family: 'Noto Serif TC', serif;
+}
+
+.paper-shadow {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 翻轉卡片 CSS */
+.flip-card {
+  background-color: transparent;
   width: 100%;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.flip-card-front {
+  background-color: #fef3c7;
+  border: 2px solid #fde68a;
+  color: #92400e;
+}
+
+.flip-card-back {
+  background-color: #1f2937;
+  color: #f9fafb;
+  transform: rotateY(180deg);
+  border: 2px solid #374151;
+}
+
+.sepia-img {
+  filter: sepia(0.4) grayscale(0.2) contrast(1.1);
+  transition: filter 0.3s;
+}
+
+.sepia-img:hover {
+  filter: sepia(0) grayscale(0) contrast(1);
+}
+
+.archive-card {
+  transition: all 0.3s ease;
+}
+
+.archive-card:hover:not(.locked) {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 未來預告卡片特效 */
+.future-card {
+  background: repeating-linear-gradient(45deg, #f9fafb, #f9fafb 10px, #f3f4f6 10px, #f3f4f6 20px);
+  opacity: 0.8;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.stamp-secret {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  color: rgba(220, 38, 38, 0.15);
+  border: 4px solid rgba(220, 38, 38, 0.15);
+  padding: 10px 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Noto Serif TC', serif;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.5rem;
+}
+
+/* 情境模擬選項特效 */
+.dilemma-btn {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dilemma-btn:hover:not(:disabled) {
+  transform: translateX(5px);
+  border-color: #4b5563;
+  background-color: #f3f4f6;
+}
+
+/* 數值變化特效 */
+.stat-change {
+  animation: floatUp 2s forwards;
+  position: absolute;
+  font-weight: bold;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.2);
+  }
+}
+
+.typewriter::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

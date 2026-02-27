@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳炯明真實歷史 - 被掩蓋的廣東聯邦奠基者 | 揭密中華民國</title>
+    <meta name="description" content="在傳統國民黨史觀中，陳炯明被貶為背信棄義的反動軍閥。然而解密真相指出，他所堅持的「聯省自治」，或許才是避免中國陷入連年內戰的出路。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // 定義本頁專屬的歷史檔案資料 (供 script.js 共用邏輯使用)
+        window.pageEpisodeData = {
+            id: "chen_jiongming",
+            chapterLabel: "卷宗 001",
+            title: "陳炯明",
+            subtitle: "被掩蓋的廣東聯邦奠基者",
+            themeColor: "#1e3a8a",
+            description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
+            dilemmas: [
+                {
+                    year: "1920年", title: "第一階段：護法建國的十字路口",
+                    context: "你剛剛率領粵軍打回廣州，驅逐了桂系軍閥。廣東百廢待興。此時孫中山回到廣州重組軍政府。你面臨著資源分配的抉擇：是將有限的財力投入廣東的基礎建設與教育，還是交給孫中山擴充軍備準備「北伐」武力統一？",
+                    options: [
+                        { text: "將資源投入廣東基建與教育，落實「聯省自治」的模範省計畫。", stats: [0, +20, 0], isHistorical: true, feedbackTitle: "廣東迎來短暫的繁榮", feedbackText: "你設立了廣州市政廳，推動禁菸、修路、辦學。廣東經濟迅速復甦，民眾安居樂業。但這引發了急於北伐的孫中山的極度不滿，雙方裂痕產生。" },
+                        { text: "聽從領袖，將財政全部用於擴軍，立刻發動武裝北伐。", stats: [+10, -20, +10], isHistorical: false, feedbackTitle: "窮兵黷武，民不聊生", feedbackText: "你選擇了課本上的「正確路線」。廣東財政瞬間枯竭，為了籌措軍費你只能橫徵暴斂。北伐軍在湖南陷入泥沼，廣東後方崩潰。" }
+                    ]
+                },
+                {
+                    year: "1922年夏", title: "第二階段：六一六事變的爆發",
+                    context: "北洋政府已恢復了《臨時約法》，你們當初「護法」的法理目標已經達成。你強烈主張停止內戰，但孫中山堅持武力北伐，並免去了你的粵軍總司令職務，企圖奪取兵權。你的部下群情激憤，要求驅逐孫中山保衛廣東自治。",
+                    options: [
+                        { text: "交出兵權，即使看著廣東被拖入戰火，也要維持對領袖的絕對忠誠。", stats: [-30, -20, +20], isHistorical: false, feedbackTitle: "失去實權，自治夢碎", feedbackText: "你選擇了妥協。孫中山拿走兵權後立刻發動殘酷的北伐內戰。廣東被徹底榨乾，你的聯邦民主理想化為泡影。但在國民黨黨史中，你成了「忠臣」。" },
+                        { text: "默許部下發動防禦性政變，包圍總統府逼迫孫中山下野離開廣東。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "保衛了廣東，卻成為了「叛徒」", feedbackText: "政變成功，孫中山離開廣東。你暫時保住了廣東的和平與自治建設。但你犯了政治上的大忌，被掌握話語權的孫派貼上了「叛徒」與「反革命軍閥」的永恆標籤。" }
+                    ]
+                },
+                {
+                    year: "1925年", title: "第三階段：東征與最後的抉擇",
+                    context: "孫中山聯俄容共，獲得了蘇聯強大的軍事與財政支援，建立了黃埔軍校與列寧式的極權政黨組織。現在，裝備精良的「國民革命軍」打著統一的旗號向你發動了東征。你的粵軍節節敗退。",
+                    options: [
+                        { text: "向強權低頭，宣布放棄聯邦自治，加入國民黨陣營。", stats: [+10, 0, -20], isHistorical: false, feedbackTitle: "信仰破滅的投降者", feedbackText: "你選擇了保全性命。你被剝奪兵權，軟禁在南京。中國徹底走向了一黨專政的武力統一道路，聯省自治的嘗試宣告徹底終結。" },
+                        { text: "堅守聯邦主義信仰，絕不妥協，戰至最後一兵一卒然後流亡。", stats: [-30, -10, +10], isHistorical: true, feedbackTitle: "理想主義的悲歌", feedbackText: "你拒絕向極權妥協。軍隊被擊潰後，你流亡香港，在貧病交加中去世。「講理」的自治理想，終究不敵「講力」的蘇聯式武力。你帶著背叛者的罵名退出了歷史舞台。" }
+                    ]
+                }
+            ],
+            summary: "陳炯明的失敗，標誌著近代中國錯失了「溫和聯邦制」的現代化路徑。在那個缺乏民主傳統、列強環伺的時代，擁有強大武裝與嚴密組織的政黨（國、共）最終主導了歷史。「講理」的自治理想，終究不敵「講力」的武裝統一。"
+        };
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Global Header -->
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="window.location.href='index.html'">
+                <span>🏛️</span> 揭密中華民國真實歷史
+            </h1>
+            <div id="top-nav-controls" class="flex items-center gap-4">
+                <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+
+        <!-- Screen 1: Intro (靜態化 HTML) -->
+        <div id="screen-intro" class="w-full max-w-4xl fade-in">
+            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#1e3a8a]"></div>
+            <div class="bg-white p-8 md:p-12 paper-shadow rounded-b-lg mb-8 relative border-2 border-gray-200">
+                <div
+                    class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 text-sm font-bold tracking-widest rounded-bl-lg">
+                    極機密</div>
+                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 001</div>
+
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
+                    陳炯明<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">被掩蓋的廣東聯邦奠基者</span>
+                </h2>
+
+                <div
+                    class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
+                    <p>在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
+                    <button onclick="goToReading()"
+                        class="bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm">
+                        📖 閱讀原始檔案
+                    </button>
+                    <button onclick="startGame()"
+                        class="bg-red-800 hover:bg-red-700 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow flex items-center justify-center gap-2 group relative overflow-hidden">
+                        <span class="relative z-10">進入情境推演</span>
+                        <span class="relative z-10 transform group-hover:translate-x-1 transition-transform">➔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Deep Reading (靜態化 HTML) -->
+        <div id="screen-reading" class="w-full max-w-5xl hidden">
+
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold serif-text flex items-center gap-3 text-gray-800">
+                    <span class="text-indigo-900">📂</span> 檔案閱覽室
+                </h2>
+                <button onclick="switchScreen('intro')" class="text-gray-500 hover:text-gray-800 font-medium">✕
+                    關閉檔案</button>
+            </div>
+
+            <!-- 神話解構 (Flip Cards) -->
+            <section class="mb-16">
+                <div class="text-center mb-10">
+                    <h3
+                        class="text-2xl font-bold serif-text text-gray-800 inline-block border-b-4 border-yellow-400 pb-2">
+                        真實史實：歷史現場的另一面</h3>
+                    <p class="text-gray-600 mt-4 text-sm max-w-xl mx-auto">點擊下方卡片，對比傳統歷史課本與被掩蓋的歷史真相。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Myth 1 -->
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明是個充滿野心的反動軍閥，為了奪權而發動「六一六事變」炮轟孫中山。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：這是一場「聯邦自治」與「中央集權」的路線之爭。當時「護法」目標已達成，陳主張停止內戰、建設廣東；孫卻堅持拿廣東的資源發動武力北伐。陳的部隊發動政變是為了逼孫下野以保衛廣東自治，且陳私下嚴令部隊讓開生路。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Myth 2 -->
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明只是一個目光短淺、阻礙國家統一的地方割據勢力。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相：陳炯明深受無政府主義與聯邦主義影響。他並非不想統一，而是主張仿效美國的「多黨民主聯邦制」，希望先將廣東建設為模範省，待各省民主成熟後，再由下而上和平統一，而非透過一黨專政的武裝侵略。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 人物深度介紹 -->
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 tracking-widest px-4">人物列傳</h3>
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <!-- Profile 1 -->
+                    <div
+                        class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-blue-800"></div>
+                        <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-r border-gray-200">
+                            <img src="images/Chen_Jiongming2.jpg" alt="陳炯明肖像"
+                                onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
+                                class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">陳炯明</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1878 - 1933)</p>
+                            <span
+                                class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">聯邦主義先驅</span>
+                        </div>
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">被掩蓋的廣東現代化奠基者</h4>
+                            <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
+                                <p class="mb-3"><strong>法政背景與政治理念：</strong>
+                                    陳炯明並非傳統草莽軍閥。早在辛亥革命前，他已是清末廣東省諮議局議員，擁有深厚的法學與地方治理背景。他深受無政府主義與聯邦主義影響，堅決反對孫中山透過武力「北伐」建立一黨專政的中央集權。
+                                </p>
+                                <p class="mb-3"><strong>聯省自治藍圖：</strong>
+                                    他主張「保境息民」，提倡先在廣東實行民主憲政，推動教育與實業，將廣東建設為全國模範省。待各省皆具備民主自治基礎後，再由下而上結合成類似美國的「多黨民主聯邦體系」。
+                                </p>
+                                <p><strong>六一六事件真相：</strong>
+                                    1922年的「六一六事件」常被簡化為叛變。實際上，當時北洋政府已恢復《臨時約法》，南方「護法」目標在法理上已達成。陳反對繼續發動內戰，但孫中山堅持強行北伐並企圖奪取陳的兵權。這場衝突本質上是「地方自治」與「中央集權武裝統一」的路線防禦戰。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 參考資料文獻 -->
+            <section class="bg-gray-100 p-6 rounded-lg mb-12 border border-gray-200">
+                <h4 class="font-bold text-gray-700 mb-3 text-sm flex items-center gap-2">
+                    <span>📚</span> 關鍵參考史料
+                </h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>段雲章，《陳炯明一生》</li>
+                    <li>Leslie H. Dingyan Chen，《Chen Jiongming and the Federalist Movement》</li>
+                </ul>
+            </section>
+
+            <div class="text-center sticky bottom-4 z-10 pt-4">
+                <button onclick="startGame()"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors shadow-lg paper-shadow text-lg flex items-center gap-2 mx-auto group">
+                    進入歷史情境推演
+                    <span class="transform group-hover:translate-x-2 transition-transform">➔</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 以下 Screen 3~5 為由 script.js 共用控制之遊戲介面結構 -->
+
+        <!-- Screen 3: Game -->
+        <div id="screen-game" class="w-full max-w-3xl hidden">
+            <!-- 狀態條 UI -->
+            <div
+                class="bg-white p-4 rounded-lg paper-shadow mb-6 flex justify-between items-center text-sm font-bold sticky top-16 z-10 border border-gray-200">
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>軍事實力</span><span
+                            id="stat-mil-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-mil-bar" class="bg-red-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-mil-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>國家主權</span><span
+                            id="stat-nat-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-nat-bar" class="bg-blue-600 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-nat-float"></div>
+                </div>
+                <div class="w-px h-8 bg-gray-300 mx-2"></div>
+                <div class="flex-1 px-4 relative">
+                    <div class="text-gray-500 mb-1 flex justify-between"><span>歷史評價</span><span
+                            id="stat-rep-val">50</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 transition-all duration-500" style="width: 50%">
+                        </div>
+                    </div>
+                    <div id="stat-rep-float"></div>
+                </div>
+            </div>
+
+            <div class="bg-[#fbf9f4] p-8 md:p-10 paper-shadow rounded-lg mb-8 border-2 border-gray-200 relative">
+                <div
+                    class="absolute -top-4 -left-4 w-12 h-12 bg-red-800 text-white rounded-full flex items-center justify-center font-bold shadow-lg border-2 border-white">
+                    <span id="dilemma-progress" class="text-sm tracking-tighter"></span>
+                </div>
+
+                <h3 id="dilemma-year"
+                    class="text-sm font-bold text-red-800 mb-2 tracking-widest uppercase border-b-2 border-red-800 inline-block pb-1">
+                </h3>
+                <h2 id="dilemma-title"
+                    class="text-2xl md:text-3xl font-bold serif-text text-gray-900 mb-6 leading-snug"></h2>
+
+                <div class="text-gray-800 leading-relaxed text-base md:text-lg mb-8 min-h-[120px]">
+                    <p id="dilemma-context" class="whitespace-pre-line text-justify"></p>
+                </div>
+
+                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500">
+                    <!-- 動態生成選項按鈕 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: Feedback Window -->
+        <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
+            <div
+                class="bg-white p-8 md:p-10 paper-shadow rounded-lg border-l-8 border-yellow-400 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-5">📜</div>
+                <div class="text-xs font-bold text-gray-400 tracking-widest mb-2 uppercase">局勢推演結果</div>
+                <h3 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug"></h3>
+                <p id="feedback-explanation"
+                    class="text-gray-700 leading-relaxed text-base md:text-lg mb-6 whitespace-pre-line text-justify relative z-10">
+                </p>
+
+                <div class="bg-gray-50 p-4 rounded border border-gray-200 flex justify-between items-center mb-8">
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">軍事實力</div>
+                        <div id="res-mil-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">國家主權</div>
+                        <div id="res-nat-icon" class="text-base"></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs text-gray-500 mb-1">歷史評價</div>
+                        <div id="res-rep-icon" class="text-base"></div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button id="next-btn" onclick="nextQuestion()"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded transition-colors w-full sm:w-auto shadow">
+                        進入下一階段推演 ➔
+                    </button>
+                </div>
+            </div>
+            <div class="h-32"></div>
+        </div>
+
+        <!-- Screen 5: End Summary -->
+        <div id="screen-end" class="w-full max-w-3xl hidden">
+            <div class="text-center mb-10">
+                <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">歷史檔案定調</div>
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-2">命運結算</h2>
+                <div class="h-1 w-20 bg-gray-800 mx-auto rounded"></div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg paper-shadow mb-8 text-center border-t-8 border-gray-900">
+                <p class="text-gray-500 mb-2 text-sm">你的最終歷史定位：</p>
+                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text tracking-wide"></h2>
+
+                <div class="flex justify-center gap-6 mb-8 border-b border-gray-200 pb-8">
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">軍事實力</div>
+                        <div id="end-stat-mil" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">國家主權</div>
+                        <div id="end-stat-nat" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                    <div class="text-center bg-gray-50 p-4 rounded-lg w-28">
+                        <div class="text-sm text-gray-500 mb-1">歷史評價</div>
+                        <div id="end-stat-rep" class="text-3xl font-bold text-gray-800"></div>
+                    </div>
+                </div>
+
+                <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
+                    <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2">
+                        <span>🖋️</span> 真實歷史真相總結：
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="window.location.href='index.html'"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">
+                        🔙 返回首頁解密其他人物
+                    </button>
+                </div>
+            </div>
+            <div class="h-16"></div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
+        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
+    </footer>
+
+    <!-- 共用推演引擎 -->
+    <script src="script.js"></script>
+    <script>
+        // 初始化本頁
+        switchScreen('intro');
+    </script>
+</body>
+
+</html>
