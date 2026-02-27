@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溥儀真相 - 從皇帝到公民：紫禁城外的傀儡 | 揭密中華民國</title>
+    <meta name="description" content="三次登基，三次退位。他是時代洪流中最身不由己的棋子，被各路軍閥、日本關東軍與新政權反覆利用與擺布。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        window.pageEpisodeData = {
+            id: "puyi",
+            chapterLabel: "卷宗 006",
+            title: "溥儀",
+            subtitle: "從皇帝到公民：紫禁城外的傀儡",
+            themeColor: "#4a3b2a",
+            description: "愛新覺羅·溥儀是中國兩千年帝制的最後一個象徵。他是時代洪流中最身不由己的棋子，被各路軍閥、日本關東軍與新政權反覆利用與擺布。從紫禁城的廢帝到偽滿洲國的傀儡，再到北京植物園的園丁，他在恐懼與執念中苟延殘喘。",
+            dilemmas: [
+                {
+                    year: "1924年11月", title: "第一階段：紫禁城的黃昏",
+                    context: "軍閥馮玉祥的軍隊包圍了紫禁城，限你幾個小時內搬出去。你倉皇逃出宮，身分極度敏感，隨時可能被暗殺或綁架。你必須決定下一步。",
+                    options: [
+                        { text: "宣布徹底放棄愛新覺羅特殊身分，赴歐美留學當個平民。", stats: [-50, +20, +40], isHistorical: false, feedbackTitle: "失去保護的自由", feedbackText: "你嘗試追求自由，但軍閥並不相信你。沒有了列強庇護，你很快就在混亂的租界外被激進分子暗殺。你的故事在此提前終結。" },
+                        { text: "逃入日本駐北京公使館尋求庇護，保留復辟希望。", stats: [+30, -10, -20], isHistorical: true, feedbackTitle: "飲鴆止渴的選擇", feedbackText: "日本看中了你的政治價值。你保住了性命與小朝廷尊嚴，但從此走入了日本人為你編織的鳥籠，一步步走向萬劫不復的深淵。" }
+                    ]
+                },
+                {
+                    year: "1931年底", title: "第二階段：滿洲國的誘惑",
+                    context: "「九一八」後，日本佔領東北。特務頭子土肥原賢二邀請你前往東北擔任新國家元首。若拒絕，日本將扶植其他宗室。",
+                    options: [
+                        { text: "堅決拒絕！大清皇帝絕不做日本傀儡。", stats: [-50, +30, +50], isHistorical: false, feedbackTitle: "被遺棄的廢帝", feedbackText: "你展現了氣節，但也失去了利用價值。你在租界孤獨終老，隨後在大陸淪陷時遭到新政權清算。歷史將記住你最後的沉默。" },
+                        { text: "答應日本條件，秘密潛赴旅順，準備在滿洲國「登基」。", stats: [+40, -50, -50], isHistorical: true, feedbackTitle: "萬劫不復的傀儡", feedbackText: "你以為能復興祖業，卻發現關東軍才是太上皇。你成了簽字蓋章的囚徒皇帝，背上了中國歷史上最大的賣國罵名。" }
+                    ]
+                },
+                {
+                    year: "1950年", title: "第三階段：戰犯管理所的生存遊戲",
+                    context: "你被引渡回國，關押在撫順戰犯管理所。獄方要求你寫深刻認罪書。周圍漢奸面臨重判，你必須決定應對策略。",
+                    options: [
+                        { text: "保持皇帝最後尊嚴，拒絕認罪，指責是日本綁架了你。", stats: [-50, -10, +10], isHistorical: false, feedbackTitle: "尊嚴與斷頭台", feedbackText: "你的傲慢激怒了新政權。你被定性為「死不悔改的頭號戰犯」，步上了尼古拉二世的後塵，在刑場結束了悲劇的一生。" },
+                        { text: "徹底放低姿態，主動揭發「罪惡」，讚美改造並寫下《我的前半生》。", stats: [+50, +20, -30], isHistorical: true, feedbackTitle: "政治櫥窗的倖存者", feedbackText: "你展現了極致的生存本能，配合了政權的宣傳。你獲得了特赦，成為北京植物園的一名園丁，在歷史夾縫中苟延殘喘到了晚年。" }
+                    ]
+                }
+            ],
+            summary: "溥儀的一生是無法掌控命運的悲劇。他被舊道德綁架，對復辟有著不切實際執念，落入日本陷阱；又在恐懼中向新政權屈膝，將自己異化為政治展覽品。與其說是賣國賊，不如說是個被剝奪人性的政治犧牲品。"
+        };
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="window.location.href='index.html'">
+                <span>🏛️</span> 揭密中華民國真實歷史
+            </h1>
+            <div id="top-nav-controls" class="flex items-center gap-4">
+                <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+
+        <div id="screen-intro" class="w-full max-w-4xl fade-in">
+            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#4a3b2a]"></div>
+            <div class="bg-white p-8 md:p-12 paper-shadow rounded-b-lg mb-8 relative border-2 border-gray-200">
+                <div
+                    class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 text-sm font-bold tracking-widest rounded-bl-lg">
+                    極機密</div>
+                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 006</div>
+
+                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
+                    溥儀<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">從皇帝到公民：紫禁城外的傀儡</span>
+                </h2>
+
+                <div
+                    class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
+                    <p>他是中國兩千年帝制的最後一個象徵。這份檔案將揭示，這位「漢奸」皇帝與「模範公民」標籤背後，一個時代棋子的真實掙扎。
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
+                    <button onclick="goToReading()"
+                        class="bg-white border-2 border-gray-800 text-gray-800 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm">
+                        📖 閱讀原始檔案
+                    </button>
+                    <button onclick="startGame()"
+                        class="bg-red-800 hover:bg-red-700 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow flex items-center justify-center gap-2 group relative overflow-hidden">
+                        <span class="relative z-10">進入情境推演</span>
+                        <span class="relative z-10 transform group-hover:translate-x-1 transition-transform">➔</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-reading" class="w-full max-w-5xl hidden">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold serif-text flex items-center gap-3 text-gray-800">
+                    <span class="text-indigo-900">📂</span> 檔案閱覽室
+                </h2>
+                <button onclick="switchScreen('intro')" class="text-gray-500 hover:text-gray-800 font-medium">✕
+                    關閉檔案</button>
+            </div>
+
+            <section class="mb-16">
+                <div class="text-center mb-10">
+                    <h3
+                        class="text-2xl font-bold serif-text text-gray-800 inline-block border-b-4 border-yellow-400 pb-2">
+                        真實史實：歷史現場的另一面</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說： 溥儀喪心病狂，主動把東北出賣給日本，是個十惡不赦的賣國賊。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相： 他確實有復辟執念，但起因是被馮玉祥無故驅逐出宮，在恐懼中投江。到了滿洲後，他才發現自己完全被關東軍軟禁，連見誰吃什麼都由不得自己，毫無任何實權。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說： 溥儀在戰犯管理所深刻認罪，被偉大理念感化，真心改造成模範公民。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相： 「改造」很大程度是生存本能。從小在宮廷鬥爭長大的他，面對死亡威脅，完美「表演」了悔過角色，以瘋狂自我貶低換取活命。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 tracking-widest px-4">人物列傳</h3>
+                    <div class="h-px bg-gray-300 flex-grow"></div>
+                </div>
+
+                <div class="flex flex-col gap-8">
+                    <div
+                        class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-[#4a3b2a]"></div>
+                        <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-r border-gray-200">
+                            <img src="images/puyi.png" alt="溥儀肖像" loading="lazy"
+                                onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
+                                class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">溥儀</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1906 - 1967)</p>
+                            <span
+                                class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-bold rounded-full">時代的棋子</span>
+                        </div>
+                        <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">從皇權崩潰到傀儡生涯</h4>
+                            <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
+                                <p class="mb-3"><strong>被撕毀的契約：</strong>
+                                    1924年馮玉祥撕毀優待條件，武裝驅逐溥儀。這摧毀了他對民國的信任，將他推向了唯一的「保護者」日本人。</p>
+                                <p class="mb-3"><strong>滿洲國的囚徒：</strong>
+                                    1932年赴東北，原以為恢復祖業，卻發現是關東軍才是太上皇。他的護軍被繳械，甚至被逼奉祀天照大神，備受折磨。</p>
+                                <p><strong>戰犯與公民：</strong> 戰後被俘，在管理所十年歲月中，為了求生寫下《我的前半生》。最終作為「改造成功」標牌，度過了晚年。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-gray-100 p-6 rounded-lg mb-12 border border-gray-200">
+                <h4 class="font-bold text-gray-700 mb-3 text-sm flex items-center gap-2"><span>📚</span> 關鍵參考史料</h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>溥儀，《我的前半生》</li>
+                    <li>莊士敦 (Reginald Johnston)，《紫禁城的黃昏》</li>
+                </ul>
+            </section>
+
+            <div class="text-center sticky bottom-4 z-10 pt-4">
+                <button onclick="startGame()"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors shadow-lg paper-shadow text-lg flex items-center gap-2 mx-auto group">
+                    進入歷史情境推演 <span class="transform group-hover:translate-x-2 transition-transform">➔</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="screen-game" class="w-full max-w-4xl hidden">
+            <div class="status-bar-dark">
+                <div class="status-item">
+                    <div class="status-label">⚔️ 軍事實力 <span id="stat-mil-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">💰 國家主權 <span id="stat-nat-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-label">📖 歷史定位 <span id="stat-rep-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between mb-6 px-2">
+                <div class="flex items-center gap-4">
+                    <span class="text-4xl text-gray-700">📻</span>
+                    <div>
+                        <div id="dilemma-year" class="text-red-800 font-bold text-sm uppercase tracking-widest mb-1">
+                        </div>
+                        <h2 id="dilemma-title"
+                            class="text-2xl md:text-3xl font-bold serif-text text-gray-900 leading-tight"></h2>
+                    </div>
+                </div>
+                <div class="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-400">進度 <span
+                        id="dilemma-progress"></span></div>
+            </div>
+            <div class="telegram-terminal mb-8">
+                <div class="telegram-header"><span>📡</span> INCOMING TELEGRAM</div>
+                <div class="telegram-body">
+                    <p id="dilemma-context" class="whitespace-pre-line"></p>
+                </div>
+            </div>
+            <div id="options-container" class="space-y-4 opacity-0 transition-opacity"></div>
+        </div>
+
+        <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
+            <div
+                class="bg-white p-8 md:p-10 paper-shadow rounded-lg border-l-8 border-yellow-400 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-5">📜</div>
+                <div class="text-xs font-bold text-gray-400 tracking-widest mb-2 uppercase">局勢推演結果</div>
+                <h3 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug"></h3>
+                <p id="feedback-explanation"
+                    class="text-gray-700 leading-relaxed text-base md:text-lg mb-6 whitespace-pre-line text-justify relative z-10">
+                </p>
+                <div class="text-right">
+                    <button id="next-btn" onclick="nextQuestion()"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded transition-colors w-full sm:w-auto shadow">進入下一階段推演
+                        ➔</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-end" class="w-full max-w-3xl hidden">
+            <div class="bg-white p-8 rounded-lg paper-shadow text-center">
+                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text"></h2>
+                <div class="text-left bg-[#fbf9f4] p-6 rounded-lg mb-8 border border-gray-300">
+                    <p class="text-gray-700" id="end-summary"></p>
+                </div>
+                <button onclick="window.location.href='index.html'"
+                    class="bg-gray-900 text-white font-bold py-4 px-8 rounded shadow w-full">🔙 返回首頁解密其他人物</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { if (typeof switchScreen === 'function') switchScreen('intro'); });
+    </script>
+</body>
+
+</html>
