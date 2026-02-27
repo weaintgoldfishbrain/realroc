@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歷史解密檔案庫：終極反思</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f4f1ea;
+            color: #2c2c2c;
+            background-image: radial-gradient(#d5d1c5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        h1, h2, h3, .serif-text {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .paper-shadow {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05), 0 4px 10px rgba(0,0,0,0.03);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 翻轉卡片 CSS */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 260px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .flip-card-front {
+            background-color: #fef3c7; 
+            border: 2px solid #fde68a;
+            color: #92400e;
+        }
+        .flip-card-back {
+            background-color: #1f2937; 
+            color: #f9fafb;
+            transform: rotateY(180deg);
+            border: 2px solid #374151;
+        }
+        
+        .sepia-img { filter: sepia(0.4) grayscale(0.2) contrast(1.1); transition: filter 0.3s; }
+        .sepia-img:hover { filter: sepia(0) grayscale(0) contrast(1); }
+        .archive-card { transition: all 0.3s ease; }
+        .archive-card:hover:not(.locked) { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        
+        /* 未來預告卡片特效 */
+        .future-card {
+            background: repeating-linear-gradient(45deg, #f9fafb, #f9fafb 10px, #f3f4f6 10px, #f3f4f6 20px);
+            opacity: 0.8;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+        .stamp-secret {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
+            color: rgba(220, 38, 38, 0.15); border: 4px solid rgba(220, 38, 38, 0.15);
+            padding: 10px 20px; font-size: 3rem; font-weight: bold; font-family: 'Noto Serif TC', serif;
+            pointer-events: none; white-space: nowrap; letter-spacing: 0.5rem;
+        }
+        
+        /* 情境模擬選項特效 */
+        .dilemma-btn { transition: all 0.2s ease; position: relative; overflow: hidden; }
+        .dilemma-btn:hover:not(:disabled) { transform: translateX(5px); border-color: #4b5563; background-color: #f3f4f6; }
+        
+        /* 數值變化特效 */
+        .stat-change { animation: floatUp 2s forwards; position: absolute; font-weight: bold; }
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-30px) scale(1.2); }
+        }
+        
+        .typewriter::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Global Header -->
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2" onclick="returnToMenu()">
+                <span>🏛️</span> 歷史解密檔案庫
+            </h1>
+            <div id="top-nav-controls" class="hidden flex items-center gap-4">
+                <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+        
+        <!-- Screen 0: Archive Menu -->
+        <div id="screen-menu" class="w-full max-w-5xl fade-in flex flex-col gap-12">
+            <!-- 已解密卷宗區塊 -->
+            <section>
+                <div class="text-center mb-10">
+                    <span class="bg-red-800 text-white px-3 py-1 text-xs font-bold tracking-widest rounded mb-4 inline-block shadow">史觀解構特別企劃</span>
+                    <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-800 mb-4 tracking-wider">打破黨國敘事的神話</h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">我們從小被灌輸的歷史，往往是為了鞏固特定政權合法性而編寫的「道德劇」。在這裡，我們讓證據說話，帶你親自走入歷史的灰色地帶。</p>
+                </div>
+                <div id="archive-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- 視覺分隔線 -->
+            <div class="w-full flex items-center justify-center py-4">
+                <div class="h-px bg-gray-300 w-1/3"></div>
+                <div class="mx-4 text-gray-400 text-2xl">⏳</div>
+                <div class="h-px bg-gray-300 w-1/3"></div>
+            </div>
+
+            <!-- 未來即將開放區塊 -->
+            <section class="pb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold serif-text text-gray-700 mb-2 flex items-center justify-center gap-2">
+                        <span>🗄️</span> 即將解密：未來卷宗預告
+                    </h2>
+                    <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto">以下歷史檔案正在進行史料交叉比對與修復作業，將於未來的系統更新中陸續開放查閱。</p>
+                </div>
+                <div id="future-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+        </div>
+
+        <!-- Screen 1: Intro -->
+        <div id="screen-intro" class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative overflow-hidden mt-8">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gray-800" id="intro-color-bar"></div>
+            <div class="mb-4 text-sm font-bold text-gray-500 tracking-widest uppercase" id="intro-chapter">CHAPTER</div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-gray-800 serif-text leading-tight text-center md:text-left" id="intro-title"></h1>
+            <div class="prose prose-lg text-gray-600 mb-8 leading-relaxed max-w-none text-justify" id="intro-desc"></div>
+            <div class="flex justify-center md:justify-start">
+                <button onclick="goToReading()" class="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded transition-colors text-lg shadow-lg flex items-center justify-center gap-2">
+                    <span>開始查閱解密檔案</span> <span>➔</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Reading Room -->
+        <div id="screen-reading" class="w-full max-w-5xl hidden flex flex-col gap-10 mt-4">
+            
+            <!-- 史觀翻轉區塊 -->
+            <div class="mb-6">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold serif-text text-gray-800 mb-2 flex justify-center items-center gap-2">
+                        <span>🔄</span> 史觀解構：課本沒教的真相
+                    </h2>
+                    <p class="text-gray-500 text-sm">點擊下方卡片，戳破國民黨歷史課本中的政治宣傳神話。</p>
+                </div>
+                <div id="flip-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+            </div>
+
+            <!-- Profiles Container (詳細文獻閱讀區) -->
+            <div class="text-center mt-4">
+                <h2 class="text-3xl font-bold serif-text text-gray-800 mb-2 flex justify-center items-center gap-2">
+                    <span>📂</span> 歷史檔案館藏閱讀室
+                </h2>
+                <p class="text-gray-600 text-sm">請詳閱以下客觀史料重建的背景脈絡，這將影響您在後續推演中的判斷。</p>
+            </div>
+            <div id="profiles-container" class="flex flex-col gap-8"></div>
+
+            <!-- 學術文獻參考 -->
+            <div class="bg-gray-100 p-6 rounded-lg border border-gray-300 text-sm text-gray-600">
+                <h4 class="font-bold text-gray-800 mb-2 uppercase tracking-widest flex items-center gap-2">
+                    <span>📚</span> 權威學術文獻參考
+                </h4>
+                <ul id="references-container" class="list-disc list-inside space-y-1"></ul>
+            </div>
+
+            <div class="flex justify-center mt-4 mb-12">
+                <button onclick="startGame()" class="w-full md:w-3/4 bg-gray-900 hover:bg-gray-800 text-white font-bold py-6 px-8 rounded-lg transition-colors text-xl shadow-2xl border-4 border-gray-700 flex flex-col items-center justify-center gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">⚙️</span> <span>啟動沙盤推演：歷史生存模擬器</span>
+                    </div>
+                    <span class="text-sm text-gray-400 font-normal">化身當事人，在政治、民生與名聲的夾縫中求生存</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Dilemma Role-play (Game) -->
+        <div id="screen-game" class="w-full max-w-4xl hidden flex flex-col gap-6 mt-4">
+            <!-- 狀態追蹤面板 (Status Bar) -->
+            <div class="bg-gray-900 text-white p-4 rounded-lg paper-shadow flex flex-col md:flex-row gap-4 md:gap-8 justify-center sticky top-16 z-10 border-b-4 border-red-800">
+                <div class="flex-1">
+                    <div class="text-xs text-gray-400 font-bold tracking-widest mb-1 flex justify-between">
+                        <span>⚔️ 政治/軍事實力</span> <span id="stat-mil-val">50</span>
+                    </div>
+                    <div class="w-full bg-gray-700 h-2 rounded-full relative">
+                        <div id="stat-mil-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+                        <div id="stat-mil-float" class="absolute right-0 -top-6 text-blue-400 text-sm font-bold opacity-0"></div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-gray-400 font-bold tracking-widest mb-1 flex justify-between">
+                        <span>🌾 國家/百姓生機</span> <span id="stat-nat-val">50</span>
+                    </div>
+                    <div class="w-full bg-gray-700 h-2 rounded-full relative">
+                        <div id="stat-nat-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+                        <div id="stat-nat-float" class="absolute right-0 -top-6 text-green-400 text-sm font-bold opacity-0"></div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="text-xs text-gray-400 font-bold tracking-widest mb-1 flex justify-between">
+                        <span>📖 歷史名聲評價</span> <span id="stat-rep-val">50</span>
+                    </div>
+                    <div class="w-full bg-gray-700 h-2 rounded-full relative">
+                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+                        <div id="stat-rep-float" class="absolute right-0 -top-6 text-yellow-400 text-sm font-bold opacity-0"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 情境區 -->
+            <div class="bg-white p-6 md:p-10 rounded-lg paper-shadow relative mt-2">
+                <div class="flex items-center justify-between mb-4 border-b pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-4xl">📻</span>
+                        <div>
+                            <div class="text-sm font-bold text-red-700 tracking-widest uppercase" id="dilemma-year">1915年</div>
+                            <h3 class="text-2xl font-bold text-gray-900 serif-text" id="dilemma-title">背景標題</h3>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+                        進度 <span id="dilemma-progress">1/3</span>
+                    </div>
+                </div>
+                
+                <!-- 機密電報打字機效果 -->
+                <div class="mb-8 p-5 bg-[#1a1a1a] border-4 border-gray-800 text-[#00ff41] font-mono leading-relaxed text-base md:text-lg shadow-inner rounded min-h-[150px]">
+                    <div class="text-xs text-gray-500 mb-2 uppercase border-b border-gray-700 pb-1">Incoming Telegram // Top Secret</div>
+                    <div id="dilemma-context" class=""></div>
+                </div>
+                
+                <div id="options-container" class="space-y-4 flex flex-col hidden opacity-0 transition-opacity duration-1000">
+                    <!-- Options go here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Modal (Outcome) -->
+        <div id="screen-feedback" class="w-full max-w-4xl hidden mt-6">
+            <div class="bg-gray-900 text-gray-100 p-6 md:p-10 rounded-lg paper-shadow" id="feedback-card-border">
+                <h3 class="text-sm text-gray-400 font-bold tracking-widest uppercase mb-2">推演結果分析</h3>
+                <h4 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-6 serif-text leading-snug"></h4>
+                
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-inner mb-6">
+                    <p id="feedback-explanation" class="text-gray-300 leading-relaxed text-base md:text-lg text-justify"></p>
+                </div>
+
+                <!-- 數值影響總結 -->
+                <div class="flex justify-center gap-6 border-t border-gray-700 pt-6">
+                    <div class="text-center"><span class="block text-xl" id="res-mil-icon">➖</span><span class="text-xs text-gray-400">軍政</span></div>
+                    <div class="text-center"><span class="block text-xl" id="res-nat-icon">➖</span><span class="text-xs text-gray-400">民生</span></div>
+                    <div class="text-center"><span class="block text-xl" id="res-rep-icon">➖</span><span class="text-xs text-gray-400">名聲</span></div>
+                </div>
+                
+                <div class="mt-8 flex justify-end">
+                    <button onclick="nextQuestion()" id="next-btn" class="bg-white text-gray-900 hover:bg-gray-200 font-bold py-4 px-8 rounded transition-colors w-full md:w-auto shadow-lg text-lg">
+                        進入下一階段推演 ➔
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: End -->
+        <div id="screen-end" class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative border-t-8 border-gray-800 mt-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-2 text-gray-500 uppercase tracking-widest">沙盤推演總結報告</h2>
+                <div class="text-6xl mb-4 drop-shadow-md">👁️</div>
+                <h3 class="text-4xl font-bold text-gray-900 serif-text mb-2">最終稱號：<br><span id="final-title" class="text-red-700"></span></h3>
+                <p class="text-gray-600 text-base">歷史沒有標準答案，只有無奈的妥協與代價。</p>
+            </div>
+
+            <!-- 最終能力雷達圖 (偽) -->
+            <div class="flex justify-center gap-4 mb-8">
+                <div class="bg-gray-100 p-4 rounded-lg text-center flex-1 border border-gray-300">
+                    <div class="text-sm text-gray-500 font-bold mb-1">軍政治理</div>
+                    <div class="text-2xl font-bold text-blue-700" id="end-stat-mil"></div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg text-center flex-1 border border-gray-300">
+                    <div class="text-sm text-gray-500 font-bold mb-1">國家民生</div>
+                    <div class="text-2xl font-bold text-green-700" id="end-stat-nat"></div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg text-center flex-1 border border-gray-300">
+                    <div class="text-sm text-gray-500 font-bold mb-1">歷史名聲</div>
+                    <div class="text-2xl font-bold text-yellow-700" id="end-stat-rep"></div>
+                </div>
+            </div>
+            
+            <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
+                <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2">
+                    <span>🖋️</span> 客觀史觀總結：
+                </h3>
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="returnToMenu()" class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full">
+                    返回檔案庫，解構下一位人物
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本教材旨在打破黨國教育體制下的單一史觀洗腦，鼓勵從「一手史料」與「政治現實」進行獨立批判思考。</p>
+        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
+        
+        <div class="mt-6 pt-5 border-t border-gray-300 flex flex-col items-center gap-4">
+            <div class="text-xs text-gray-500 flex items-center justify-center gap-2 tracking-wide">
+                <span>Made by <strong>Andesign</strong></span>
+                <span class="text-gray-400">|</span>
+                <span>Powered by ✨ <strong>Gemini</strong></span>
+            </div>
+            <a href="https://buymeacoffee.com/andesign" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:bg-[#FFDD00] hover:border-[#FFDD00] hover:text-gray-900 transition-all shadow-sm">
+                ☕ 請 Andesign 喝咖啡
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // 📚 核心設計池：包含完整歷史文獻閱讀版
+        // ==========================================
+        const archiveDatabase = [
+            // --- 卷宗 1: 陳炯明 ---
+            {
+                id: "chen_jiongming",
+                chapterLabel: "卷宗 001",
+                title: "陳炯明",
+                subtitle: "被掩蓋的廣東聯邦奠基者",
+                themeColor: "#1e3a8a", 
+                coverIcon: "⚖️",
+                cardBorderHover: "hover:border-blue-500",
+                description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
+                targetName: "陳炯明",
+                references: ["段雲章，《陳炯明一生》", "Leslie H. Dingyan Chen，《Chen Jiongming and the Federalist Movement》"],
+                myths: [
+                    {
+                        myth: "歷史課本說：陳炯明是個充滿野心的反動軍閥，為了奪權而發動「六一六事變」炮轟孫中山。",
+                        truth: "解密真相：這是一場「聯邦自治」與「中央集權」的路線之爭。當時「護法」目標已達成，陳主張停止內戰、建設廣東；孫卻堅持拿廣東的資源發動武力北伐。陳的部隊發動政變是為了逼孫下野以保衛廣東自治，且陳私下嚴令部隊讓開生路。"
+                    },
+                    {
+                        myth: "歷史課本說：陳炯明只是一個目光短淺、阻礙國家統一的地方割據勢力。",
+                        truth: "解密真相：陳炯明深受無政府主義與聯邦主義影響。他並非不想統一，而是主張仿效美國的「多黨民主聯邦制」，希望先將廣東建設為模範省，待各省民主成熟後，再由下而上和平統一，而非透過一黨專政的武裝侵略。"
+                    }
+                ],
+                profiles: [
+                    {
+                        name: "陳炯明", years: "1878 - 1933", tag: "聯邦主義先驅", tagColor: "blue", image: "Chen_Jiongming2.jpg",
+                        profileTitle: "被掩蓋的廣東現代化奠基者",
+                        content: `<p class="mb-3"><strong>法政背景與政治理念：</strong> 陳炯明並非傳統草莽軍閥。早在辛亥革命前，他已是清末廣東省諮議局議員，擁有深厚的法學與地方治理背景。他深受無政府主義與聯邦主義影響，堅決反對孫中山透過武力「北伐」建立一黨專政的中央集權。</p>
+                                  <p class="mb-3"><strong>聯省自治藍圖：</strong> 他主張「保境息民」，提倡先在廣東實行民主憲政，推動教育與實業，將廣東建設為全國模範省。待各省皆具備民主自治基礎後，再由下而上結合成類似美國的「多黨民主聯邦體系」。</p>
+                                  <p><strong>六一六事件真相：</strong> 1922年的「六一六事件」常被簡化為叛變。實際上，當時北洋政府已恢復《臨時約法》，南方「護法」目標在法理上已達成。陳反對繼續發動內戰，但孫中山堅持強行北伐並企圖奪取陳的兵權。這場衝突本質上是「地方自治」與「中央集權武裝統一」的路線防禦戰。</p>`
+                    }
+                ],
+                dilemmas: [
+                    {
+                        year: "1920年", title: "第一階段：護法建國的十字路口",
+                        context: "你剛剛率領粵軍打回廣州，驅逐了桂系軍閥。廣東百廢待興。此時孫中山回到廣州重組軍政府。你面臨著資源分配的抉擇：是將有限的財力投入廣東的基礎建設與教育，還是交給孫中山擴充軍備準備「北伐」武力統一？",
+                        options: [
+                            { text: "將資源投入廣東基建與教育，落實「聯省自治」的模範省計畫。", stats: [0, +20, 0], isHistorical: true, feedbackTitle: "廣東迎來短暫的繁榮", feedbackText: "你設立了廣州市政廳，推動禁菸、修路、辦學。廣東經濟迅速復甦，民眾安居樂業。但這引發了急於北伐的孫中山的極度不滿，雙方裂痕產生。" },
+                            { text: "聽從領袖，將財政全部用於擴軍，立刻發動武裝北伐。", stats: [+10, -20, +10], isHistorical: false, feedbackTitle: "窮兵黷武，民不聊生", feedbackText: "你選擇了課本上的「正確路線」。廣東財政瞬間枯竭，為了籌措軍費你只能橫徵暴斂。北伐軍在湖南陷入泥沼，廣東後方崩潰。" }
+                        ]
+                    },
+                    {
+                        year: "1922年夏", title: "第二階段：六一六事變的爆發",
+                        context: "北洋政府已恢復了《臨時約法》，你們當初「護法」的法理目標已經達成。你強烈主張停止內戰，但孫中山堅持武力北伐，並免去了你的粵軍總司令職務，企圖奪取兵權。你的部下群情激憤，要求驅逐孫中山保衛廣東自治。",
+                        options: [
+                            { text: "交出兵權，即使看著廣東被拖入戰火，也要維持對領袖的絕對忠誠。", stats: [-30, -20, +20], isHistorical: false, feedbackTitle: "失去實權，自治夢碎", feedbackText: "你選擇了妥協。孫中山拿走兵權後立刻發動殘酷的北伐內戰。廣東被徹底榨乾，你的聯邦民主理想化為泡影。但在國民黨黨史中，你成了「忠臣」。" },
+                            { text: "默許部下發動防禦性政變，包圍總統府逼迫孫中山下野離開廣東。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "保衛了廣東，卻成為了「叛徒」", feedbackText: "政變成功，孫中山離開廣東。你暫時保住了廣東的和平與自治建設。但你犯了政治上的大忌，被掌握話語權的孫派貼上了「叛徒」與「反革命軍閥」的永恆標籤。" }
+                        ]
+                    },
+                    {
+                        year: "1925年", title: "第三階段：東征與最後的抉擇",
+                        context: "孫中山聯俄容共，獲得了蘇聯強大的軍事與財政支援，建立了黃埔軍校與列寧式的極權政黨組織。現在，裝備精良的「國民革命軍」打著統一的旗號向你發動了東征。你的粵軍節節敗退。",
+                        options: [
+                            { text: "向強權低頭，宣布放棄聯邦自治，加入國民黨陣營。", stats: [+10, 0, -20], isHistorical: false, feedbackTitle: "信仰破滅的投降者", feedbackText: "你選擇了保全性命。你被剝奪兵權，軟禁在南京。中國徹底走向了一黨專政的武力統一道路，聯省自治的嘗試宣告徹底終結。" },
+                            { text: "堅守聯邦主義信仰，絕不妥協，戰至最後一兵一卒然後流亡。", stats: [-30, -10, +10], isHistorical: true, feedbackTitle: "理想主義的悲歌", feedbackText: "你拒絕向極權妥協。軍隊被擊潰後，你流亡香港，在貧病交加中去世。「講理」的自治理想，終究不敵「講力」的蘇聯式武力。你帶著背叛者的罵名退出了歷史舞台。" }
+                        ]
+                    }
+                ],
+                summary: "陳炯明的失敗，標誌著近代中國錯失了「溫和聯邦制」的現代化路徑。在那個缺乏民主傳統、列強環伺的時代，擁有強大武裝與嚴密組織的政黨（國、共）最終主導了歷史。「講理」的自治理想，終究不敵「講力」的武裝統一。"
+            },
+
+            // --- 卷宗 2: 汪精衛 ---
+            {
+                id: "wang_jingwei",
+                chapterLabel: "卷宗 002",
+                title: "汪精衛",
+                subtitle: "「漢奸」標籤下的殘酷地緣博弈",
+                themeColor: "#7f1d1d", 
+                coverIcon: "🕊️",
+                cardBorderHover: "hover:border-red-500",
+                description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
+                targetName: "汪精衛",
+                references: ["汪榮祖，《汪精衛的歷史定位》", "林思雲，《真實的汪精衛》"],
+                myths: [
+                    {
+                        myth: "歷史課本說：汪精衛是因為在內鬥中輸給蔣介石，出於貪婪與私心才投靠日本當漢奸。",
+                        truth: "解密真相：汪早年敢於捨生刺殺清攝政王，其晚年的轉變並非單純怕死。他對中國落後的工業與軍事有極度悲觀的清醒認識，深恐長期「焦土抗戰」會讓國家元氣盡毀並為中共擴張提供溫床。他將建立政權視為「我不入地獄誰入地獄」的政治犧牲。"
+                    },
+                    {
+                        myth: "歷史課本說：汪精衛政權只是個一無是處的日本傀儡，對中國毫無貢獻。",
+                        truth: "解密真相：汪政權雖然高度受制於日本，但在客觀上頂替了部分日軍的直接軍管，維持了淪陷區的基本社會運作。更弔詭的是，汪政權在1943年成功收回了上海公共租界等特權，此舉迫使重慶蔣介石政府加速與同盟國簽署廢除治外法權的《新約》。"
+                    }
+                ],
+                profiles: [
+                    {
+                        name: "汪精衛", years: "1883 - 1944", tag: "和平運動推動者", tagColor: "red", image: "汪精衛照片.jpg",
+                        profileTitle: "「漢奸」標籤下的殘酷地緣博弈",
+                        content: `<p class="mb-3"><strong>絕境中的悲觀評估：</strong> 汪精衛早年是著名的革命刺客，但抗戰爆發後，他對中日國力差距的評估極度悲觀。他深恐長期的焦土抗戰不僅無法驅逐日軍，反而會導致中國國家元氣盡毀、人民生靈塗炭。</p>
+                                  <p class="mb-3"><strong>地緣妥協與和平路線：</strong> 他脫離重慶國民政府，主張對日妥協，試圖將中日全面戰爭降級為政治談判。他將建立南京政權視為「曲線救國」與「我不入地獄誰入地獄」的犧牲，期望在日軍佔領區內維持一套中國人的行政系統，保全淪陷區民眾的基本生存空間與經濟命脈。</p>
+                                  <p><strong>主權博弈的弔詭：</strong> 為了向民眾證明和平路線的價值，汪政權在外交上極力周旋。1943年，汪政權成功收回了上海公共租界與法租界。雖然這在形式上依賴日本的軍事力量，但客觀上也迫使重慶蔣介石政府加速與英美簽署廢除治外法權的新約，意外地共同推進了中國收回主權的歷史進程。</p>`
+                    }
+                ],
+                dilemmas: [
+                    {
+                        year: "1938年底", title: "第一階段：焦土與和平的十字路口",
+                        context: "抗日戰爭爆發一年多，首都南京及各大精華區已全部淪陷，中國精銳部隊死傷殆盡。你深刻認知到農業國打不贏工業國。如果繼續蔣介石的「焦土抗戰」，國家將化為廢墟；但如果你脫離重慶提出「和平運動」，你將背負千古罵名。",
+                        options: [
+                            { text: "堅守重慶，哪怕戰到最後一兵一卒，國家化為焦土也在所不惜！", stats: [+10, -30, +30], isHistorical: false, feedbackTitle: "慘烈的勝利與隨之而來的赤化", feedbackText: "你選擇了課本標準答案。中國經歷八年絞肉機，數千萬平民傷亡，經濟徹底崩潰。國力消耗與農村空虛讓中共在敵後迅速壯大，最終國民政府在內戰中全面潰敗。" },
+                            { text: "脫離重慶，發表艷電求和。我不入地獄誰入地獄，試圖在淪陷區維持生機。", stats: [-10, +10, -40], isHistorical: true, feedbackTitle: "背負漢奸之名的不歸路", feedbackText: "你踏出了無法回頭的一步。你試圖利用日本的內部矛盾，但在狂熱的民族主義面前，你瞬間從革命元老變成了舉國唾罵的賣國賊。" }
+                        ]
+                    },
+                    {
+                        year: "1940年", title: "第二階段：密約與偽政權的建立",
+                        context: "你到了日佔區，原本期望能與日本平等談判。但日本軍部露出了貪婪的真面目，逼迫你簽署極度苛刻的《日華新關係調整要綱》（汪密約），否則就不支持你成立政府。如果不簽，你的和平運動將徹底破產。",
+                        options: [
+                            { text: "條件太苛刻，這與賣國無異！拒絕簽字，宣佈和平運動失敗並退隱。", stats: [-20, 0, +20], isHistorical: false, feedbackTitle: "獨善其身的逃避", feedbackText: "你保全了個人最後的一點名節，但淪陷區的百姓只能繼續由殘暴的日軍直接軍管，遭受無情的屠殺與掠奪。" },
+                            { text: "忍辱負重簽下密約，成立南京國民政府，試圖從內部奪回行政權。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "在刀刃上跳舞的傀儡", feedbackText: "你簽下了屈辱的密約成立政府。雖然你處處受制於日本顧問，但你確實建立了一套中國人的警察與行政系統，某種程度上頂替了日軍的直接軍管，為淪陷區百姓爭取了一絲喘息空間。" }
+                        ]
+                    },
+                    {
+                        year: "1943年", title: "第三階段：太平洋戰爭爆發",
+                        context: "太平洋戰爭爆發，日本在各戰場吃緊。日本要求你的南京政權對英美宣戰，以配合大東亞聖戰。作為交換，你可以要求日本交還在中國境內的外國租界與部分治外法權。",
+                        options: [
+                            { text: "絕對不能對同盟國宣戰，這會讓中國徹底站到世界反法西斯的對立面。", stats: [-10, -10, +10], isHistorical: false, feedbackTitle: "失去利用價值", feedbackText: "你拒絕了日本的要求。惱羞成怒的日方撤銷了對你的全部支持，南京政權土崩瓦解，你被軟禁至死。" },
+                            { text: "配合日本對英美宣戰，並以此為籌碼，強硬要求收回上海等地的外國租界。", stats: [+10, +20, -20], isHistorical: true, feedbackTitle: "主權博弈的弔詭", feedbackText: "你對英美宣戰了，但也成功逼迫日本將法租界、公共租界交還給中國。這項在淪陷區的「主權收復」舉動產生了奇妙的歷史連鎖反應：重慶的蔣介石政府為了不落下風，立刻敦促英美廢除了不平等條約。你的妥協，意外推動了歷史。" }
+                        ]
+                    }
+                ],
+                summary: "汪精衛的歷史定位極具爭議。在民族主義的最高標準下他是叛國。但放回當時的歷史情境，他的「和平運動」反映了弱國面對強敵時，另一種基於絕望與現實主義的「瓦全」嘗試，體現了近代中國在地緣夾縫中求生存的極度殘酷。"
+            },
+
+            // --- 卷宗 3: 袁世凱 ---
+            {
+                id: "yuan_shikai",
+                chapterLabel: "卷宗 003",
+                title: "袁世凱",
+                subtitle: "共和破壞者與現代化的奠基人",
+                themeColor: "#374151", 
+                coverIcon: "🪖",
+                cardBorderHover: "hover:border-gray-500",
+                description: "在國民黨教科書中，他被簡化為「竊國大盜」與簽署二十一條的「賣國賊」。然而客觀審視歷史，他不僅在辛亥革命時避免了全面內戰，更在軍事、貨幣與教育上奠定了中國現代化的基礎。他最終的敗亡，是缺乏民主素養的傳統強人，在權力傲慢下的必然悲劇。",
+                targetName: "袁世凱",
+                references: ["唐德剛，《袁氏當國》", "Patrick Fuliang Shan，《Yuan Shikai: A Reappraisal》"],
+                myths: [
+                    {
+                        myth: "歷史課本說：袁世凱為了當皇帝，毫無底線地接受了日本喪權辱國的「二十一條」，是個純粹的賣國賊。",
+                        truth: "解密真相：當時中國陸軍彈藥僅能支撐48小時。袁世凱極度震怒但只能靠「拖延戰術」周旋，並暗中將機密洩露給英美引發國際干涉。最終他迫使日本放棄了最致命、企圖全面控制中國內政外交的「第五號條款」，保全了國家實體。"
+                    },
+                    {
+                        myth: "歷史課本說：袁世凱是靠武力恐嚇革命黨，卑鄙地「竊取」了辛亥革命的果實。",
+                        truth: "解密真相：當時南方革命軍在軍事與財政上皆處於崩潰邊緣。是袁世凱憑藉在北洋軍的威望，逼迫清帝和平退位。這項政治妥協極大降低了流血衝突，避免了列強趁機武裝干涉與瓜分中國。"
+                    }
+                ],
+                profiles: [
+                    {
+                        name: "袁世凱", years: "1859 - 1916", tag: "國家現代化推手", tagColor: "gray", image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/YuanShikai.jpg",
+                        profileTitle: "破舊立新：民國肇建與制度現代化",
+                        content: `<p class="mb-3"><strong>避免全面內戰的和平過渡：</strong> 1911年辛亥革命爆發，南方革命軍面臨嚴峻的財政與軍事劣勢。袁世凱憑藉在北洋軍中的威望與政治手腕，成功促成清帝和平退位。這一妥協極大地降低了政權更迭的流血衝突，避免了列強武裝干涉與領土瓜分，為中華民國保留了相對完整的版圖基礎。</p>
+                                  <p class="mb-3"><strong>軍事與經濟的現代化奠基：</strong> 他主導「小站練兵」，全盤引進德國軍制，徹底終結了中國傳統封建世襲軍制，創建了第一支現代國防軍。在經濟上，他於1914年頒布《國幣條例》，發行統一的「袁大頭」銀元，成功驅逐市場劣幣，穩固了國家金融信用，大幅推動了近代民族資本主義的發展。</p>
+                                  <p><strong>推動現代教育與普及：</strong> 早在晚清他就積極推動廢除科舉。民國初年，袁政府致力於教育制度現代化，頒布法令實施義務教育、倡導師範教育與教科書標準化，為民國時期的知識普及奠定了硬體與制度基礎。</p>`
+                    },
+                    {
+                        name: "袁世凱", years: "1859 - 1916", tag: "強人政治與外交防禦", tagColor: "gray", image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/YuanShikai.jpg",
+                        profileTitle: "弱國外交防線與「法治」的崩潰",
+                        content: `<p class="mb-3"><strong>「二十一條」交涉的歷史真相：</strong> 面對日本趁一戰之危提出的條款，在國防軍隊「只能支撐48小時」的絕境下，袁世凱極度震怒並親自掌控談判。他施展極致的拖延戰術，並暗中將機密洩露給英美施壓。最終他被迫妥協了部分經濟權益，但死守底線，堅決拒絕了最致命、企圖全面剝奪中國內政外交自主權的「第五號」條款，保全了國家實體。</p>
+                                  <p class="mb-3"><strong>民主的脆弱與超級總統制：</strong> 1913年宋教仁遇刺案徹底摧毀了初創的政治互信。面對國會《天壇憲草》試圖將總統權力徹底虛位化的極端限制，缺乏民主妥協精神的袁世凱選擇動用武力，解散國會並廢除《臨時約法》，建立了類似拉丁美洲軍事獨裁的「超級總統制」，犧牲了政權長期的合法性。</p>
+                                  <p><strong>洪憲帝制與人治的迷信：</strong> 袁世凱本質上仍是傳統威權統治者。在當時部分知識分子（如籌安會）對共和亂象失望、呼籲「人治」的氛圍下，他迷信強人政治能帶來穩定，悍然發動「洪憲帝制」。這不僅逆歷史潮流，更遭到了全國乃至北洋嫡系的背棄，最終僅83天便在眾叛親離中草草收場。</p>`
+                    }
+                ],
+                dilemmas: [
+                    {
+                        year: "1912年春", title: "第一階段：鼎革之際的權力博弈",
+                        context: "辛亥革命爆發，南方多省獨立。你手握裝備精良的北洋大軍，清廷命你鎮壓革命。但此時清廷氣數已盡，而南方革命軍其實也面臨財政破產邊緣。你要如何在這場大風暴中做出選擇？",
+                        options: [
+                            { text: "效忠大清，率領北洋軍南下徹底血洗革命黨。", stats: [+20, -30, -30], isHistorical: false, feedbackTitle: "血流成河的內戰", feedbackText: "你盡了臣子的愚忠。中國陷入長達數年的南北血腥內戰，列強趁機武裝干預瓜分領土，國家徹底四分五裂。" },
+                            { text: "憑藉軍事實力居中斡旋，逼迫清帝退位，換取民國大總統之位。", stats: [+20, +20, +10], isHistorical: true, feedbackTitle: "代價最小的和平過渡", feedbackText: "你施展了高超的政治手腕。清朝和平終結，國家版圖得以完整保留，避免了極端流血。雖然革命黨罵你「竊國」，但你實質上拯救了當時的中國免於解體。" }
+                        ]
+                    },
+                    {
+                        year: "1915年初", title: "第二階段：二十一條的絕境交涉",
+                        context: "第一次世界大戰爆發，日本趁機出兵佔領山東，並秘密遞交了企圖全面吞併中國的「二十一條」。你的陸軍總長冷酷地報告：面對裝備精良的日軍，我們最多只能支撐48小時。日本公使威脅你立刻簽署並嚴禁洩密。",
+                        options: [
+                            { text: "寧為玉碎，不為瓦全！立刻通電全國，對日本宣戰！", stats: [-50, -50, +40], isHistorical: false, feedbackTitle: "國家瞬間覆滅", feedbackText: "這是課本最喜歡的「民族英雄」標準答案。但在現實中極其愚蠢。你的軍隊在48小時內彈盡糧絕，日軍迅速攻佔北京。中國提前30年亡國，你成了烈士，但國家沒了。" },
+                            { text: "表面周旋拖延，暗中將條款洩露給英美列強，死拒最致命的「第五號」條款。", stats: [-10, +10, -20], isHistorical: true, feedbackTitle: "背負罵名的損害控制", feedbackText: "你故意洩密引發國際譁然，迫使日本收斂。在最後通牒下，你被迫讓渡了部分經濟特權，但成功逼迫日本撤回了企圖全面控制中國內政的「第五號條款」。你保全了國家實體，卻被痛罵為賣國賊。" }
+                        ]
+                    },
+                    {
+                        year: "1915年底", title: "第三階段：強人政治的致命誘惑",
+                        context: "民國建立後政局極度動盪，國會與內閣頻繁癱瘓。當時國內知名學者（如楊度）與美國憲法顧問紛紛發表文章，認為中國人缺乏民主素質，共和制只會帶來無休止的內耗，勸進你恢復帝制，建立強有力的中央集權。",
+                        options: [
+                            { text: "恪守憲法與共和精神，逐步培育公民社會，拒絕稱帝。", stats: [-10, +10, +30], isHistorical: false, feedbackTitle: "理想豐滿，素養不足", feedbackText: "這是一個現代法治領導人該做的。但很遺憾，你出身於晚清封建官僚體系，無法忍受國會的制肘，也不相信老百姓有自治能力。你放棄了這條路。" },
+                            { text: "順應「民意」，為了國家的穩定與統一，宣布稱帝，改元洪憲。", stats: [-40, -20, -50], isHistorical: true, feedbackTitle: "威權的自毀與崩塌", feedbackText: "你嚴重誤判了歷史進程——辛亥後「民主共和」已成為絕對的政治正確。你一稱帝，立刻摧毀了統治的合法性基礎。短短83天，你在眾叛親離中病逝，中國陷入軍閥混戰。不受制約的絕對權力，帶來了毀滅性災難。" }
+                        ]
+                    }
+                ],
+                summary: "袁世凱的成敗，是近代中國摸索現代化最沉重的警碑。他在國防絕境中以務實的手腕保全了國家（破除單純賣國的神話）；但他對「人治」的迷信與對「法治」的踐踏，最終導致了身敗名裂（證明了民主體制不可或缺的價值）。"
+            }
+        ];
+
+        const futureDatabase = [
+            { chapterLabel: "卷宗 004", title: "張作霖", subtitle: "東北王的生存法則：夾縫中的豪賭", coverIcon: "🚂", description: "夾在日、俄兩大強權與南方國民政府之間，這位綠林出身的東北軍閥，是如何運用實用主義保全東北？" },
+            { chapterLabel: "卷宗 005", title: "蔣介石", subtitle: "民族救星還是獨裁者？", coverIcon: "🎖️", description: "北伐統一與抗日神話的背後，是清黨的血腥與訓政的威權。「黃金十年」究竟是現代化奇蹟，還是買辦資本的狂歡？" },
+            { chapterLabel: "卷宗 006", title: "溥儀", subtitle: "從皇帝到公民：紫禁城外的傀儡", coverIcon: "🐉", description: "三次登基，三次退位。他是帝國最後的象徵，也是時代洪流中最無力的棋子。" }
+        ];
+
+        let currentEpisode = null;
+        let currentQuestionIndex = 0;
+        let stats = { mil: 50, nat: 50, rep: 50 };
+
+        const screens = {
+            menu: document.getElementById('screen-menu'),
+            intro: document.getElementById('screen-intro'),
+            reading: document.getElementById('screen-reading'),
+            game: document.getElementById('screen-game'),
+            end: document.getElementById('screen-end'),
+            feedback: document.getElementById('screen-feedback')
+        };
+        const elNavControls = document.getElementById('top-nav-controls');
+        
+        function initApp() {
+            const grid = document.getElementById('archive-grid');
+            grid.innerHTML = '';
+            archiveDatabase.forEach((ep) => {
+                const card = document.createElement('div');
+                card.className = `archive-card bg-white rounded-xl paper-shadow p-6 border-2 border-transparent relative overflow-hidden cursor-pointer ${ep.cardBorderHover}`;
+                card.onclick = () => loadEpisode(ep.id);
+                card.innerHTML = `
+                    <div class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-2">${ep.chapterLabel}</div>
+                    <div class="text-4xl mb-4">${ep.coverIcon}</div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 mb-1 leading-snug">${ep.title}</h3>
+                    <div class="text-sm font-medium text-gray-600 mb-3" style="color: ${ep.themeColor}">${ep.subtitle}</div>
+                    <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">${ep.description}</p>
+                    <div class="mt-4 text-sm font-bold flex items-center gap-1" style="color: ${ep.themeColor}">啟動史觀解構 ➔</div>
+                `;
+                grid.appendChild(card);
+            });
+
+            const futureGrid = document.getElementById('future-grid');
+            futureGrid.innerHTML = '';
+            futureDatabase.forEach((ep) => {
+                const card = document.createElement('div');
+                card.className = `future-card rounded-xl paper-shadow p-6 border-2 border-dashed border-gray-400 relative overflow-hidden select-none`;
+                card.innerHTML = `
+                    <div class="stamp-secret">極機密</div>
+                    <div class="relative z-10 opacity-70">
+                        <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">${ep.chapterLabel} (尚未解密)</div>
+                        <div class="text-4xl mb-4 grayscale filter drop-shadow-md">${ep.coverIcon}</div>
+                        <h3 class="text-2xl font-bold serif-text text-gray-800 mb-1 leading-snug blur-[1px]">${ep.title}</h3>
+                        <div class="text-sm font-bold text-gray-700 mb-3">${ep.subtitle}</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">${ep.description}</p>
+                        <div class="mt-4 text-xs font-bold text-gray-500 flex items-center gap-1">🔒 史料修復中...</div>
+                    </div>
+                `;
+                futureGrid.appendChild(card);
+            });
+        }
+
+        function switchScreen(screenName) {
+            Object.values(screens).forEach(s => s.classList.add('hidden'));
+            screens[screenName].classList.remove('hidden');
+            screens[screenName].classList.remove('fade-in');
+            void screens[screenName].offsetWidth; 
+            screens[screenName].classList.add('fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function returnToMenu() {
+            currentEpisode = null;
+            elNavControls.classList.add('hidden');
+            switchScreen('menu');
+        }
+
+        function loadEpisode(episodeId) {
+            currentEpisode = archiveDatabase.find(e => e.id === episodeId);
+            if (!currentEpisode) return;
+
+            document.getElementById('intro-chapter').textContent = currentEpisode.chapterLabel;
+            document.getElementById('intro-title').innerHTML = `${currentEpisode.title}<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">${currentEpisode.subtitle}</span>`;
+            document.getElementById('intro-desc').innerHTML = `<p>${currentEpisode.description}</p>`;
+            document.getElementById('intro-color-bar').style.backgroundColor = currentEpisode.themeColor || '#1f2937';
+
+            // Render Flip Cards
+            const flipContainer = document.getElementById('flip-cards-container');
+            flipContainer.innerHTML = '';
+            if (currentEpisode.myths) {
+                currentEpisode.myths.forEach(item => {
+                    const cardHtml = `
+                        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <span class="text-3xl mb-2">📖</span>
+                                    <p class="font-bold text-lg leading-snug">${item.myth}</p>
+                                    <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                </div>
+                                <div class="flip-card-back">
+                                    <span class="text-3xl mb-2">📂</span>
+                                    <p class="text-sm md:text-base leading-relaxed text-justify">${item.truth}</p>
+                                    <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    flipContainer.innerHTML += cardHtml;
+                });
+            }
+
+            // Render Profiles
+            const profilesContainer = document.getElementById('profiles-container');
+            profilesContainer.innerHTML = '';
+            if (currentEpisode.profiles) {
+                currentEpisode.profiles.forEach((profile, index) => {
+                    const isReverse = index % 2 !== 0;
+                    const colorMap = {
+                        blue: { bg: 'bg-blue-800', badgeBg: 'bg-blue-100', badgeText: 'text-blue-800' },
+                        red: { bg: 'bg-red-800', badgeBg: 'bg-red-100', badgeText: 'text-red-800' },
+                        gray: { bg: 'bg-gray-800', badgeBg: 'bg-gray-200', badgeText: 'text-gray-800' },
+                    };
+                    const theme = colorMap[profile.tagColor] || colorMap.gray;
+                    const profileHtml = `
+                        <div class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:${isReverse ? 'flex-row-reverse' : 'flex-row'} border border-gray-200 relative">
+                            <div class="absolute top-0 ${isReverse ? 'right-0' : 'left-0'} w-2 h-full ${theme.bg}"></div>
+                            <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-${isReverse ? 'l' : 'r'} border-gray-200">
+                                <img src="${profile.image}" alt="" onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'" class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
+                                <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">${profile.name}</h3>
+                                <p class="text-sm text-gray-500 mt-1 mb-2">(${profile.years})</p>
+                                <span class="px-3 py-1 ${theme.badgeBg} ${theme.badgeText} text-xs font-bold rounded-full">${profile.tag}</span>
+                            </div>
+                            <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
+                                <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">${profile.profileTitle}</h4>
+                                <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">${profile.content}</div>
+                            </div>
+                        </div>
+                    `;
+                    profilesContainer.innerHTML += profileHtml;
+                });
+            }
+
+            // Render References
+            const refContainer = document.getElementById('references-container');
+            refContainer.innerHTML = '';
+            if(currentEpisode.references) {
+                currentEpisode.references.forEach(ref => { refContainer.innerHTML += `<li>${ref}</li>`; });
+            }
+
+            elNavControls.classList.remove('hidden');
+            switchScreen('intro');
+        }
+
+        function goToReading() { switchScreen('reading'); }
+
+        // ==========================================
+        // 沙盤推演系統 (Simulation Engine)
+        // ==========================================
+        function startGame() {
+            if (!currentEpisode || !currentEpisode.dilemmas) return;
+            currentQuestionIndex = 0;
+            stats = { mil: 50, nat: 50, rep: 50 };
+            updateUIStats();
+            switchScreen('game');
+            loadQuestion();
+        }
+
+        function updateUIStats() {
+            stats.mil = Math.max(0, Math.min(100, stats.mil));
+            stats.nat = Math.max(0, Math.min(100, stats.nat));
+            stats.rep = Math.max(0, Math.min(100, stats.rep));
+            
+            document.getElementById('stat-mil-val').textContent = stats.mil;
+            document.getElementById('stat-mil-bar').style.width = `${stats.mil}%`;
+            document.getElementById('stat-nat-val').textContent = stats.nat;
+            document.getElementById('stat-nat-bar').style.width = `${stats.nat}%`;
+            document.getElementById('stat-rep-val').textContent = stats.rep;
+            document.getElementById('stat-rep-bar').style.width = `${stats.rep}%`;
+        }
+
+        let typeWriterTimeout;
+        function typeWriter(text, elementId, speed, callback) {
+            let i = 0;
+            const el = document.getElementById(elementId);
+            el.innerHTML = '';
+            el.classList.add('typewriter');
+            
+            function type() {
+                if (i < text.length) {
+                    if(text.charAt(i) === '<') {
+                        let tag = '';
+                        while(text.charAt(i) !== '>' && i < text.length) {
+                            tag += text.charAt(i);
+                            i++;
+                        }
+                        tag += '>';
+                        el.innerHTML += tag;
+                        i++;
+                    } else {
+                        el.innerHTML += text.charAt(i);
+                        i++;
+                    }
+                    typeWriterTimeout = setTimeout(type, speed);
+                } else {
+                    el.classList.remove('typewriter');
+                    if(callback) callback();
+                }
+            }
+            type();
+        }
+
+        function loadQuestion() {
+            clearTimeout(typeWriterTimeout);
+            const data = currentEpisode.dilemmas[currentQuestionIndex];
+            
+            screens.feedback.classList.add('hidden');
+            const elOptions = document.getElementById('options-container');
+            elOptions.innerHTML = '';
+            elOptions.classList.add('hidden');
+            elOptions.classList.remove('opacity-100');
+            
+            document.getElementById('dilemma-year').textContent = data.year;
+            document.getElementById('dilemma-title').textContent = data.title;
+            document.getElementById('dilemma-progress').textContent = `${currentQuestionIndex + 1}/${currentEpisode.dilemmas.length}`;
+            
+            typeWriter(data.context, 'dilemma-context', 20, () => {
+                elOptions.classList.remove('hidden');
+                setTimeout(() => elOptions.classList.add('opacity-100'), 100);
+            });
+
+            data.options.forEach((opt) => {
+                const btn = document.createElement('button');
+                btn.className = 'dilemma-btn w-full text-left p-4 rounded bg-white border-2 border-gray-300 text-gray-800 font-medium text-base shadow-sm flex items-start gap-3';
+                btn.innerHTML = `<span class="mt-1 font-bold text-red-800 border-2 border-red-800 rounded-sm px-2 py-0.5 text-xs whitespace-nowrap">發送決策</span> <span class="leading-relaxed">${opt.text}</span>`;
+                btn.onclick = () => selectOption(opt, btn);
+                elOptions.appendChild(btn);
+            });
+        }
+
+        function showStatFloat(id, val) {
+            const el = document.getElementById(id);
+            if(val === 0) return;
+            el.textContent = val > 0 ? `+${val}` : val;
+            el.className = `absolute right-0 -top-6 text-sm font-bold stat-change ${val > 0 ? 'text-green-400' : 'text-red-400'}`;
+            void el.offsetWidth;
+        }
+
+        function getStatResHTML(val) {
+            if(val > 0) return `<span class="text-green-500 font-bold">▲ +${val}</span>`;
+            if(val < 0) return `<span class="text-red-500 font-bold">▼ ${val}</span>`;
+            return `<span class="text-gray-500 font-bold">➖ 0</span>`;
+        }
+
+        function selectOption(selectedOpt, btnElement) {
+            clearTimeout(typeWriterTimeout);
+            document.getElementById('dilemma-context').classList.remove('typewriter');
+            
+            const buttons = document.getElementById('options-container').querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.className = 'w-full text-left p-4 rounded border-2 text-base opacity-50 cursor-not-allowed bg-gray-100 text-gray-400 border-gray-200 flex items-start gap-3';
+            });
+
+            btnElement.className = 'w-full text-left p-4 rounded border-2 text-base opacity-100 bg-gray-800 text-white font-bold border-gray-900 shadow-md flex items-start gap-3';
+            
+            const dStats = selectedOpt.stats;
+            stats.mil += dStats[0];
+            stats.nat += dStats[1];
+            stats.rep += dStats[2];
+            
+            showStatFloat('stat-mil-float', dStats[0]);
+            showStatFloat('stat-nat-float', dStats[1]);
+            showStatFloat('stat-rep-float', dStats[2]);
+            updateUIStats();
+            
+            const elFeedbackTitle = document.getElementById('feedback-title');
+            elFeedbackTitle.textContent = selectedOpt.feedbackTitle;
+            elFeedbackTitle.className = `text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug ${selectedOpt.isHistorical ? 'text-yellow-400' : 'text-red-400'}`;
+
+            document.getElementById('feedback-explanation').innerHTML = selectedOpt.feedbackText;
+            
+            document.getElementById('res-mil-icon').innerHTML = getStatResHTML(dStats[0]);
+            document.getElementById('res-nat-icon').innerHTML = getStatResHTML(dStats[1]);
+            document.getElementById('res-rep-icon').innerHTML = getStatResHTML(dStats[2]);
+            
+            screens.feedback.classList.remove('hidden');
+            screens.feedback.classList.add('fade-in');
+            
+            const nextBtn = document.getElementById('next-btn');
+            if (currentQuestionIndex === currentEpisode.dilemmas.length - 1) {
+                nextBtn.innerHTML = '查看歷史定性總結 ➔';
+            } else {
+                nextBtn.innerHTML = '進入下一階段推演 ➔';
+            }
+
+            setTimeout(() => screens.feedback.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentEpisode.dilemmas.length) {
+                loadQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                showEndScreen();
+            }
+        }
+
+        function determineTitle() {
+            if(stats.mil > 60 && stats.rep < 40) return "背負罵名的實用主義者";
+            if(stats.nat < 30 && stats.rep > 60) return "亡國的道德烈士";
+            if(stats.mil < 30 && stats.nat < 30) return "歷史洪流下的犧牲品";
+            if(stats.nat > 60 && stats.rep < 40) return "忍辱負重的救贖者";
+            return "絕境中的掙扎者";
+        }
+
+        function showEndScreen() {
+            switchScreen('end');
+            document.getElementById('end-summary').innerHTML = currentEpisode.summary;
+            document.getElementById('end-stat-mil').textContent = stats.mil;
+            document.getElementById('end-stat-nat').textContent = stats.nat;
+            document.getElementById('end-stat-rep').textContent = stats.rep;
+            document.getElementById('final-title').textContent = `【${determineTitle()}】`;
+        }
+
+        initApp();
+    </script>
+</body>
+</html>
