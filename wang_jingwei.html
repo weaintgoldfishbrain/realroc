@@ -216,58 +216,61 @@
         </div>
 
         <!-- 空白 HTML 結構，透過 script 填入 -->
-        <div id="screen-game" class="w-full max-w-3xl hidden">
-            <!-- Game UI -->
-            <div
-                class="bg-white p-4 rounded-lg paper-shadow mb-6 flex justify-between items-center text-sm font-bold sticky top-16 z-10 border border-gray-200">
-                <div class="flex-1 px-4 relative">
-                    <div class="text-gray-500 mb-1 flex justify-between"><span>軍事實力</span><span
-                            id="stat-mil-val">50</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="stat-mil-bar" class="bg-red-600 h-2 transition-all duration-500" style="width: 50%">
-                        </div>
+        <div id="screen-game" class="w-full max-w-4xl hidden">
+            <!-- 狀態條 UI (Dark Style) -->
+            <div class="status-bar-dark">
+                <div class="status-item">
+                    <div class="status-label"><span>⚔️</span> 政治/軍事實力 <span id="stat-mil-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-mil-float"></div>
+                    <div id="stat-mil-float" class="relative"></div>
                 </div>
-                <div class="w-px h-8 bg-gray-300 mx-2"></div>
-                <div class="flex-1 px-4 relative">
-                    <div class="text-gray-500 mb-1 flex justify-between"><span>國家主權</span><span
-                            id="stat-nat-val">50</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="stat-nat-bar" class="bg-blue-600 h-2 transition-all duration-500" style="width: 50%">
-                        </div>
+                <div class="status-item">
+                    <div class="status-label"><span>💰</span> 國家/百姓生機 <span id="stat-nat-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-nat-float"></div>
+                    <div id="stat-nat-float" class="relative"></div>
                 </div>
-                <div class="w-px h-8 bg-gray-300 mx-2"></div>
-                <div class="flex-1 px-4 relative">
-                    <div class="text-gray-500 mb-1 flex justify-between"><span>歷史評價</span><span
-                            id="stat-rep-val">50</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 transition-all duration-500" style="width: 50%">
-                        </div>
+                <div class="status-item">
+                    <div class="status-label"><span>📖</span> 歷史名聲評價 <span id="stat-rep-val">50</span></div>
+                    <div class="status-progress-bg">
+                        <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-rep-float"></div>
+                    <div id="stat-rep-float" class="relative"></div>
                 </div>
             </div>
 
-            <div class="bg-[#fbf9f4] p-8 md:p-10 paper-shadow rounded-lg mb-8 border-2 border-gray-200 relative">
-                <div
-                    class="absolute -top-4 -left-4 w-12 h-12 bg-red-800 text-white rounded-full flex items-center justify-center font-bold shadow-lg border-2 border-white">
-                    <span id="dilemma-progress" class="text-sm tracking-tighter"></span>
+            <!-- Header above Terminal -->
+            <div class="flex items-center justify-between mb-6 px-2">
+                <div class="flex items-center gap-4">
+                    <span class="text-4xl text-gray-700">📻</span>
+                    <div>
+                        <div id="dilemma-year" class="text-red-800 font-bold text-sm uppercase tracking-widest mb-1">
+                        </div>
+                        <h2 id="dilemma-title"
+                            class="text-2xl md:text-3xl font-bold serif-text text-gray-900 leading-tight"></h2>
+                    </div>
                 </div>
-
-                <h3 id="dilemma-year"
-                    class="text-sm font-bold text-red-800 mb-2 tracking-widest uppercase border-b-2 border-red-800 inline-block pb-1">
-                </h3>
-                <h2 id="dilemma-title"
-                    class="text-2xl md:text-3xl font-bold serif-text text-gray-900 mb-6 leading-snug"></h2>
-
-                <div class="text-gray-800 leading-relaxed text-base md:text-lg mb-8 min-h-[120px]">
-                    <p id="dilemma-context" class="whitespace-pre-line text-justify"></p>
+                <div class="bg-gray-100 px-3 py-1 rounded-full text-xs font-bold text-gray-400 border border-gray-200">
+                    進度 <span id="dilemma-progress"></span>
                 </div>
+            </div>
 
-                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500"></div>
+            <!-- Terminal Box -->
+            <div class="telegram-terminal mb-8">
+                <div class="telegram-header">
+                    <span>📡</span> INCOMING TELEGRAM // TOP SECRET
+                </div>
+                <div class="telegram-body">
+                    <p id="dilemma-context" class="whitespace-pre-line"></p>
+                </div>
+            </div>
+
+            <!-- Options Container -->
+            <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500">
+                <!-- 動態生成選項按鈕 -->
             </div>
         </div>
 
