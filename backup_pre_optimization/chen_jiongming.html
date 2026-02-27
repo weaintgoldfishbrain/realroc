@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>汪精衛真相 - 漢奸標籤下的殘酷地緣博弈 | 揭密中華民國</title>
-    <meta name="description" content="汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？">
+    <title>陳炯明真實歷史 - 被掩蓋的廣東聯邦奠基者 | 揭密中華民國</title>
+    <meta name="description" content="在傳統國民黨史觀中，陳炯明被貶為背信棄義的反動軍閥。然而解密真相指出，他所堅持的「聯省自治」，或許才是避免中國陷入連年內戰的出路。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
@@ -13,46 +13,48 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
+        // 定義本頁專屬的歷史檔案資料 (供 script.js 共用邏輯使用)
         window.pageEpisodeData = {
-            id: "wang_jingwei",
-            chapterLabel: "卷宗 002",
-            title: "汪精衛",
-            subtitle: "「漢奸」標籤下的殘酷地緣博弈",
-            themeColor: "#7f1d1d",
-            description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
+            id: "chen_jiongming",
+            chapterLabel: "卷宗 001",
+            title: "陳炯明",
+            subtitle: "被掩蓋的廣東聯邦奠基者",
+            themeColor: "#1e3a8a",
+            description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
             dilemmas: [
                 {
-                    year: "1938年底", title: "第一階段：焦土與和平的十字路口",
-                    context: "抗日戰爭爆發一年多，首都南京及各大精華區已全部淪陷，中國精銳部隊死傷殆盡。你深刻認知到農業國打不贏工業國。如果繼續蔣介石的「焦土抗戰」，國家將化為廢墟；但如果你脫離重慶提出「和平運動」，你將背負千古罵名。",
+                    year: "1920年", title: "第一階段：護法建國的十字路口",
+                    context: "你剛剛率領粵軍打回廣州，驅逐了桂系軍閥。廣東百廢待興。此時孫中山回到廣州重組軍政府。你面臨著資源分配的抉擇：是將有限的財力投入廣東的基礎建設與教育，還是交給孫中山擴充軍備準備「北伐」武力統一？",
                     options: [
-                        { text: "堅守重慶，哪怕戰到最後一兵一卒，國家化為焦土也在所不惜！", stats: [+10, -30, +30], isHistorical: false, feedbackTitle: "慘烈的勝利與隨之而來的赤化", feedbackText: "你選擇了課本標準答案。中國經歷八年絞肉機，數千萬平民傷亡，經濟徹底崩潰。國力消耗與農村空虛讓中共在敵後迅速壯大，最終國民政府在內戰中全面潰敗。" },
-                        { text: "脫離重慶，發表艷電求和。我不入地獄誰入地獄，試圖在淪陷區維持生機。", stats: [-10, +10, -40], isHistorical: true, feedbackTitle: "背負漢奸之名的不歸路", feedbackText: "你踏出了無法回頭的一步。你試圖利用日本的內部矛盾，但在狂熱的民族主義面前，你瞬間從革命元老變成了舉國唾罵的賣國賊。" }
+                        { text: "將資源投入廣東基建與教育，落實「聯省自治」的模範省計畫。", stats: [0, +20, 0], isHistorical: true, feedbackTitle: "廣東迎來短暫的繁榮", feedbackText: "你設立了廣州市政廳，推動禁菸、修路、辦學。廣東經濟迅速復甦，民眾安居樂業。但這引發了急於北伐的孫中山的極度不滿，雙方裂痕產生。" },
+                        { text: "聽從領袖，將財政全部用於擴軍，立刻發動武裝北伐。", stats: [+10, -20, +10], isHistorical: false, feedbackTitle: "窮兵黷武，民不聊生", feedbackText: "你選擇了課本上的「正確路線」。廣東財政瞬間枯竭，為了籌措軍費你只能橫徵暴斂。北伐軍在湖南陷入泥沼，廣東後方崩潰。" }
                     ]
                 },
                 {
-                    year: "1940年", title: "第二階段：密約與偽政權的建立",
-                    context: "你到了日佔區，原本期望能與日本平等談判。但日本軍部露出了貪婪的真面目，逼迫你簽署極度苛刻的《日華新關係調整要綱》（汪密約），否則就不支持你成立政府。如果不簽，你的和平運動將徹底破產。",
+                    year: "1922年夏", title: "第二階段：六一六事變的爆發",
+                    context: "北洋政府已恢復了《臨時約法》，你們當初「護法」的法理目標已經達成。你強烈主張停止內戰，但孫中山堅持武力北伐，並免去了你的粵軍總司令職務，企圖奪取兵權。你的部下群情激憤，要求驅逐孫中山保衛廣東自治。",
                     options: [
-                        { text: "條件太苛刻，這與賣國無異！拒絕簽字，宣佈和平運動失敗並退隱。", stats: [-20, 0, +20], isHistorical: false, feedbackTitle: "獨善其身的逃避", feedbackText: "你保全了個人最後的一點名節，但淪陷區的百姓只能繼續由殘暴的日軍直接軍管，遭受無情的屠殺與掠奪。" },
-                        { text: "忍辱負重簽下密約，成立南京國民政府，試圖從內部奪回行政權。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "在刀刃上跳舞的傀儡", feedbackText: "你簽下了屈辱的密約成立政府。雖然你處處受制於日本顧問，但你確實建立了一套中國人的警察與行政系統，某種程度上頂替了日軍的直接軍管，為淪陷區百姓爭取了一絲喘息空間。" }
+                        { text: "交出兵權，即使看著廣東被拖入戰火，也要維持對領袖的絕對忠誠。", stats: [-30, -20, +20], isHistorical: false, feedbackTitle: "失去實權，自治夢碎", feedbackText: "你選擇了妥協。孫中山拿走兵權後立刻發動殘酷的北伐內戰。廣東被徹底榨乾，你的聯邦民主理想化為泡影。但在國民黨黨史中，你成了「忠臣」。" },
+                        { text: "默許部下發動防禦性政變，包圍總統府逼迫孫中山下野離開廣東。", stats: [+10, +10, -30], isHistorical: true, feedbackTitle: "保衛了廣東，卻成為了「叛徒」", feedbackText: "政變成功，孫中山離開廣東。你暫時保住了廣東的和平與自治建設。但你犯了政治上的大忌，被掌握話語權的孫派貼上了「叛徒」與「反革命軍閥」的永恆標籤。" }
                     ]
                 },
                 {
-                    year: "1943年", title: "第三階段：太平洋戰爭爆發",
-                    context: "太平洋戰爭爆發，日本在各戰場吃緊。日本要求你的南京政權對英美宣戰，以配合大東亞聖戰。作為交換，你可以要求日本交還在中國境內的外國租界與部分治外法權。",
+                    year: "1925年", title: "第三階段：東征與最後的抉擇",
+                    context: "孫中山聯俄容共，獲得了蘇聯強大的軍事與財政支援，建立了黃埔軍校與列寧式的極權政黨組織。現在，裝備精良的「國民革命軍」打著統一的旗號向你發動了東征。你的粵軍節節敗退。",
                     options: [
-                        { text: "絕對不能對同盟國宣戰，這會讓中國徹底站到世界反法西斯的對立面。", stats: [-10, -10, +10], isHistorical: false, feedbackTitle: "失去利用價值", feedbackText: "你拒絕了日本的要求。惱羞成怒的日方撤銷了對你的全部支持，南京政權土崩瓦解，你被軟禁至死。" },
-                        { text: "配合日本對英美宣戰，並以此為籌碼，強硬要求收回上海等地的外國租界。", stats: [+10, +20, -20], isHistorical: true, feedbackTitle: "主權博弈的弔詭", feedbackText: "你對英美宣戰了，但也成功逼迫日本將法租界、公共租界交還給中國。這項在淪陷區的「主權收復」舉動產生了奇妙的歷史連鎖反應：重慶的蔣介石政府為了不落下風，立刻敦促英美廢除了不平等條約。你的妥協，意外推動了歷史。" }
+                        { text: "向強權低頭，宣布放棄聯邦自治，加入國民黨陣營。", stats: [+10, 0, -20], isHistorical: false, feedbackTitle: "信仰破滅的投降者", feedbackText: "你選擇了保全性命。你被剝奪兵權，軟禁在南京。中國徹底走向了一黨專政的武力統一道路，聯省自治的嘗試宣告徹底終結。" },
+                        { text: "堅守聯邦主義信仰，絕不妥協，戰至最後一兵一卒然後流亡。", stats: [-30, -10, +10], isHistorical: true, feedbackTitle: "理想主義的悲歌", feedbackText: "你拒絕向極權妥協。軍隊被擊潰後，你流亡香港，在貧病交加中去世。「講理」的自治理想，終究不敵「講力」的蘇聯式武力。你帶著背叛者的罵名退出了歷史舞台。" }
                     ]
                 }
             ],
-            summary: "汪精衛的歷史定位極具爭議。在民族主義的最高標準下他是叛國。但放回當時的歷史情境，他的「和平運動」反映了弱國面對強敵時，另一種基於絕望與現實主義的「瓦全」嘗試，體現了近代中國在地緣夾縫中求生存的極度殘酷。"
+            summary: "陳炯明的失敗，標誌著近代中國錯失了「溫和聯邦制」的現代化路徑。在那個缺乏民主傳統、列強環伺的時代，擁有強大武裝與嚴密組織的政黨（國、共）最終主導了歷史。「講理」的自治理想，終究不敵「講力」的武裝統一。"
         };
     </script>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
+    <!-- Global Header -->
     <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
@@ -65,24 +67,25 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
 
-        <!-- Screen 1: Intro -->
+        <!-- Screen 1: Intro (靜態化 HTML) -->
         <div id="screen-intro" class="w-full max-w-4xl fade-in">
-            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#7f1d1d]"></div>
+            <div id="intro-color-bar" class="h-2 w-full rounded-t-lg bg-[#1e3a8a]"></div>
             <div class="bg-white p-8 md:p-12 paper-shadow rounded-b-lg mb-8 relative border-2 border-gray-200">
                 <div
                     class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 text-sm font-bold tracking-widest rounded-bl-lg">
                     極機密</div>
-                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 002</div>
+                <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 001</div>
 
                 <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
-                    汪精衛<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">「漢奸」標籤下的殘酷地緣博弈</span>
+                    陳炯明<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">被掩蓋的廣東聯邦奠基者</span>
                 </h2>
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？</p>
+                    <p>在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
@@ -99,7 +102,7 @@
             </div>
         </div>
 
-        <!-- Screen 2: Deep Reading -->
+        <!-- Screen 2: Deep Reading (靜態化 HTML) -->
         <div id="screen-reading" class="w-full max-w-5xl hidden">
 
             <div class="flex justify-between items-center mb-8">
@@ -120,33 +123,35 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Myth 1 -->
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛是因為在內鬥中輸給蔣介石，出於貪婪與私心才投靠日本當漢奸。</p>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明是個充滿野心的反動軍閥，為了奪權而發動「六一六事變」炮轟孫中山。</p>
                                 <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
                             </div>
                             <div class="flip-card-back">
                                 <span class="text-3xl mb-2">📂</span>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：汪早年敢於捨生刺殺清攝政王，其晚年的轉變並非單純怕死。他對中國落後的工業與軍事有極度悲觀的清醒認識，深恐長期「焦土抗戰」會讓國家元氣盡毀並為中共擴張提供溫床。他將建立政權視為「我不入地獄誰入地獄」的政治犧牲。
+                                    解密真相：這是一場「聯邦自治」與「中央集權」的路線之爭。當時「護法」目標已達成，陳主張停止內戰、建設廣東；孫卻堅持拿廣東的資源發動武力北伐。陳的部隊發動政變是為了逼孫下野以保衛廣東自治，且陳私下嚴令部隊讓開生路。
                                 </p>
                                 <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
                             </div>
                         </div>
                     </div>
+                    <!-- Myth 2 -->
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛政權只是個一無是處的日本傀儡，對中國毫無貢獻。</p>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明只是一個目光短淺、阻礙國家統一的地方割據勢力。</p>
                                 <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
                             </div>
                             <div class="flip-card-back">
                                 <span class="text-3xl mb-2">📂</span>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：汪政權雖然高度受制於日本，但在客觀上頂替了部分日軍的直接軍管，維持了淪陷區的基本社會運作。更弔詭的是，汪政權在1943年成功收回了上海公共租界等特權，此舉迫使重慶蔣介石政府加速與同盟國簽署廢除治外法權的《新約》。
+                                    解密真相：陳炯明深受無政府主義與聯邦主義影響。他並非不想統一，而是主張仿效美國的「多黨民主聯邦制」，希望先將廣東建設為模範省，待各省民主成熟後，再由下而上和平統一，而非透過一黨專政的武裝侵略。
                                 </p>
                                 <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
                             </div>
@@ -164,30 +169,30 @@
                 </div>
 
                 <div class="flex flex-col gap-8">
+                    <!-- Profile 1 -->
                     <div
                         class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
-                        <div class="absolute top-0 left-0 w-2 h-full bg-red-800"></div>
+                        <div class="absolute top-0 left-0 w-2 h-full bg-blue-800"></div>
                         <div class="md:w-1/3 bg-gray-50 flex flex-col items-center p-6 border-r border-gray-200">
-                            <!-- 修補圖片路徑及檔名錯誤 -->
-                            <img src="images/wjw.jpg" alt="汪精衛肖像" loading="lazy"
+                            <img src="images/Chen_Jiongming2.jpg" alt="陳炯明肖像"
                                 onerror="this.src='https://via.placeholder.com/300x400?text=圖片載入失敗'"
                                 class="w-48 h-64 object-cover object-top rounded shadow-md sepia-img mb-4 bg-white p-1 border border-gray-300">
-                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">汪精衛</h3>
-                            <p class="text-sm text-gray-500 mt-1 mb-2">(1883 - 1944)</p>
+                            <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">陳炯明</h3>
+                            <p class="text-sm text-gray-500 mt-1 mb-2">(1878 - 1933)</p>
                             <span
-                                class="px-3 py-1 bg-red-100 text-red-800 text-xs font-bold rounded-full">和平運動推動者</span>
+                                class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">聯邦主義先驅</span>
                         </div>
                         <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">「漢奸」標籤下的殘酷地緣博弈
-                            </h4>
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">被掩蓋的廣東現代化奠基者</h4>
                             <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
-                                <p class="mb-3"><strong>絕境中的悲觀評估：</strong>
-                                    汪精衛早年是著名的革命刺客，但抗戰爆發後，他對中日國力差距的評估極度悲觀。他深恐長期的焦土抗戰不僅無法驅逐日軍，反而會導致中國國家元氣盡毀、人民生靈塗炭。</p>
-                                <p class="mb-3"><strong>地緣妥協與和平路線：</strong>
-                                    他脫離重慶國民政府，主張對日妥協，試圖將中日全面戰爭降級為政治談判。他將建立南京政權視為「曲線救國」與「我不入地獄誰入地獄」的犧牲，期望在日軍佔領區內維持一套中國人的行政系統，保全淪陷區民眾的基本生存空間與經濟命脈。
+                                <p class="mb-3"><strong>法政背景與政治理念：</strong>
+                                    陳炯明並非傳統草莽軍閥。早在辛亥革命前，他已是清末廣東省諮議局議員，擁有深厚的法學與地方治理背景。他深受無政府主義與聯邦主義影響，堅決反對孫中山透過武力「北伐」建立一黨專政的中央集權。
                                 </p>
-                                <p><strong>主權博弈的弔詭：</strong>
-                                    為了向民眾證明和平路線的價值，汪政權在外交上極力周旋。1943年，汪政權成功收回了上海公共租界與法租界。雖然這在形式上依賴日本的軍事力量，但客觀上也迫使重慶蔣介石政府加速與英美簽署廢除治外法權的新約，意外地共同推進了中國收回主權的歷史進程。
+                                <p class="mb-3"><strong>聯省自治藍圖：</strong>
+                                    他主張「保境息民」，提倡先在廣東實行民主憲政，推動教育與實業，將廣東建設為全國模範省。待各省皆具備民主自治基礎後，再由下而上結合成類似美國的「多黨民主聯邦體系」。
+                                </p>
+                                <p><strong>六一六事件真相：</strong>
+                                    1922年的「六一六事件」常被簡化為叛變。實際上，當時北洋政府已恢復《臨時約法》，南方「護法」目標在法理上已達成。陳反對繼續發動內戰，但孫中山堅持強行北伐並企圖奪取陳的兵權。這場衝突本質上是「地方自治」與「中央集權武裝統一」的路線防禦戰。
                                 </p>
                             </div>
                         </div>
@@ -201,8 +206,8 @@
                     <span>📚</span> 關鍵參考史料
                 </h4>
                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>汪榮祖，《汪精衛的歷史定位》</li>
-                    <li>林思雲，《真實的汪精衛》</li>
+                    <li>段雲章，《陳炯明一生》</li>
+                    <li>Leslie H. Dingyan Chen，《Chen Jiongming and the Federalist Movement》</li>
                 </ul>
             </section>
 
@@ -215,9 +220,11 @@
             </div>
         </div>
 
-        <!-- 空白 HTML 結構，透過 script 填入 -->
+        <!-- 以下 Screen 3~5 為由 script.js 共用控制之遊戲介面結構 -->
+
+        <!-- Screen 3: Game -->
         <div id="screen-game" class="w-full max-w-3xl hidden">
-            <!-- Game UI -->
+            <!-- 狀態條 UI -->
             <div
                 class="bg-white p-4 rounded-lg paper-shadow mb-6 flex justify-between items-center text-sm font-bold sticky top-16 z-10 border border-gray-200">
                 <div class="flex-1 px-4 relative">
@@ -267,10 +274,13 @@
                     <p id="dilemma-context" class="whitespace-pre-line text-justify"></p>
                 </div>
 
-                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500"></div>
+                <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500">
+                    <!-- 動態生成選項按鈕 -->
+                </div>
             </div>
         </div>
 
+        <!-- Screen 4: Feedback Window -->
         <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
             <div
                 class="bg-white p-8 md:p-10 paper-shadow rounded-lg border-l-8 border-yellow-400 relative overflow-hidden">
@@ -306,6 +316,7 @@
             <div class="h-32"></div>
         </div>
 
+        <!-- Screen 5: End Summary -->
         <div id="screen-end" class="w-full max-w-3xl hidden">
             <div class="text-center mb-10">
                 <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">歷史檔案定調</div>
@@ -351,18 +362,17 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
         <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
         <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
     </footer>
 
+    <!-- 共用推演引擎 -->
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof switchScreen === 'function') {
-                switchScreen('intro');
-            }
-        });
+        // 初始化本頁
+        switchScreen('intro');
     </script>
 </body>
 

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揭密中華民國真實歷史：那些與您想像不同的檔案</title>
+    <meta name="description" content="本站旨在呈現多元且真實的歷史紀錄，打破黨國教育體制下的單一史觀，鼓勵閱讀一手史料以還原中華民國歷史真相。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Global Header -->
+    <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="window.location.href='index.html'">
+                <span>🏛️</span> 揭密中華民國真實歷史
+            </h1>
+            <div id="top-nav-controls" class="hidden flex items-center gap-4">
+                <a href="index.html" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
+
+        <!-- Screen 0: Archive Menu -->
+        <div id="screen-menu" class="w-full max-w-5xl fade-in flex flex-col gap-12">
+            <!-- 已解密卷宗區塊 -->
+            <section>
+                <div class="text-center mb-10">
+                    <span
+                        class="bg-red-800 text-white px-3 py-1 text-xs font-bold tracking-widest rounded mb-4 inline-block shadow">中華民國真實歷史揭密</span>
+                    <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-800 mb-4 tracking-wider">揭開被隱藏的歷史真相
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        傳統教育下的歷史往往被特定政治目的所修飾。在這裡，我們透過一手史料，帶你還原那些被課本簡化或扭曲的真實片段。</p>
+                </div>
+                <div id="archive-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- 視覺分隔線 -->
+            <div class="w-full flex items-center justify-center py-4">
+                <div class="h-px bg-gray-300 w-1/3"></div>
+                <div class="mx-4 text-gray-400 text-2xl">⏳</div>
+                <div class="h-px bg-gray-300 w-1/3"></div>
+            </div>
+
+            <!-- 未來即將開放區塊 -->
+            <section class="pb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold serif-text text-gray-700 mb-2 flex items-center justify-center gap-2">
+                        <span>🗄️</span> 即將解密：未來卷宗預告
+                    </h2>
+                    <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
+                        以下歷史檔案正在進行史料交叉比對與修復作業，將於未來的系統更新中陸續開放查閱。</p>
+                </div>
+                <div id="future-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
+        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
+
+        <div class="mt-6 pt-5 border-t border-gray-300 flex flex-col items-center gap-4">
+            <div class="text-xs text-gray-500 flex items-center justify-center gap-2 tracking-wide">
+                <span>Made by <strong>Andesign</strong></span>
+                <span class="text-gray-400">|</span>
+                <span>Powered by ✨ <strong>Gemini</strong></span>
+            </div>
+            <a href="https://buymeacoffee.com/andesign" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:bg-[#FFDD00] hover:border-[#FFDD00] hover:text-gray-900 transition-all shadow-sm">
+                ☕ 請 Andesign 喝咖啡
+            </a>
+        </div>
+    </footer>
+
+    <!-- 共用腳本 -->
+    <script src="script.js"></script>
+    <script>
+        // 目錄建構腳本 (僅用於首頁)
+        const archiveDatabase = [
+            {
+                id: "chen_jiongming",
+                chapterLabel: "卷宗 001",
+                title: "陳炯明",
+                subtitle: "被掩蓋的廣東聯邦奠基者",
+                themeColor: "#1e3a8a",
+                coverIcon: "⚖️",
+                cardBorderHover: "hover:border-blue-500",
+                description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
+                link: "chen_jiongming.html"
+            },
+            {
+                id: "wang_jingwei",
+                chapterLabel: "卷宗 002",
+                title: "汪精衛",
+                subtitle: "「漢奸」標籤下的殘酷地緣博弈",
+                themeColor: "#7f1d1d",
+                coverIcon: "🕊️",
+                cardBorderHover: "hover:border-red-500",
+                description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
+                link: "wang_jingwei.html"
+            },
+            {
+                id: "yuan_shikai",
+                chapterLabel: "卷宗 003",
+                title: "袁世凱",
+                subtitle: "共和破壞者與現代化的奠基人",
+                themeColor: "#374151",
+                coverIcon: "🪖",
+                cardBorderHover: "hover:border-gray-500",
+                description: "在國民黨教科書中，他被簡化為「竊國大盜」與簽署二十一條的「賣國賊」。然而客觀審視歷史，他不僅在辛亥革命時避免了全面內戰，更在軍事、貨幣與教育上奠定了中國現代化的基礎。他最終的敗亡，是缺乏民主素養的傳統強人，在權力傲慢下的必然悲劇。",
+                link: "yuan_shikai.html"
+            }
+        ];
+
+        const futureDatabase = [
+            { chapterLabel: "卷宗 004", title: "張作霖", subtitle: "東北王的生存法則：夾縫中的豪賭", coverIcon: "🚂", description: "夾在日、俄兩大強權與南方國民政府之間，這位綠林出身的東北軍閥，是如何運用實用主義保全東北？" },
+            { chapterLabel: "卷宗 005", title: "蔣介石", subtitle: "民族救星還是獨裁者？", coverIcon: "🎖️", description: "北伐統一與抗日神話的背後，是清黨的血腥與訓政的威權。「黃金十年」究竟是現代化奇蹟，還是買辦資本的狂歡？" },
+            { chapterLabel: "卷宗 006", title: "溥儀", subtitle: "從皇帝到公民：紫禁城外的傀儡", coverIcon: "🐉", description: "三次登基，三次退位。他是帝國最後的象徵，也是時代洪流中最無力的棋子。" }
+        ];
+
+        function initIndex() {
+            const grid = document.getElementById('archive-grid');
+            grid.innerHTML = '';
+            archiveDatabase.forEach((ep) => {
+                const card = document.createElement('div');
+                card.className = `archive-card bg-white rounded-xl paper-shadow p-6 border-2 border-transparent relative overflow-hidden cursor-pointer ${ep.cardBorderHover}`;
+                // 修改點擊邏輯，直接跳轉外部連結
+                card.onclick = () => window.location.href = ep.link;
+                card.innerHTML = `
+                    <div class="text-xs font-bold text-gray-400 tracking-widest uppercase mb-2">${ep.chapterLabel}</div>
+                    <div class="text-4xl mb-4">${ep.coverIcon}</div>
+                    <h3 class="text-2xl font-bold serif-text text-gray-800 mb-1 leading-snug">${ep.title}</h3>
+                    <div class="text-sm font-medium text-gray-600 mb-3" style="color: ${ep.themeColor}">${ep.subtitle}</div>
+                    <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">${ep.description}</p>
+                    <div class="mt-4 text-sm font-bold flex items-center gap-1" style="color: ${ep.themeColor}">進入歷史現場 ➔</div>
+                `;
+                grid.appendChild(card);
+            });
+
+            const futureGrid = document.getElementById('future-grid');
+            futureGrid.innerHTML = '';
+            futureDatabase.forEach((ep) => {
+                const card = document.createElement('div');
+                card.className = `future-card rounded-xl paper-shadow p-6 border-2 border-dashed border-gray-400 relative overflow-hidden select-none`;
+                card.innerHTML = `
+                    <div class="stamp-secret">極機密</div>
+                    <div class="relative z-10 opacity-70">
+                        <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">${ep.chapterLabel} (尚未解密)</div>
+                        <div class="text-4xl mb-4 grayscale filter drop-shadow-md">${ep.coverIcon}</div>
+                        <h3 class="text-2xl font-bold serif-text text-gray-800 mb-1 leading-snug blur-[1px]">${ep.title}</h3>
+                        <div class="text-sm font-bold text-gray-700 mb-3">${ep.subtitle}</div>
+                        <p class="text-gray-600 text-sm leading-relaxed">${ep.description}</p>
+                        <div class="mt-4 text-xs font-bold text-gray-500 flex items-center gap-1">🔒 史料修復中...</div>
+                    </div>
+                `;
+                futureGrid.appendChild(card);
+            });
+        }
+
+        // 渲染首頁
+        initIndex();
+    </script>
+</body>
+
+</html>
