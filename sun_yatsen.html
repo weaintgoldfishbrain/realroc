@@ -17,36 +17,36 @@
             id: "sun_yatsen",
             chapterLabel: "卷宗 007",
             title: "孫中山",
-            subtitle: "理想主義的革命先行者與威權先驅",
+            subtitle: "被神化的先行者與黨國威權之父",
             themeColor: "#991b1b",
-            description: "國民黨尊他為締造者，共產黨敬他是先驅。真實的孫中山在屢次挫折後，親手將鬆散的民政黨，改造成要求絕對服從的列寧式威權政黨，為近代中國的「黨國體制」播下種子。",
+            description: "在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以出賣國家領土主權為籌碼換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的列寧式威權政黨的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。",
             dilemmas: [
                 {
-                    year: "1912年春", title: "第一階段：大總統的讓位",
-                    context: "你是臨時大總統孫中山。國庫空虛，軍餉告急。北方袁世凱手握重兵，提出條件：只要你讓位給他，他就逼清帝退位，贊成共和。",
+                    year: "1915年2月", title: "第一階段：魔鬼的交易與二十一條",
+                    context: "你是流亡日本的孫中山。袁世凱在國內掌控大局，你的「二次革命」被輕鬆鎮壓，你手中沒有軍隊，沒有資金，革命陷入絕境。此時，日本正向袁世凱政府逼迫簽署喪權辱國的「二十一條」。你意識到這是一個奪權的機會。如果你能給日本比袁世凱更好的條件，日本或許會轉而資助你推翻袁世凱。",
                     options: [
-                        { text: "絕不讓位！下令北伐與袁世凱決一死戰。", stats: [-50, -30, +40], isHistorical: false, feedbackTitle: "革命夭折", feedbackText: "沒有外國貸款，軍隊不戰自潰。袁世凱進軍南方將革命黨徹底剿滅。你成了通緝犯，中國繼續由強人統治。你保住了權力，卻毀了革命。" },
-                        { text: "同意讓位給袁世凱，換取清朝和平滅亡與《臨時約法》簽署。", stats: [+30, +40, +30], isHistorical: true, feedbackTitle: "務實的政治妥協", feedbackText: "你展現了政治胸襟，促成了帝制和平終結。但你也失去了對軍隊機器的控制權，埋下了日後被反噬的隱患。但此刻，你救了中國免於更大內戰。" }
+                        { text: "民族大義為重！發表公開聲明，譴責日本的帝國主義行徑，並號召全國團結一致對外，暫時停止反袁武裝鬥爭。", stats: [-30, +20, +40], isHistorical: false, feedbackTitle: "失去奪權機會的愛國者", feedbackText: "你保住了民族氣節。但日本人對你毫無興趣，斷絕了對你的庇護。你在海外的革命組織因為缺乏資金而徹底瓦解，你被邊緣化，無法再對中國政局產生任何實質影響。" },
+                        { text: "為了革命的最終勝利，悄悄致函日本首相，承諾若日本出兵幫你推翻袁世凱，你願意將滿蒙的特權，甚至中國軍警財政的控制權讓給日本（條件比二十一條更優惠）。", stats: [+20, -40, -40], isHistorical: true, feedbackTitle: "為了權力出賣國家底線", feedbackText: "你展現了極致的馬基維利主義（為了目的不擇手段）。日本政客拿到了你的底牌，以此去威脅袁世凱，袁世凱最終被迫妥協。你雖然沒拿到實質的兵力，但你這封密函成為了近代史上洗不清的賣國污點，只是後來被你建立的政黨用權力硬生生掩蓋了。" }
                     ]
                 },
                 {
-                    year: "1914年", title: "第二階段：中華革命黨的誓言",
-                    context: "袁世凱解散國會，二次革命失敗。你流亡日本反思，認為失敗在於黨員一盤散沙。你決定重組「中華革命黨」。",
+                    year: "1914年7月", title: "第二階段：重建政黨的獨裁誓言",
+                    context: "你流亡海外，痛苦地反思國民黨為何會被袁世凱輕易擊敗。你得出結論：是因為黨員一盤散沙，沒有一個擁有絕對權威的獨裁領袖來指揮。你決定解散國民黨，重新組建「中華革命黨」。你需要制定新的黨章與入黨儀式。",
                     options: [
-                        { text: "堅持民主原則，容許黨內不同聲音，靠理念凝聚同志。", stats: [-40, -10, +30], isHistorical: false, feedbackTitle: "一盤散沙", feedbackText: "在軍閥混戰時代，講民主的鬆散組織無法對抗槍砲。你的政黨被徹底邊緣化，被歷史淘汰。理想很好，但現實很殘酷。" },
-                        { text: "規定黨員必須按指印宣誓「絕對服從孫先生」，實行領袖獨裁。", stats: [+40, +10, -40], isHistorical: true, feedbackTitle: "戰友決裂與威權轉向", feedbackText: "黃興等同志拒絕加入並與你決裂。你建立了一個聽話組織，卻也關上了黨內民主大門，開啟了「以黨治國、領袖至上」先河。" }
+                        { text: "堅持民主與平等原則，以共同的政治理念來凝聚同志，容許黨內存在不同的派系與反對聲音。", stats: [-30, +0, +20], isHistorical: false, feedbackTitle: "組織渙散，被歷史淘汰", feedbackText: "在軍閥割據的亂世中，講求民主程序的鬆散組織根本無法對抗有槍有錢的軍事強人。你的政黨效率低下，命令無法貫徹，最終在殘酷的武裝鬥爭中徹底覆滅。" },
+                        { text: "規定新黨員入黨必須立誓「服從孫先生再舉革命」，並強制要求在誓詞上「按指印」以示效忠你個人。", stats: [+30, +0, -20], isHistorical: true, feedbackTitle: "戰友決裂與威權的萌芽", feedbackText: "你建立了一個只聽命於你一人的極權小圈子。但這種黑幫式的入黨儀式，激怒了黃興等為建立民主共和出生入死的革命元老，他們認為你已經變成了另一個專制皇帝，從此與你分道揚鑣。你親手扼殺了黨內民主。" }
                     ]
                 },
                 {
-                    year: "1923年", title: "第三階段：聯俄容共的世紀豪賭",
-                    context: "你在廣州被陳炯明驅逐。向西方求援遭無視。蘇聯提出：只要允許共產黨以個人身分加入國民黨，就提供軍火與顧問。",
+                    year: "1923年1月", title: "第三階段：引進列寧體制的世紀豪賭",
+                    context: "你在廣州遭到昔日部下陳炯明的武裝驅逐（六一六事件）。你向英美等西方民主國家求援，希望他們資助你建立軍隊，卻慘遭無視。此時，新生的蘇聯（共產國際）向你伸出援手：只要你實行「聯俄容共」，讓共產黨員加入國民黨，蘇聯就提供海量軍火與教官，幫你建立一支列寧式的無敵黨軍。",
                     options: [
-                        { text: "拒絕與共產國際合作。我們是民主革命，不能引進列寧式獨裁體制。", stats: [-50, -20, +40], isHistorical: false, feedbackTitle: "壯志未酬", feedbackText: "沒軍隊就沒發言權。你只能在南方依靠小軍閥苟延，最終在鬱悶中離世，國民政府也無法統一中國。你守住了理念，卻輸了國家。" },
-                        { text: "接受蘇聯援助，實行「聯俄容共」，建立黃埔軍校與黨代表制度。", stats: [+50, +30, -50], isHistorical: true, feedbackTitle: "飲鴆止渴的勝利", feedbackText: "你獲得了強大武裝，日後成功統一中國。但也把共產主義火種引進黨內，為殘酷國共內戰與日後中國赤化埋下致命地雷。這是一場決定性的豪賭。" }
+                        { text: "拒絕與共產國際合作。我們是民主革命，絕對不能引進共產主義的紅色思想與列寧式獨裁體制，這會毀了中國。", stats: [-40, +10, +0], isHistorical: false, feedbackTitle: "壯志未酬的邊緣人", feedbackText: "沒有蘇聯的槍砲與盧布，你沒有發言權。你只能繼續在南方依靠各路小軍閥苟延殘喘，受制於人。你最終在鬱鬱寡歡中離世，你的政黨永遠只是一個無足輕重的在野勢力。" },
+                        { text: "為了革命的武裝勝利，接受蘇聯援助。引進蘇聯顧問，建立黃埔軍校，徹底將國民黨改造成布爾什維克式的極權黨國體制。", stats: [+50, -30, -10], isHistorical: true, feedbackTitle: "飲鴆止渴的勝利與黨國的誕生", feedbackText: "你獲得了強大的武裝力量。這支擁有列寧式政黨組織力與政治委員監控的「黨軍」，日後摧枯拉朽般地統一了中國。但你打開了潘朵拉的盒子，引進了共產主義火種與一黨專政體制。中國從此告別了走向西方自由民主的可能，陷入了國共兩黨長達大半個世紀的「黨國獨裁」夢魘。" }
                     ]
                 }
             ],
-            summary: "孫中山是一位令人敬佩的理想主義者，更是殘酷現實中不斷妥協實用主義者。他為了「救國」最高目標不斷變換路線，最終為了換取武力，放棄了西式民主架構，擁抱列寧式威權。他奠定了政治基礎，也同時開啟了黨國幽靈。"
+            summary: "孫中山是一位令人敬佩的理想主義者與百折不撓的行動家，但他更是殘酷政治現實中不斷打破底線的實用主義者。他一生為了「救國」這個最高目標，不惜將國家領土主權當作交易籌碼；最終為了獲得武力，他徹底放棄了早年的西式民主信仰，轉而擁抱了蘇聯的列寧式威權架構。他確實為推翻滿清奠定了思想基礎，卻也同時為中國引進了至今難以擺脫的「黨國獨裁」幽靈。將他神化為完美無瑕的國父，是對歷史複雜性最大的褻瀆。"
         };
     </script>
 </head>
@@ -76,12 +76,12 @@
                 <div class="text-gray-500 font-bold mb-2 tracking-widest text-sm uppercase">卷宗 007</div>
 
                 <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-6 leading-tight">
-                    孫中山<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">理想主義的革命先行者與威權先驅</span>
+                    孫中山<br><span class="text-gray-500 text-2xl md:text-3xl mt-2 block">被神化的先行者與黨國威權之父</span>
                 </h2>
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>他是不可褻瀆的「國父」。但拋開神化光環，真實的孫中山為了救國，甚至不惜跨越早年的民主底線。這份檔案將帶領你見證他的理想與妥協。
+                    <p>在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以出賣國家領土主權為籌碼換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的列寧式威權政黨的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。
                     </p>
                 </div>
 
@@ -115,30 +115,58 @@
                         真實史實：歷史現場的另一面</h3>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <p class="font-bold text-lg leading-snug">歷史課本說： 孫中山親自領導武昌起義，憑藉他一人的號召力推翻滿清，建立共和。</p>
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：
+                                    孫中山先生親自領導了武昌起義，憑藉他一人的革命號召力，成功推翻了滿清政府，建立了亞洲第一個民主共和國。</p>
                                 <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
                             </div>
                             <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相： 武昌起義時，孫人在美國洗碗打工（看報才知起義）。成功主要是新軍、地方士紳與袁世凱多方妥協結果。孫最大的貢獻在於海外募款與精神圖騰。
+                                    解密真相（缺席的革命者）：
+                                    1911年10月10日武昌起義爆發時，孫中山人正在美國科羅拉多州的丹佛市，他是在隔天的報紙上才得知起義消息的。辛亥革命之所以能成功，主要是國內湖北新軍的兵變、立憲派士紳的倒戈，以及袁世凱北洋集團逼宮的多方妥協結果。孫中山的貢獻在於長期的思想播種與海外募款，但他從未真正掌握過推翻清朝的核心武裝力量。
                                 </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
                             </div>
                         </div>
                     </div>
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <p class="font-bold text-lg leading-snug">歷史課本說： 孫中山一生堅定不移推動西方式民主憲政，是中國民主燈塔。</p>
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：
+                                    孫中山一生堅定捍衛國家主權，是抵抗帝國主義侵略的民族英雄，與簽署二十一條的賣國賊袁世凱形成強烈對比。</p>
                                 <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
                             </div>
                             <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相： 失敗挫折後，他對議會制產生懷疑。1914年組建新黨要求黨員手印宣誓絕對服從個人；晚年的三階段論實質建立了「一黨專政」法理。
+                                    解密真相（為求贊助不惜賣國）：
+                                    史料解密顯示，孫中山為了籌措推翻袁世凱的革命資金，曾多次主動向日本提出極度損害中國主權的交易。1915年初，當袁世凱正與日本就「二十一條」苦苦周旋時，孫中山卻私下致函日本首相大隈重信，主動提出比二十一條更優厚的條件（包含將滿蒙與中國軍警財政權讓與日本），企圖換取日本出兵幫他奪權。他的邏輯是「只要能奪取政權，領土主權皆可作為交易籌碼」。
                                 </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <span class="text-3xl mb-2">📖</span>
+                                <p class="font-bold text-lg leading-snug">歷史課本說：
+                                    孫中山一生堅定不移地推動西方式的民主憲政，他提出的「三民主義」與「五權憲法」是中國民主的最高指標。</p>
+                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="text-3xl mb-2">📂</span>
+                                <p class="text-sm md:text-base leading-relaxed text-justify">
+                                    解密真相（黨國體制的真正祖師爺）：
+                                    經歷幾次挫折後，孫中山對西式民主與議會制度徹底失去耐心。1914年組建中華革命黨時，他強制要求所有黨員「按指印」宣誓對他個人絕對服從；晚年更全盤引進蘇聯共產黨的「列寧式政黨」體制，確立了「以黨治國」、「黨指揮槍」的一黨專政模式。現代中國的極權獨裁基因，正是由他親手植入的。
+                                </p>
+                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
                             </div>
                         </div>
                     </div>
@@ -157,16 +185,22 @@
                             <h3 class="text-2xl font-bold serif-text text-gray-900 tracking-widest">孫文</h3>
                             <p class="text-sm text-gray-500 mt-1 mb-2">(1866 - 1925)</p>
                             <span
-                                class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-bold rounded-full">理念與權力的掙扎</span>
+                                class="px-3 py-1 bg-gray-200 text-gray-800 text-xs font-bold rounded-full">黨國體制的開創者</span>
                         </div>
                         <div class="md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
-                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">從民主盟友到威權先驅</h4>
+                            <h4 class="text-xl font-bold serif-text text-gray-800 mb-4 border-b pb-2">從民主同盟到極權轉向</h4>
                             <div class="text-gray-700 leading-relaxed text-sm md:text-base text-justify">
-                                <p class="mb-3"><strong>四處碰壁的革命家：</strong>
-                                    早期生涯充滿無奈，周旋於列強間，甚至曾想出賣利益換資產。但百折不撓的精神感化力是他最大資產。</p>
-                                <p class="mb-3"><strong>民主的轉向：</strong> 議會路線失敗後，他認為是因為黨內不夠獨裁。重組政黨要求效忠個人，導致黃興等民主同志決裂而去。
+                                <p class="mb-3"><strong>「租讓滿洲」的歷史黑案：</strong>
+                                    國際漢學家（如韋慕庭 C. Martin
+                                    Wilbur）的研究指出，孫中山在面臨革命絕境時，其「實用主義」往往超越了民族主義的底線。除了1915年致日本首相大隈重信的密函外，早年他為了換取法國的財政與軍事支援，也曾提議將中國廣西與雲南的特權讓與法國。對孫中山而言，「推翻現有政權」是最高道德，為了這個目標，國家的邊疆領土與主權皆可被視為換取列強軍火的「抵押品」。這種「為了目的不擇手段」的做法，在國民黨史觀中被徹底抹除。
                                 </p>
-                                <p><strong>聯俄與黨國誕生：</strong> 走投無路下引進列寧式政黨組織模式，建立黃埔。雖成功統一中國，卻也埋葬了民初脆弱的民主實驗。</p>
+                                <p class="mb-3"><strong>從民主同盟到極權轉向（按指印事件）：</strong>
+                                    辛亥革命初期的同盟會，是一個內部派系林立、相對民主的鬆散聯盟（黃興、宋教仁皆有強大影響力）。但當議會路線被袁世凱摧毀後，孫中山將失敗歸咎於「黨內不夠獨裁、不聽我的話」。1914年他在日本重組「中華革命黨」時，竟定下規矩：入黨者必須立誓「附從孫先生再舉革命」，並在誓詞上按捺指印以示個人效忠。這種帶有封建會黨色彩與個人崇拜的規定，激怒了黃興、胡漢民等民主革命元老，導致他們拂袖而去。孫中山的民主思想，在此刻已實質死亡。
+                                </p>
+                                <p><strong>聯俄容共與「黨國怪物」的誕生：</strong>
+                                    1923年，在遭到西方列強冷落與地方軍閥（陳炯明）驅逐後，走投無路的孫中山選擇了與蘇聯（共產國際）結盟。他請來了蘇聯顧問鮑羅廷（Mikhail
+                                    Borodin），對國民黨進行了徹底的「布爾什維克化」改造。他建立了黃埔軍校，設立了「黨代表」制度（即政治委員），確保軍隊絕對忠於政黨。這支擁有宗教般信仰與嚴密監控網的「黨軍」，雖然日後幫助國民黨武力統一了中國，但也徹底埋葬了民國初年雖然混亂但充滿活力的自由議會民主。今天兩岸的「黨國體制」，皆溯源於孫中山晚年的這次致命轉向。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -176,8 +210,9 @@
             <section class="bg-gray-100 p-6 rounded-lg mb-12 border border-gray-200">
                 <h4 class="font-bold text-gray-700 mb-3 text-sm flex items-center gap-2"><span>📚</span> 權威文獻參考</h4>
                 <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
-                    <li>韋慕庭 (C. Martin Wilbur)，《孫中山：壯志未酬的愛國者》</li>
-                    <li>史扶鄰，《孫中山與中國革命的起源》</li>
+                    <li>韋慕庭 (C. Martin Wilbur)，《孫中山：壯志未酬的愛國者》(Sun Yat-sen: Frustrated Patriot)</li>
+                    <li>史扶鄰 (Harold Z. Schiffrin)，《孫中山與中國革命的起源》</li>
+                    <li>唐德剛，《晚清七十年》、《袁氏當國》</li>
                 </ul>
             </section>
 

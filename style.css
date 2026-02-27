@@ -79,8 +79,24 @@ h3,
   background-color: #1f2937;
   color: #f9fafb;
   transform: rotateY(180deg);
-  border: 2px solid #374151
+  border: 2px solid #374151;
+  overflow-y: auto;
+  justify-content: flex-start;
 }
+
+.flip-card-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flip-card-back::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.flip-card-back::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 10px;
+}
+
 
 .sepia-img {
   filter: sepia(0.4) grayscale(0.2) contrast(1.1);
