@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>歷史解密檔案庫：終極反思</title>
+    <title>揭密中華民國真實歷史：那些與您想像不同的檔案</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -14,20 +17,34 @@
             background-image: radial-gradient(#d5d1c5 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        h1, h2, h3, .serif-text {
+
+        h1,
+        h2,
+        h3,
+        .serif-text {
             font-family: 'Noto Serif TC', serif;
         }
+
         .paper-shadow {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05), 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.03);
         }
+
         .fade-in {
             animation: fadeIn 0.5s ease-out forwards;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         /* 翻轉卡片 CSS */
         .flip-card {
             background-color: transparent;
@@ -36,6 +53,7 @@
             perspective: 1000px;
             cursor: pointer;
         }
+
         .flip-card-inner {
             position: relative;
             width: 100%;
@@ -44,10 +62,13 @@
             transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
             transform-style: preserve-3d;
         }
+
         .flip-card.flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
-        .flip-card-front, .flip-card-back {
+
+        .flip-card-front,
+        .flip-card-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -60,23 +81,38 @@
             justify-content: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+
         .flip-card-front {
-            background-color: #fef3c7; 
+            background-color: #fef3c7;
             border: 2px solid #fde68a;
             color: #92400e;
         }
+
         .flip-card-back {
-            background-color: #1f2937; 
+            background-color: #1f2937;
             color: #f9fafb;
             transform: rotateY(180deg);
             border: 2px solid #374151;
         }
-        
-        .sepia-img { filter: sepia(0.4) grayscale(0.2) contrast(1.1); transition: filter 0.3s; }
-        .sepia-img:hover { filter: sepia(0) grayscale(0) contrast(1); }
-        .archive-card { transition: all 0.3s ease; }
-        .archive-card:hover:not(.locked) { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
+
+        .sepia-img {
+            filter: sepia(0.4) grayscale(0.2) contrast(1.1);
+            transition: filter 0.3s;
+        }
+
+        .sepia-img:hover {
+            filter: sepia(0) grayscale(0) contrast(1);
+        }
+
+        .archive-card {
+            transition: all 0.3s ease;
+        }
+
+        .archive-card:hover:not(.locked) {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
         /* 未來預告卡片特效 */
         .future-card {
             background: repeating-linear-gradient(45deg, #f9fafb, #f9fafb 10px, #f3f4f6 10px, #f3f4f6 20px);
@@ -84,38 +120,76 @@
             cursor: not-allowed;
             filter: grayscale(1);
         }
+
         .stamp-secret {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
-            color: rgba(220, 38, 38, 0.15); border: 4px solid rgba(220, 38, 38, 0.15);
-            padding: 10px 20px; font-size: 3rem; font-weight: bold; font-family: 'Noto Serif TC', serif;
-            pointer-events: none; white-space: nowrap; letter-spacing: 0.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            color: rgba(220, 38, 38, 0.15);
+            border: 4px solid rgba(220, 38, 38, 0.15);
+            padding: 10px 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Noto Serif TC', serif;
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: 0.5rem;
         }
-        
+
         /* 情境模擬選項特效 */
-        .dilemma-btn { transition: all 0.2s ease; position: relative; overflow: hidden; }
-        .dilemma-btn:hover:not(:disabled) { transform: translateX(5px); border-color: #4b5563; background-color: #f3f4f6; }
-        
-        /* 數值變化特效 */
-        .stat-change { animation: floatUp 2s forwards; position: absolute; font-weight: bold; }
-        @keyframes floatUp {
-            0% { opacity: 1; transform: translateY(0) scale(1); }
-            100% { opacity: 0; transform: translateY(-30px) scale(1.2); }
+        .dilemma-btn {
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .dilemma-btn:hover:not(:disabled) {
+            transform: translateX(5px);
+            border-color: #4b5563;
+            background-color: #f3f4f6;
+        }
+
+        /* 數值變化特效 */
+        .stat-change {
+            animation: floatUp 2s forwards;
+            position: absolute;
+            font-weight: bold;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-30px) scale(1.2);
+            }
+        }
+
         .typewriter::after {
             content: '|';
             animation: blink 1s step-end infinite;
         }
-        @keyframes blink { 50% { opacity: 0; } }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col">
 
     <!-- Global Header -->
     <header class="bg-gray-900 text-gray-100 py-4 shadow-md z-20 sticky top-0">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2" onclick="returnToMenu()">
-                <span>🏛️</span> 歷史解密檔案庫
+            <h1 class="text-xl font-bold tracking-wider cursor-pointer flex items-center gap-2"
+                onclick="returnToMenu()">
+                <span>🏛️</span> 揭密中華民國真實歷史
             </h1>
             <div id="top-nav-controls" class="hidden flex items-center gap-4">
                 <button onclick="returnToMenu()" class="text-sm hover:text-yellow-400 transition-colors">返回書庫</button>
@@ -125,15 +199,18 @@
 
     <!-- Main Content Area -->
     <main class="flex-grow container mx-auto px-4 py-8 flex flex-col items-center">
-        
+
         <!-- Screen 0: Archive Menu -->
         <div id="screen-menu" class="w-full max-w-5xl fade-in flex flex-col gap-12">
             <!-- 已解密卷宗區塊 -->
             <section>
                 <div class="text-center mb-10">
-                    <span class="bg-red-800 text-white px-3 py-1 text-xs font-bold tracking-widest rounded mb-4 inline-block shadow">史觀解構特別企劃</span>
-                    <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-800 mb-4 tracking-wider">打破黨國敘事的神話</h2>
-                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">我們從小被灌輸的歷史，往往是為了鞏固特定政權合法性而編寫的「道德劇」。在這裡，我們讓證據說話，帶你親自走入歷史的灰色地帶。</p>
+                    <span
+                        class="bg-red-800 text-white px-3 py-1 text-xs font-bold tracking-widest rounded mb-4 inline-block shadow">中華民國真實歷史揭密</span>
+                    <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-800 mb-4 tracking-wider">揭開被隱藏的歷史真相
+                    </h2>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        傳統教育下的歷史往往被特定政治目的所修飾。在這裡，我們透過一手史料，帶你還原那些被課本簡化或扭曲的真實片段。</p>
                 </div>
                 <div id="archive-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </section>
@@ -151,20 +228,25 @@
                     <h2 class="text-3xl font-bold serif-text text-gray-700 mb-2 flex items-center justify-center gap-2">
                         <span>🗄️</span> 即將解密：未來卷宗預告
                     </h2>
-                    <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto">以下歷史檔案正在進行史料交叉比對與修復作業，將於未來的系統更新中陸續開放查閱。</p>
+                    <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto">
+                        以下歷史檔案正在進行史料交叉比對與修復作業，將於未來的系統更新中陸續開放查閱。</p>
                 </div>
                 <div id="future-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </section>
         </div>
 
         <!-- Screen 1: Intro -->
-        <div id="screen-intro" class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative overflow-hidden mt-8">
+        <div id="screen-intro"
+            class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative overflow-hidden mt-8">
             <div class="absolute top-0 left-0 w-full h-2 bg-gray-800" id="intro-color-bar"></div>
             <div class="mb-4 text-sm font-bold text-gray-500 tracking-widest uppercase" id="intro-chapter">CHAPTER</div>
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-gray-800 serif-text leading-tight text-center md:text-left" id="intro-title"></h1>
-            <div class="prose prose-lg text-gray-600 mb-8 leading-relaxed max-w-none text-justify" id="intro-desc"></div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-gray-800 serif-text leading-tight text-center md:text-left"
+                id="intro-title"></h1>
+            <div class="prose prose-lg text-gray-600 mb-8 leading-relaxed max-w-none text-justify" id="intro-desc">
+            </div>
             <div class="flex justify-center md:justify-start">
-                <button onclick="goToReading()" class="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded transition-colors text-lg shadow-lg flex items-center justify-center gap-2">
+                <button onclick="goToReading()"
+                    class="w-full md:w-auto bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded transition-colors text-lg shadow-lg flex items-center justify-center gap-2">
                     <span>開始查閱解密檔案</span> <span>➔</span>
                 </button>
             </div>
@@ -172,14 +254,15 @@
 
         <!-- Screen 2: Reading Room -->
         <div id="screen-reading" class="w-full max-w-5xl hidden flex flex-col gap-10 mt-4">
-            
+
             <!-- 史觀翻轉區塊 -->
             <div class="mb-6">
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl md:text-3xl font-bold serif-text text-gray-800 mb-2 flex justify-center items-center gap-2">
-                        <span>🔄</span> 史觀解構：課本沒教的真相
+                    <h2
+                        class="text-2xl md:text-3xl font-bold serif-text text-gray-800 mb-2 flex justify-center items-center gap-2">
+                        <span>🔄</span> 真實史實：歷史現場的另一面
                     </h2>
-                    <p class="text-gray-500 text-sm">點擊下方卡片，戳破國民黨歷史課本中的政治宣傳神話。</p>
+                    <p class="text-gray-500 text-sm">點擊下方卡片，揭開被遮蔽的歷史細節。</p>
                 </div>
                 <div id="flip-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
             </div>
@@ -202,7 +285,8 @@
             </div>
 
             <div class="flex justify-center mt-4 mb-12">
-                <button onclick="startGame()" class="w-full md:w-3/4 bg-gray-900 hover:bg-gray-800 text-white font-bold py-6 px-8 rounded-lg transition-colors text-xl shadow-2xl border-4 border-gray-700 flex flex-col items-center justify-center gap-2">
+                <button onclick="startGame()"
+                    class="w-full md:w-3/4 bg-gray-900 hover:bg-gray-800 text-white font-bold py-6 px-8 rounded-lg transition-colors text-xl shadow-2xl border-4 border-gray-700 flex flex-col items-center justify-center gap-2">
                     <div class="flex items-center gap-3">
                         <span class="text-2xl">⚙️</span> <span>啟動沙盤推演：歷史生存模擬器</span>
                     </div>
@@ -214,14 +298,17 @@
         <!-- Screen 3: Dilemma Role-play (Game) -->
         <div id="screen-game" class="w-full max-w-4xl hidden flex flex-col gap-6 mt-4">
             <!-- 狀態追蹤面板 (Status Bar) -->
-            <div class="bg-gray-900 text-white p-4 rounded-lg paper-shadow flex flex-col md:flex-row gap-4 md:gap-8 justify-center sticky top-16 z-10 border-b-4 border-red-800">
+            <div
+                class="bg-gray-900 text-white p-4 rounded-lg paper-shadow flex flex-col md:flex-row gap-4 md:gap-8 justify-center sticky top-16 z-10 border-b-4 border-red-800">
                 <div class="flex-1">
                     <div class="text-xs text-gray-400 font-bold tracking-widest mb-1 flex justify-between">
                         <span>⚔️ 政治/軍事實力</span> <span id="stat-mil-val">50</span>
                     </div>
                     <div class="w-full bg-gray-700 h-2 rounded-full relative">
-                        <div id="stat-mil-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
-                        <div id="stat-mil-float" class="absolute right-0 -top-6 text-blue-400 text-sm font-bold opacity-0"></div>
+                        <div id="stat-mil-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-500"
+                            style="width: 50%"></div>
+                        <div id="stat-mil-float"
+                            class="absolute right-0 -top-6 text-blue-400 text-sm font-bold opacity-0"></div>
                     </div>
                 </div>
                 <div class="flex-1">
@@ -229,8 +316,10 @@
                         <span>🌾 國家/百姓生機</span> <span id="stat-nat-val">50</span>
                     </div>
                     <div class="w-full bg-gray-700 h-2 rounded-full relative">
-                        <div id="stat-nat-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
-                        <div id="stat-nat-float" class="absolute right-0 -top-6 text-green-400 text-sm font-bold opacity-0"></div>
+                        <div id="stat-nat-bar" class="bg-green-500 h-2 rounded-full transition-all duration-500"
+                            style="width: 50%"></div>
+                        <div id="stat-nat-float"
+                            class="absolute right-0 -top-6 text-green-400 text-sm font-bold opacity-0"></div>
                     </div>
                 </div>
                 <div class="flex-1">
@@ -238,8 +327,10 @@
                         <span>📖 歷史名聲評價</span> <span id="stat-rep-val">50</span>
                     </div>
                     <div class="w-full bg-gray-700 h-2 rounded-full relative">
-                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
-                        <div id="stat-rep-float" class="absolute right-0 -top-6 text-yellow-400 text-sm font-bold opacity-0"></div>
+                        <div id="stat-rep-bar" class="bg-yellow-500 h-2 rounded-full transition-all duration-500"
+                            style="width: 50%"></div>
+                        <div id="stat-rep-float"
+                            class="absolute right-0 -top-6 text-yellow-400 text-sm font-bold opacity-0"></div>
                     </div>
                 </div>
             </div>
@@ -250,22 +341,27 @@
                     <div class="flex items-center gap-3">
                         <span class="text-4xl">📻</span>
                         <div>
-                            <div class="text-sm font-bold text-red-700 tracking-widest uppercase" id="dilemma-year">1915年</div>
+                            <div class="text-sm font-bold text-red-700 tracking-widest uppercase" id="dilemma-year">
+                                1915年</div>
                             <h3 class="text-2xl font-bold text-gray-900 serif-text" id="dilemma-title">背景標題</h3>
                         </div>
                     </div>
-                    <div class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+                    <div
+                        class="text-xs font-bold text-gray-400 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
                         進度 <span id="dilemma-progress">1/3</span>
                     </div>
                 </div>
-                
+
                 <!-- 機密電報打字機效果 -->
-                <div class="mb-8 p-5 bg-[#1a1a1a] border-4 border-gray-800 text-[#00ff41] font-mono leading-relaxed text-base md:text-lg shadow-inner rounded min-h-[150px]">
-                    <div class="text-xs text-gray-500 mb-2 uppercase border-b border-gray-700 pb-1">Incoming Telegram // Top Secret</div>
+                <div
+                    class="mb-8 p-5 bg-[#1a1a1a] border-4 border-gray-800 text-[#00ff41] font-mono leading-relaxed text-base md:text-lg shadow-inner rounded min-h-[150px]">
+                    <div class="text-xs text-gray-500 mb-2 uppercase border-b border-gray-700 pb-1">Incoming Telegram //
+                        Top Secret</div>
                     <div id="dilemma-context" class=""></div>
                 </div>
-                
-                <div id="options-container" class="space-y-4 flex flex-col hidden opacity-0 transition-opacity duration-1000">
+
+                <div id="options-container"
+                    class="space-y-4 flex flex-col hidden opacity-0 transition-opacity duration-1000">
                     <!-- Options go here -->
                 </div>
             </div>
@@ -276,20 +372,25 @@
             <div class="bg-gray-900 text-gray-100 p-6 md:p-10 rounded-lg paper-shadow" id="feedback-card-border">
                 <h3 class="text-sm text-gray-400 font-bold tracking-widest uppercase mb-2">推演結果分析</h3>
                 <h4 id="feedback-title" class="text-2xl md:text-3xl font-bold mb-6 serif-text leading-snug"></h4>
-                
+
                 <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-inner mb-6">
-                    <p id="feedback-explanation" class="text-gray-300 leading-relaxed text-base md:text-lg text-justify"></p>
+                    <p id="feedback-explanation"
+                        class="text-gray-300 leading-relaxed text-base md:text-lg text-justify"></p>
                 </div>
 
                 <!-- 數值影響總結 -->
                 <div class="flex justify-center gap-6 border-t border-gray-700 pt-6">
-                    <div class="text-center"><span class="block text-xl" id="res-mil-icon">➖</span><span class="text-xs text-gray-400">軍政</span></div>
-                    <div class="text-center"><span class="block text-xl" id="res-nat-icon">➖</span><span class="text-xs text-gray-400">民生</span></div>
-                    <div class="text-center"><span class="block text-xl" id="res-rep-icon">➖</span><span class="text-xs text-gray-400">名聲</span></div>
+                    <div class="text-center"><span class="block text-xl" id="res-mil-icon">➖</span><span
+                            class="text-xs text-gray-400">軍政</span></div>
+                    <div class="text-center"><span class="block text-xl" id="res-nat-icon">➖</span><span
+                            class="text-xs text-gray-400">民生</span></div>
+                    <div class="text-center"><span class="block text-xl" id="res-rep-icon">➖</span><span
+                            class="text-xs text-gray-400">名聲</span></div>
                 </div>
-                
+
                 <div class="mt-8 flex justify-end">
-                    <button onclick="nextQuestion()" id="next-btn" class="bg-white text-gray-900 hover:bg-gray-200 font-bold py-4 px-8 rounded transition-colors w-full md:w-auto shadow-lg text-lg">
+                    <button onclick="nextQuestion()" id="next-btn"
+                        class="bg-white text-gray-900 hover:bg-gray-200 font-bold py-4 px-8 rounded transition-colors w-full md:w-auto shadow-lg text-lg">
                         進入下一階段推演 ➔
                     </button>
                 </div>
@@ -297,11 +398,13 @@
         </div>
 
         <!-- Screen 4: End -->
-        <div id="screen-end" class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative border-t-8 border-gray-800 mt-8">
+        <div id="screen-end"
+            class="w-full max-w-3xl bg-white p-8 md:p-12 rounded-lg paper-shadow hidden relative border-t-8 border-gray-800 mt-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl font-bold mb-2 text-gray-500 uppercase tracking-widest">沙盤推演總結報告</h2>
                 <div class="text-6xl mb-4 drop-shadow-md">👁️</div>
-                <h3 class="text-4xl font-bold text-gray-900 serif-text mb-2">最終稱號：<br><span id="final-title" class="text-red-700"></span></h3>
+                <h3 class="text-4xl font-bold text-gray-900 serif-text mb-2">最終稱號：<br><span id="final-title"
+                        class="text-red-700"></span></h3>
                 <p class="text-gray-600 text-base">歷史沒有標準答案，只有無奈的妥協與代價。</p>
             </div>
 
@@ -320,17 +423,18 @@
                     <div class="text-2xl font-bold text-yellow-700" id="end-stat-rep"></div>
                 </div>
             </div>
-            
+
             <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
                 <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2">
-                    <span>🖋️</span> 客觀史觀總結：
+                    <span>🖋️</span> 真實歷史真相總結：
                 </h3>
                 <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button onclick="returnToMenu()" class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full">
-                    返回檔案庫，解構下一位人物
+                <button onclick="returnToMenu()"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full">
+                    返回檔案庫，揭密下一位人物
                 </button>
             </div>
         </div>
@@ -339,16 +443,17 @@
 
     <!-- Footer -->
     <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
-        <p>本教材旨在打破黨國教育體制下的單一史觀洗腦，鼓勵從「一手史料」與「政治現實」進行獨立批判思考。</p>
+        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
         <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
-        
+
         <div class="mt-6 pt-5 border-t border-gray-300 flex flex-col items-center gap-4">
             <div class="text-xs text-gray-500 flex items-center justify-center gap-2 tracking-wide">
                 <span>Made by <strong>Andesign</strong></span>
                 <span class="text-gray-400">|</span>
                 <span>Powered by ✨ <strong>Gemini</strong></span>
             </div>
-            <a href="https://buymeacoffee.com/andesign" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:bg-[#FFDD00] hover:border-[#FFDD00] hover:text-gray-900 transition-all shadow-sm">
+            <a href="https://buymeacoffee.com/andesign" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-300 rounded-full text-xs font-bold text-gray-700 hover:bg-[#FFDD00] hover:border-[#FFDD00] hover:text-gray-900 transition-all shadow-sm">
                 ☕ 請 Andesign 喝咖啡
             </a>
         </div>
@@ -365,7 +470,7 @@
                 chapterLabel: "卷宗 001",
                 title: "陳炯明",
                 subtitle: "被掩蓋的廣東聯邦奠基者",
-                themeColor: "#1e3a8a", 
+                themeColor: "#1e3a8a",
                 coverIcon: "⚖️",
                 cardBorderHover: "hover:border-blue-500",
                 description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
@@ -425,7 +530,7 @@
                 chapterLabel: "卷宗 002",
                 title: "汪精衛",
                 subtitle: "「漢奸」標籤下的殘酷地緣博弈",
-                themeColor: "#7f1d1d", 
+                themeColor: "#7f1d1d",
                 coverIcon: "🕊️",
                 cardBorderHover: "hover:border-red-500",
                 description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
@@ -485,7 +590,7 @@
                 chapterLabel: "卷宗 003",
                 title: "袁世凱",
                 subtitle: "共和破壞者與現代化的奠基人",
-                themeColor: "#374151", 
+                themeColor: "#374151",
                 coverIcon: "🪖",
                 cardBorderHover: "hover:border-gray-500",
                 description: "在國民黨教科書中，他被簡化為「竊國大盜」與簽署二十一條的「賣國賊」。然而客觀審視歷史，他不僅在辛亥革命時避免了全面內戰，更在軍事、貨幣與教育上奠定了中國現代化的基礎。他最終的敗亡，是缺乏民主素養的傳統強人，在權力傲慢下的必然悲劇。",
@@ -566,7 +671,7 @@
             feedback: document.getElementById('screen-feedback')
         };
         const elNavControls = document.getElementById('top-nav-controls');
-        
+
         function initApp() {
             const grid = document.getElementById('archive-grid');
             grid.innerHTML = '';
@@ -580,7 +685,7 @@
                     <h3 class="text-2xl font-bold serif-text text-gray-800 mb-1 leading-snug">${ep.title}</h3>
                     <div class="text-sm font-medium text-gray-600 mb-3" style="color: ${ep.themeColor}">${ep.subtitle}</div>
                     <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">${ep.description}</p>
-                    <div class="mt-4 text-sm font-bold flex items-center gap-1" style="color: ${ep.themeColor}">啟動史觀解構 ➔</div>
+                    <div class="mt-4 text-sm font-bold flex items-center gap-1" style="color: ${ep.themeColor}">進入歷史現場 ➔</div>
                 `;
                 grid.appendChild(card);
             });
@@ -609,7 +714,7 @@
             Object.values(screens).forEach(s => s.classList.add('hidden'));
             screens[screenName].classList.remove('hidden');
             screens[screenName].classList.remove('fade-in');
-            void screens[screenName].offsetWidth; 
+            void screens[screenName].offsetWidth;
             screens[screenName].classList.add('fade-in');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -688,7 +793,7 @@
             // Render References
             const refContainer = document.getElementById('references-container');
             refContainer.innerHTML = '';
-            if(currentEpisode.references) {
+            if (currentEpisode.references) {
                 currentEpisode.references.forEach(ref => { refContainer.innerHTML += `<li>${ref}</li>`; });
             }
 
@@ -714,7 +819,7 @@
             stats.mil = Math.max(0, Math.min(100, stats.mil));
             stats.nat = Math.max(0, Math.min(100, stats.nat));
             stats.rep = Math.max(0, Math.min(100, stats.rep));
-            
+
             document.getElementById('stat-mil-val').textContent = stats.mil;
             document.getElementById('stat-mil-bar').style.width = `${stats.mil}%`;
             document.getElementById('stat-nat-val').textContent = stats.nat;
@@ -729,12 +834,12 @@
             const el = document.getElementById(elementId);
             el.innerHTML = '';
             el.classList.add('typewriter');
-            
+
             function type() {
                 if (i < text.length) {
-                    if(text.charAt(i) === '<') {
+                    if (text.charAt(i) === '<') {
                         let tag = '';
-                        while(text.charAt(i) !== '>' && i < text.length) {
+                        while (text.charAt(i) !== '>' && i < text.length) {
                             tag += text.charAt(i);
                             i++;
                         }
@@ -748,7 +853,7 @@
                     typeWriterTimeout = setTimeout(type, speed);
                 } else {
                     el.classList.remove('typewriter');
-                    if(callback) callback();
+                    if (callback) callback();
                 }
             }
             type();
@@ -757,17 +862,17 @@
         function loadQuestion() {
             clearTimeout(typeWriterTimeout);
             const data = currentEpisode.dilemmas[currentQuestionIndex];
-            
+
             screens.feedback.classList.add('hidden');
             const elOptions = document.getElementById('options-container');
             elOptions.innerHTML = '';
             elOptions.classList.add('hidden');
             elOptions.classList.remove('opacity-100');
-            
+
             document.getElementById('dilemma-year').textContent = data.year;
             document.getElementById('dilemma-title').textContent = data.title;
             document.getElementById('dilemma-progress').textContent = `${currentQuestionIndex + 1}/${currentEpisode.dilemmas.length}`;
-            
+
             typeWriter(data.context, 'dilemma-context', 20, () => {
                 elOptions.classList.remove('hidden');
                 setTimeout(() => elOptions.classList.add('opacity-100'), 100);
@@ -784,22 +889,22 @@
 
         function showStatFloat(id, val) {
             const el = document.getElementById(id);
-            if(val === 0) return;
+            if (val === 0) return;
             el.textContent = val > 0 ? `+${val}` : val;
             el.className = `absolute right-0 -top-6 text-sm font-bold stat-change ${val > 0 ? 'text-green-400' : 'text-red-400'}`;
             void el.offsetWidth;
         }
 
         function getStatResHTML(val) {
-            if(val > 0) return `<span class="text-green-500 font-bold">▲ +${val}</span>`;
-            if(val < 0) return `<span class="text-red-500 font-bold">▼ ${val}</span>`;
+            if (val > 0) return `<span class="text-green-500 font-bold">▲ +${val}</span>`;
+            if (val < 0) return `<span class="text-red-500 font-bold">▼ ${val}</span>`;
             return `<span class="text-gray-500 font-bold">➖ 0</span>`;
         }
 
         function selectOption(selectedOpt, btnElement) {
             clearTimeout(typeWriterTimeout);
             document.getElementById('dilemma-context').classList.remove('typewriter');
-            
+
             const buttons = document.getElementById('options-container').querySelectorAll('button');
             buttons.forEach(btn => {
                 btn.disabled = true;
@@ -807,30 +912,30 @@
             });
 
             btnElement.className = 'w-full text-left p-4 rounded border-2 text-base opacity-100 bg-gray-800 text-white font-bold border-gray-900 shadow-md flex items-start gap-3';
-            
+
             const dStats = selectedOpt.stats;
             stats.mil += dStats[0];
             stats.nat += dStats[1];
             stats.rep += dStats[2];
-            
+
             showStatFloat('stat-mil-float', dStats[0]);
             showStatFloat('stat-nat-float', dStats[1]);
             showStatFloat('stat-rep-float', dStats[2]);
             updateUIStats();
-            
+
             const elFeedbackTitle = document.getElementById('feedback-title');
             elFeedbackTitle.textContent = selectedOpt.feedbackTitle;
             elFeedbackTitle.className = `text-2xl md:text-3xl font-bold mb-4 serif-text leading-snug ${selectedOpt.isHistorical ? 'text-yellow-400' : 'text-red-400'}`;
 
             document.getElementById('feedback-explanation').innerHTML = selectedOpt.feedbackText;
-            
+
             document.getElementById('res-mil-icon').innerHTML = getStatResHTML(dStats[0]);
             document.getElementById('res-nat-icon').innerHTML = getStatResHTML(dStats[1]);
             document.getElementById('res-rep-icon').innerHTML = getStatResHTML(dStats[2]);
-            
+
             screens.feedback.classList.remove('hidden');
             screens.feedback.classList.add('fade-in');
-            
+
             const nextBtn = document.getElementById('next-btn');
             if (currentQuestionIndex === currentEpisode.dilemmas.length - 1) {
                 nextBtn.innerHTML = '查看歷史定性總結 ➔';
@@ -852,10 +957,10 @@
         }
 
         function determineTitle() {
-            if(stats.mil > 60 && stats.rep < 40) return "背負罵名的實用主義者";
-            if(stats.nat < 30 && stats.rep > 60) return "亡國的道德烈士";
-            if(stats.mil < 30 && stats.nat < 30) return "歷史洪流下的犧牲品";
-            if(stats.nat > 60 && stats.rep < 40) return "忍辱負重的救贖者";
+            if (stats.mil > 60 && stats.rep < 40) return "背負罵名的實用主義者";
+            if (stats.nat < 30 && stats.rep > 60) return "亡國的道德烈士";
+            if (stats.mil < 30 && stats.nat < 30) return "歷史洪流下的犧牲品";
+            if (stats.nat > 60 && stats.rep < 40) return "忍辱負重的救贖者";
             return "絕境中的掙扎者";
         }
 
@@ -871,4 +976,5 @@
         initApp();
     </script>
 </body>
+
 </html>
