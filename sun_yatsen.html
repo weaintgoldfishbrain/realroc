@@ -19,7 +19,7 @@
             title: "孫中山",
             subtitle: "被神化的先行者與黨國威權之父",
             themeColor: "#991b1b",
-            description: "在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以出賣國家領土主權為籌碼換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的列寧式威權政黨的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。",
+            description: "在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以<span class="redacted" onclick="this.classList.add('revealed')">出賣國家領土主權為籌碼</span>換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的<span class="redacted" onclick="this.classList.add('revealed')">列寧式威權政黨</span>的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。",
             dilemmas: [
                 {
                     year: "1915年2月", title: "第一階段：魔鬼的交易與二十一條",
@@ -81,7 +81,7 @@
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以出賣國家領土主權為籌碼換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的列寧式威權政黨的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。
+                    <p>在兩岸的政治圖騰中，他是不可褻瀆的「國父」與無瑕的「民族救星」。國民黨尊他為民主憲政的締造者，教科書將辛亥革命的成功全數歸功於他的英明領導。然而，拋開神化的光環與政治造神運動，真實的孫中山是一位為了達到「救國」目的，不惜屢次以<span class="redacted" onclick="this.classList.add('revealed')">出賣國家領土主權為籌碼</span>換取外國軍火，並在晚年親手將原本鬆散的民主政黨，改造成要求絕對服從的<span class="redacted" onclick="this.classList.add('revealed')">列寧式威權政黨</span>的極端實用主義者。他為近代中國的「黨國獨裁體制」播下了第一顆種子。
                     </p>
                 </div>
 
@@ -226,19 +226,19 @@
 
         <div id="screen-game" class="w-full max-w-4xl hidden">
             <div class="status-bar-dark">
-                <div class="status-item">
+                <div class="status-item relative"><div id="stat-mil-float"></div>
                     <div class="status-label">⚔️ 軍事實力 <span id="stat-mil-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
                 </div>
-                <div class="status-item">
+                <div class="status-item relative"><div id="stat-nat-float"></div>
                     <div class="status-label">💰 國家主權 <span id="stat-nat-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
                 </div>
-                <div class="status-item">
+                <div class="status-item relative"><div id="stat-rep-float"></div>
                     <div class="status-label">📖 歷史評價 <span id="stat-rep-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>

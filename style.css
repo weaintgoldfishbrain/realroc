@@ -259,3 +259,22 @@ h3,
   height: 100%;
   transition: width 0.5s ease-in-out;
 }
+/* Redacted Reveal Effect */
+.redacted {
+  background-color: #1a1a1b;
+  color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  padding: 0 4px;
+  border-radius: 2px;
+  user-select: none;
+}
+.redacted:hover {
+  background-color: #374151;
+}
+.redacted.revealed {
+  background-color: transparent;
+  color: #991b1b;
+  font-weight: bold;
+  user-select: text;
+}
