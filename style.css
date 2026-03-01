@@ -65,13 +65,20 @@ h3,
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* 移除中心對齊，防止長文溢出被裁切 */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
 }
 
-.flip-card-front p,
-.flip-card-back p {
-  margin: auto 0;
+/* 使用 Safe Centering: 首元素推滿上方，末元素推滿下方，中間內容自然置中或填滿 */
+.flip-card-front>*:first-child,
+.flip-card-back>*:first-child {
+  margin-top: auto;
+}
+
+.flip-card-front>*:last-child,
+.flip-card-back>*:last-child {
+  margin-bottom: auto;
 }
 
 .flip-card-front {
@@ -88,7 +95,7 @@ h3,
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .flip-card-back::-webkit-scrollbar {
