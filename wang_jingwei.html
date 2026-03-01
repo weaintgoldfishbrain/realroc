@@ -19,7 +19,7 @@
             title: "汪精衛",
             subtitle: "「漢奸」標籤下的殘酷地緣博弈",
             themeColor: "#7f1d1d",
-            description: "從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？",
+            description: "從熱血革命刺客，到主導南京偽政權的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「頭號漢奸」</span>。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「曲線救國」</span>？",
             dilemmas: [
                 {
                     year: "1938年底", title: "第一階段：焦土與和平的十字路口",
@@ -82,7 +82,9 @@
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>從熱血革命刺客，到主導南京偽政權的「頭號漢奸」。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的「曲線救國」？</p>
+                    <p>從熱血革命刺客，到主導南京偽政權的<span class="redacted"
+                            onclick="this.classList.add('revealed')">「頭號漢奸」</span>。汪精衛的「和平運動」究竟是出於貪生怕死的權力慾望，還是對中日國力懸殊感到極度絕望下，試圖保全淪陷區生機的<span
+                            class="redacted" onclick="this.classList.add('revealed')">「曲線救國」</span>？</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
@@ -123,32 +125,36 @@
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛是因為在內鬥中輸給蔣介石，出於貪婪與私心才投靠日本當漢奸。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">汪精衛是因為在內鬥中輸給蔣介石，出於貪婪與私心才投靠日本當漢奸。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：汪早年敢於捨生刺殺清攝政王，其晚年的轉變並非單純怕死。他對中國落後的工業與軍事有極度悲觀的清醒認識，深恐長期「焦土抗戰」會讓國家元氣盡毀並為中共擴張提供溫床。他將建立政權視為「我不入地獄誰入地獄」的政治犧牲。
+                                    汪早年敢於捨生刺殺清攝政王，其晚年的轉變並非單純怕死。他對中國落後的工業與軍事有極度悲觀的清醒認識，深恐長期「焦土抗戰」會讓國家元氣盡毀並為中共擴張提供溫床。他將建立政權視為「我不入地獄誰入地獄」的政治犧牲。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：汪精衛政權只是個一無是處的日本傀儡，對中國毫無貢獻。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">汪精衛政權只是個一無是處的日本傀儡，對中國毫無貢獻。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：汪政權雖然高度受制於日本，但在客觀上頂替了部分日軍的直接軍管，維持了淪陷區的基本社會運作。更弔詭的是，汪政權在1943年成功收回了上海公共租界等特權，此舉迫使重慶蔣介石政府加速與同盟國簽署廢除治外法權的《新約》。
+                                    汪政權雖然高度受制於日本，但在客觀上頂替了部分日軍的直接軍管，維持了淪陷區的基本社會運作。更弔詭的是，汪政權在1943年成功收回了上海公共租界等特權，此舉迫使重慶蔣介石政府加速與同盟國簽署廢除治外法權的《新約》。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
@@ -219,26 +225,26 @@
         <div id="screen-game" class="w-full max-w-4xl hidden">
             <!-- 狀態條 UI (Dark Style) -->
             <div class="status-bar-dark">
-                <div class="status-item relative"><div id="stat-mil-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>⚔️</span> 政治/軍事實力 <span id="stat-mil-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-mil-float" class="relative"></div>
+                    <div id="stat-mil-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-nat-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>💰</span> 國家/百姓生機 <span id="stat-nat-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-nat-float" class="relative"></div>
+                    <div id="stat-nat-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-rep-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>📖</span> 歷史名聲評價 <span id="stat-rep-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-rep-float" class="relative"></div>
+                    <div id="stat-rep-float" class="floating-stat"></div>
                 </div>
             </div>
 
@@ -344,8 +350,12 @@
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button onclick="window.location.href='index.html'"
-                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">
-                        🔙 返回首頁解密其他人物
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow text-lg tracking-wider">
+                        🔙 返回圖書館首頁
+                    </button>
+                    <button onclick="location.reload()"
+                        class="bg-white border-2 border-gray-900 text-gray-900 hover:bg-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm text-lg tracking-wider">
+                        🔄 重新推演本卷宗
                     </button>
                 </div>
             </div>

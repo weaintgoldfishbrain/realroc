@@ -19,7 +19,7 @@
             title: "蔣介石",
             subtitle: "民族救星還是二二八慘案元凶？",
             themeColor: "#1e3a8a",
-            description: "在台灣早期的黨國教育中，他是神聖不可侵犯的「世界偉人、民族救星」；每逢二二八事件，官方敘事總試圖將他塑造成「受陳儀欺上瞞下」、「為恢復秩序才無奈派兵」的清白領袖。然而，隨著《大溪檔案》與《蔣介石日記》等官方史料的全面解密，客觀的歷史證據無情地戳破了這層神話。真實的蔣介石不僅完全知情，更是親自下達鎮壓指令、越洋細膩指揮軍隊登陸，並在事後全面包庇、升遷殺人將領的絕對元凶。他將台灣視為戰利品，用國家暴力進行了一場有計畫的菁英滅絕。",
+            description: `在台灣早期的黨國教育中，他是神聖不可侵犯的「世界偉人、民族救星」；每逢二二八事件，官方敘事總試圖將他塑造成「受陳儀欺上瞞下」、「為恢復秩序才無奈派兵」的清白領袖。然而，隨著《大溪檔案》與《蔣介石日記》等官方史料的全面解密，客觀的歷史證據無情地戳破了這層神話。真實的蔣介石不僅完全知情，更是親自下達<span class="redacted" onclick="this.classList.add('revealed')">鎮壓指令</span>、越洋細膩<span class="redacted" onclick="this.classList.add('revealed')">指揮軍隊登陸</span>，並在事後全面包庇、升遷殺人將領的絕對元凶。他將台灣視為戰利品，用國家暴力進行了一場有計畫的<span class="redacted" onclick="this.classList.add('revealed')">菁英滅絕</span>。`,
             dilemmas: [
                 {
                     year: "1947年3月初", title: "第一階段：處理委員會的訴求與派兵",
@@ -81,7 +81,11 @@
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>在台灣早期的黨國教育中，他是神聖不可侵犯的「世界偉人、民族救星」；每逢二二八事件，官方敘事總試圖將他塑造成「受陳儀欺上瞞下」、「為恢復秩序才無奈派兵」的清白領袖。然而，隨著《大溪檔案》與《蔣介石日記》等官方史料的全面解密，客觀的歷史證據無情地戳破了這層神話。真實的蔣介石不僅完全知情，更是親自下達鎮壓指令、越洋細膩指揮軍隊登陸，並在事後全面包庇、升遷殺人將領的絕對元凶。他將台灣視為戰利品，用國家暴力進行了一場有計畫的菁英滅絕。
+                    <p>在台灣早期的黨國教育中，他是神聖不可侵犯的「世界偉人、民族救星」；每逢二二八事件，官方敘事總試圖將他塑造成「受陳儀欺上瞞下」、「為恢復秩序才無奈派兵」的清白領袖。然而，隨著《大溪檔案》與《蔣介石日記》等官方史料的全面解密，客觀的歷史證據無情地戳破了這層神話。真實的蔣介石不僅完全知情，更是親自下達<span
+                            class="redacted" onclick="this.classList.add('revealed')">鎮壓指令</span>、越洋細膩<span
+                            class="redacted"
+                            onclick="this.classList.add('revealed')">指揮軍隊登陸</span>，並在事後全面包庇、升遷殺人將領的絕對元凶。他將台灣視為戰利品，用國家暴力進行了一場有計畫的<span
+                            class="redacted" onclick="this.classList.add('revealed')">菁英滅絕</span>。
                     </p>
                 </div>
 
@@ -159,12 +163,6 @@
             </section>
 
             <section class="mb-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-px bg-gray-300 flex-grow"></div>
-                    <h3 class="text-2xl font-bold serif-text text-gray-800 tracking-widest px-4">歷史檔案館藏閱讀室</h3>
-                    <div class="h-px bg-gray-300 flex-grow"></div>
-                </div>
-
                 <div class="flex flex-col gap-8">
                     <div
                         class="bg-white rounded-lg paper-shadow overflow-hidden flex flex-col md:flex-row border border-gray-200 relative">
@@ -207,28 +205,31 @@
 
             <div class="text-center sticky bottom-4 z-10 pt-4">
                 <button onclick="startGame()"
-                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-12 rounded-full transition-colors shadow-lg paper-shadow text-lg flex items-center gap-2 mx-auto group">
-                    進入歷史情境推演 <span class="transform group-hover:translate-x-2 transition-transform">➔</span>
+                    class="bg-gray-900 text-white font-bold py-4 px-12 rounded-full shadow-lg text-lg flex items-center gap-2 mx-auto">
+                    進入歷史情境推演 ➔
                 </button>
             </div>
         </div>
 
         <div id="screen-game" class="w-full max-w-4xl hidden">
             <div class="status-bar-dark">
-                <div class="status-item relative"><div id="stat-mil-float"></div>
-                    <div class="status-label"><span>⚔️</span> 政治/軍事實力 <span id="stat-mil-val">50</span></div>
+                <div class="status-item relative">
+                    <div id="stat-mil-float"></div>
+                    <div class="status-label">⚔️ 軍事實力 <span id="stat-mil-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
                 </div>
-                <div class="status-item relative"><div id="stat-nat-float"></div>
-                    <div class="status-label"><span>💰</span> 國家/百姓生機 <span id="stat-nat-val">50</span></div>
+                <div class="status-item relative">
+                    <div id="stat-nat-float"></div>
+                    <div class="status-label">💰 國家主權 <span id="stat-nat-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
                 </div>
-                <div class="status-item relative"><div id="stat-rep-float"></div>
-                    <div class="status-label"><span>📖</span> 歷史名聲評價 <span id="stat-rep-val">50</span></div>
+                <div class="status-item relative">
+                    <div id="stat-rep-float"></div>
+                    <div class="status-label">📖 歷史評價 <span id="stat-rep-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
                     </div>
@@ -256,8 +257,7 @@
                     <p id="dilemma-context" class="whitespace-pre-line"></p>
                 </div>
             </div>
-
-            <div id="options-container" class="space-y-4 opacity-0 transition-opacity duration-500"></div>
+            <div id="options-container" class="space-y-4"></div>
         </div>
 
         <div id="screen-feedback" class="w-full max-w-3xl hidden mt-6">
@@ -278,14 +278,8 @@
         </div>
 
         <div id="screen-end" class="w-full max-w-3xl hidden">
-            <div class="text-center mb-10">
-                <div class="text-xs font-bold text-gray-500 tracking-widest uppercase mb-2">歷史檔案定調</div>
-                <h2 class="text-4xl md:text-5xl font-bold serif-text text-gray-900 mb-2">命運結算</h2>
-                <div class="h-1 w-20 bg-gray-800 mx-auto rounded"></div>
-            </div>
-            <div class="bg-white p-8 rounded-lg paper-shadow mb-8 text-center border-t-8 border-gray-900">
-                <p class="text-gray-500 mb-2 text-sm">你的最終歷史定位：</p>
-                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text tracking-wide"></h2>
+            <div class="bg-white p-8 rounded-lg paper-shadow text-center">
+                <h2 id="final-title" class="text-3xl font-bold text-red-800 mb-8 serif-text"></h2>
 
                 <div class="flex justify-center gap-6 mb-8 border-b border-gray-200 pb-8 flex-wrap">
                     <div class="text-center bg-gray-50 p-4 rounded-lg min-w-[100px]">
@@ -293,7 +287,7 @@
                         <div id="end-stat-mil" class="text-3xl font-bold text-gray-800"></div>
                     </div>
                     <div class="text-center bg-gray-50 p-4 rounded-lg min-w-[100px]">
-                        <div class="text-sm text-gray-500 mb-1">國家生機</div>
+                        <div class="text-sm text-gray-500 mb-1">國家主權</div>
                         <div id="end-stat-nat" class="text-3xl font-bold text-gray-800"></div>
                     </div>
                     <div class="text-center bg-gray-50 p-4 rounded-lg min-w-[100px]">
@@ -302,23 +296,15 @@
                     </div>
                 </div>
 
-                <div class="text-left bg-[#fbf9f4] p-6 md:p-8 rounded-lg mb-8 border border-gray-300 shadow-inner">
-                    <h3 class="font-bold text-gray-800 text-xl mb-4 serif-text flex items-center gap-2"><span>🖋️</span>
-                        真實歷史真相總結：</h3>
-                    <p class="text-gray-700 leading-relaxed text-base md:text-lg text-justify" id="end-summary"></p>
+                <div class="text-left bg-[#fbf9f4] p-6 rounded-lg mb-8 border border-gray-300">
+                    <p class="text-gray-700" id="end-summary"></p>
                 </div>
                 <button onclick="window.location.href='index.html'"
-                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">🔙
-                    返回首頁解密其他人物</button>
+                    class="bg-gray-900 text-white font-bold py-4 px-8 rounded shadow w-full">🔙 返回首頁</button>
             </div>
         </div>
 
     </main>
-
-    <footer class="text-center py-8 text-gray-500 text-sm mt-auto bg-gray-200 w-full">
-        <p>本站旨在呈現多元且真實的歷史紀錄，鼓勵閱讀一手史料以還原歷史真相。</p>
-        <p class="mt-2 font-bold text-gray-600">歷史沒有絕對的好人與壞人，只有在體制與絕境下掙扎的人性。</p>
-    </footer>
 
     <script src="script.js"></script>
     <script>

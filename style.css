@@ -69,6 +69,11 @@ h3,
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
 }
 
+.flip-card-front p,
+.flip-card-back p {
+  margin: auto 0;
+}
+
 .flip-card-front {
   background-color: #fef3c7;
   border: 2px solid #fde68a;
@@ -81,7 +86,9 @@ h3,
   transform: rotateY(180deg);
   border: 2px solid #374151;
   overflow-y: auto;
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flip-card-back::-webkit-scrollbar {
@@ -190,12 +197,16 @@ h3,
 .telegram-terminal {
   background-color: #1a1a1b;
   border-radius: 8px;
-  padding: 24px;
+  padding: 32px;
   color: #4ade80;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   position: relative;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .telegram-header {
@@ -259,19 +270,26 @@ h3,
   height: 100%;
   transition: width 0.5s ease-in-out;
 }
+
 /* Redacted Reveal Effect */
 .redacted {
+  display: inline;
   background-color: #1a1a1b;
   color: transparent;
   cursor: pointer;
   transition: all 0.5s ease;
   padding: 0 4px;
+  margin: 0 2px;
   border-radius: 2px;
   user-select: none;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
+
 .redacted:hover {
   background-color: #374151;
 }
+
 .redacted.revealed {
   background-color: transparent;
   color: #991b1b;

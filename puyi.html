@@ -19,7 +19,7 @@
             title: "溥儀",
             subtitle: "從皇帝到公民：紫禁城外的傀儡",
             themeColor: "#4a3b2a",
-            description: "愛新覺羅·溥儀是中國兩千年帝制的最後一個象徵。他是時代洪流中最身不由己的棋子，被各路軍閥、日本關東軍與新政權反覆利用與擺布。從紫禁城的廢帝到偽滿洲國的傀儡，再到北京植物園的園丁，他在恐懼與執念中苟延殘喘。",
+            description: "愛新覺羅·溥儀是中國兩千年帝制的最後一個象徵。他是時代洪流中最身不由己的棋子，被各路軍閥、日本關東軍與新政權反覆利用與擺布。從紫禁城的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「廢帝」</span>到偽滿洲國的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「傀儡」</span>，再到北京植物園的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「園丁」</span>，他在恐懼與執念中苟延殘喘。",
             dilemmas: [
                 {
                     year: "1924年11月", title: "第一階段：紫禁城的黃昏",
@@ -81,8 +81,10 @@
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>他是中國兩千年帝制的最後一個象徵。這份檔案將揭示，這位「漢奸」皇帝與「模範公民」標籤背後，一個時代棋子的真實掙扎。
-                    </p>
+                    <p>愛新覺羅·溥儀是中國兩千年帝制的最後一個象徵。他是時代洪流中<span class="redacted"
+                            onclick="this.classList.add('revealed')">最身不由己的棋子</span>，被各路軍閥、日本關東軍與新政權反覆利用與擺布。這份檔案將揭示，這位<span
+                            class="redacted" onclick="this.classList.add('revealed')">「漢奸」皇帝</span>與<span
+                            class="redacted" onclick="this.classList.add('revealed')">「模範公民」</span>標籤背後，一個時代棋子的真實掙扎。</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
@@ -119,32 +121,36 @@
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說： 溥儀喪心病狂，主動把東北出賣給日本，是個十惡不赦的賣國賊。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">溥儀喪心病狂，主動把東北出賣給日本，是個十惡不赦的賣國賊。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相： 他確實有復辟執念，但起因是被馮玉祥無故驅逐出宮，在恐懼中投江。到了滿洲後，他才發現自己完全被關東軍軟禁，連見誰吃什麼都由不得自己，毫無任何實權。
+                                    他確實有復辟執念，但起因是被馮玉祥無故驅逐出宮，在恐懼中投江。到了滿洲後，他才發現自己完全被關東軍軟禁，連見誰吃什麼都由不得自己，毫無任何實權。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說： 溥儀在戰犯管理所深刻認罪，被偉大理念感化，真心改造成模範公民。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">溥儀在戰犯管理所深刻認罪，被偉大理念感化，真心改造成模範公民。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相： 「改造」很大程度是生存本能。從小在宮廷鬥爭長大的他，面對死亡威脅，完美「表演」了悔過角色，以瘋狂自我貶低換取活命。
+                                    「改造」很大程度是生存本能。從小在宮廷鬥爭長大的他，面對死亡威脅，完美「表演」了悔過角色，以瘋狂自我貶低換取活命。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
@@ -203,23 +209,26 @@
 
         <div id="screen-game" class="w-full max-w-4xl hidden">
             <div class="status-bar-dark">
-                <div class="status-item relative"><div id="stat-mil-float"></div>
-                    <div class="status-label">⚔️ 軍事實力 <span id="stat-mil-val">50</span></div>
+                <div class="status-item relative">
+                    <div class="status-label"><span>⚔️</span> 政治/軍事實力 <span id="stat-mil-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
+                    <div id="stat-mil-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-nat-float"></div>
-                    <div class="status-label">💰 國家主權 <span id="stat-nat-val">50</span></div>
+                <div class="status-item relative">
+                    <div class="status-label"><span>💰</span> 國家/百姓生機 <span id="stat-nat-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
+                    <div id="stat-nat-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-rep-float"></div>
-                    <div class="status-label">📖 歷史定位 <span id="stat-rep-val">50</span></div>
+                <div class="status-item relative">
+                    <div class="status-label"><span>📖</span> 歷史名聲評價 <span id="stat-rep-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
                     </div>
+                    <div id="stat-rep-float" class="floating-stat"></div>
                 </div>
             </div>
             <div class="flex items-center justify-between mb-6 px-2">
@@ -283,8 +292,16 @@
                 <div class="text-left bg-[#fbf9f4] p-6 rounded-lg mb-8 border border-gray-300">
                     <p class="text-gray-700" id="end-summary"></p>
                 </div>
-                <button onclick="window.location.href='index.html'"
-                    class="bg-gray-900 text-white font-bold py-4 px-8 rounded shadow w-full">🔙 返回首頁解密其他人物</button>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="window.location.href='index.html'"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow text-lg tracking-wider">
+                        🔙 返回圖書館首頁
+                    </button>
+                    <button onclick="location.reload()"
+                        class="bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm text-lg tracking-wider">
+                        🔄 重新推演本卷宗
+                    </button>
+                </div>
             </div>
         </div>
 

@@ -20,7 +20,7 @@
             title: "陳炯明",
             subtitle: "被掩蓋的廣東聯邦奠基者",
             themeColor: "#1e3a8a",
-            description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。",
+            description: "在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「反動軍閥」</span>。然而，身為具有法政背景的清末議員，他所堅持的<span class='redacted' onclick='this.classList.add(\"revealed\")'>「聯省自治」</span>，或許才是當時避免中國陷入連年內戰的另一條出路。",
             dilemmas: [
                 {
                     year: "1920年", title: "第一階段：護法建國的十字路口",
@@ -85,7 +85,10 @@
 
                 <div
                     class="text-gray-700 leading-relaxed text-lg mb-8 border-l-4 border-gray-300 pl-4 py-2 bg-gray-50 italic">
-                    <p>在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的「反動軍閥」。然而，身為具有法政背景的清末議員，他所堅持的「聯省自治」，或許才是當時避免中國陷入連年內戰的另一條出路。</p>
+                    <p>在傳統國民黨史觀中，他被貶為背信棄義、炮轟總統府的<span class="redacted"
+                            onclick="this.classList.add('revealed')">「反動軍閥」</span>。然而，身為具有法政背景的清末議員，他所堅持的<span
+                            class="redacted"
+                            onclick="this.classList.add('revealed')">「聯省自治」</span>，或許才是當時避免中國陷入連年內戰的另一條出路。</p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 border-t border-gray-200 pt-8 mt-4">
@@ -127,16 +130,18 @@
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明是個充滿野心的反動軍閥，為了奪權而發動「六一六事變」炮轟孫中山。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">陳炯明是個充滿野心的反動軍閥，為了奪權而發動「六一六事變」炮轟孫中山。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：這是一場「聯邦自治」與「中央集權」的路線之爭。當時「護法」目標已達成，陳主張停止內戰、建設廣東；孫卻堅持拿廣東的資源發動武力北伐。陳的部隊發動政變是為了逼孫下野以保衛廣東自治，且陳私下嚴令部隊讓開生路。
+                                    這是一場「聯邦自治」與「中央集權」的路線之爭。當時「護法」目標已達成，陳主張停止內戰、建設廣東；孫卻堅持拿廣東的資源發動武力北伐。陳的部隊發動政變是為了逼孫下野以保衛廣東自治，且陳私下嚴令部隊讓開生路。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
@@ -144,16 +149,18 @@
                     <div class="flip-card" onclick="this.classList.toggle('flipped')">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <span class="text-3xl mb-2">📖</span>
-                                <p class="font-bold text-lg leading-snug">歷史課本說：陳炯明只是一個目光短淺、阻礙國家統一的地方割據勢力。</p>
-                                <span class="text-xs text-yellow-700 mt-4 opacity-70">點擊解密檔案 ➔</span>
+                                <div class="text-xs font-bold text-yellow-600 mb-2 tracking-widest uppercase">歷史課本說 📖
+                                </div>
+                                <p class="font-bold text-lg leading-snug">陳炯明只是一個目光短淺、阻礙國家統一的地方割據勢力。</p>
+                                <div class="mt-auto pt-4 text-xs text-gray-400">點擊查看解密真相 ➔</div>
                             </div>
                             <div class="flip-card-back">
-                                <span class="text-3xl mb-2">📂</span>
+                                <div class="text-xs font-bold text-indigo-400 mb-2 tracking-widest uppercase">解密原始檔案 📂
+                                </div>
                                 <p class="text-sm md:text-base leading-relaxed text-justify">
-                                    解密真相：陳炯明深受無政府主義與聯邦主義影響。他並非不想統一，而是主張仿效美國的「多黨民主聯邦制」，希望先將廣東建設為模範省，待各省民主成熟後，再由下而上和平統一，而非透過一黨專政的武裝侵略。
+                                    陳炯明深受無政府主義與聯邦主義影響。他並非不想統一，而是主張仿效美國的「多黨民主聯邦制」，希望先將廣東建設為模範省，待各省民主成熟後，再由下而上和平統一，而非透過一黨專政的武裝侵略。
                                 </p>
-                                <span class="text-xs text-gray-400 mt-4 opacity-70">點擊翻回課本</span>
+                                <div class="mt-auto pt-4 text-xs text-gray-500">點擊翻回</div>
                             </div>
                         </div>
                     </div>
@@ -226,26 +233,26 @@
         <div id="screen-game" class="w-full max-w-4xl hidden">
             <!-- 狀態條 UI (Dark Style) -->
             <div class="status-bar-dark">
-                <div class="status-item relative"><div id="stat-mil-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>⚔️</span> 政治/軍事實力 <span id="stat-mil-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-mil-bar" class="status-progress-fill bg-blue-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-mil-float" class="relative"></div>
+                    <div id="stat-mil-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-nat-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>💰</span> 國家/百姓生機 <span id="stat-nat-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-nat-bar" class="status-progress-fill bg-green-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-nat-float" class="relative"></div>
+                    <div id="stat-nat-float" class="floating-stat"></div>
                 </div>
-                <div class="status-item relative"><div id="stat-rep-float"></div>
+                <div class="status-item relative">
                     <div class="status-label"><span>📖</span> 歷史名聲評價 <span id="stat-rep-val">50</span></div>
                     <div class="status-progress-bg">
                         <div id="stat-rep-bar" class="status-progress-fill bg-yellow-500" style="width: 50%"></div>
                     </div>
-                    <div id="stat-rep-float" class="relative"></div>
+                    <div id="stat-rep-float" class="floating-stat"></div>
                 </div>
             </div>
 
@@ -353,8 +360,12 @@
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button onclick="window.location.href='index.html'"
-                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full shadow text-lg tracking-wider">
-                        🔙 返回首頁解密其他人物
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow text-lg tracking-wider">
+                        🔙 返回圖書館首頁
+                    </button>
+                    <button onclick="location.reload()"
+                        class="bg-white border-2 border-gray-900 text-gray-900 hover:bg-gray-100 font-bold py-4 px-8 rounded transition-colors w-full sm:w-auto shadow-sm text-lg tracking-wider">
+                        🔄 重新推演本卷宗
                     </button>
                 </div>
             </div>
